@@ -1,0 +1,20 @@
+[{
+    "packageDescription": "SimpleBlackboardConnect is a .NET Core class library that can be used to connect to Blackboard to obtain the Access Token to integrate your application with Blackboard and make API calls for CRUD operations.",
+    "packageData": [{
+        "methodName": "Usage",
+        "description": "The connection details to connect to Blackboard to get the Access Token can be provided by any of the following options",
+        "samples": [{
+            "title": "",
+            "code": "1. Add a config.json file at the application's current directory.\n2. Add enviroment variables.                   \n                            "
+        }, {
+            "title": "The json file(s) format should be as follows:",
+            "code": "{\n  \"Blackboard\": {\n    \"ApplicationKey\": \"applicationkey\",\n    \"Secret\": \"secret\",\n    \"TokenUrl\": \"tokenurl\"\n  } \n}                   \n    "
+        }, {
+            "title": "The environment variables naming convention should be as follows:",
+            "code": "Variable                    Value\nBlackboard:Applicationkey   applicationkey\nBlackboard:Secret           secret\nBlackboard:TokenUrl         tokenurl  "
+        }, {
+            "title": "The usage is follows:",
+            "code": "using System;\nusing BlackboardConnect;\n\nnamespace BlackboardConnectTestClient\n{\n    public class Program\n    {\n        public static void Main(string[] args)\n        {\n            //Authentication details by adding config.json at application's current directory and/or by adding environmental variables\n            var bbConnect = new Connect();\n            var data = bbConnect.TryConnect();\n\n            Console.WriteLine($\"Error : {data.Error}\");\n            Console.WriteLine($\"Instance Url : {data.AccessToken}\");\n            Console.WriteLine($\"Access Token : {data.ExpiresIn}\");\n\n            Console.ReadLine();\n        }\n    }\n}      "
+        }]
+    }]
+}]
