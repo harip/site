@@ -56,14 +56,14 @@
         "description": "Get object's namespace",
         "samples": [{
             "title": "",
-            "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\n\nvar ns = so1.GetNamespace();"
+            "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List<string> { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\n\nvar ns = so1.GetNamespace();"
         }]
     }, {
         "methodName": "GetBaseClassesNames",
         "description": "Get the object base class names",
         "samples": [{
             "title": "",
-            "code": "public class SimpleObjectWithParent : Parent\n{\n\tpublic int Field1;\n\tpublic List<string> X { get; set; }\n\tprivate int Z=10;\n}\npublic class Parent:Grandparent\n{\n\tpublic int ParentProperty { get; set; }\n}\npublic class Grandparent \n{\n\tpublic int GrandparentProperty { get; set; }\n}\n\nvar baseClassNames=new SimpleObjectWithParent ().GetBaseClassesNames();"
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n}\npublic class Grandparent \n{\n    public int GrandparentProperty { get; set; }\n}\n\nvar baseClassNames=new SimpleObjectWithParent ().GetBaseClassesNames();"
         }]
     }
 ]
