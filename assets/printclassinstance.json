@@ -51,5 +51,19 @@
             "title": "",
             "code": "namespace PrintClassInstance\n{\n    public class PrintMeGrandParent\n    {\n        private int GrandParentIntPrivatePropertyTest { get; set; }\n    }\n\n    public class PrintMeParent : PrintMeGrandParent\n    {\n        private int ParentIntPrivatePropertyTest { get; set; }\n    }\n\n    public class PrintMe: PrintMeParent\n    {\n        public Tuple TestTuple { get; set; }\n    }\n}\n\nnamespace PrintClassInstance\n{\n    public class Program\n    {\n            static void Main(string[] args)\n            {\n                PrintMe data = GenerateTestDataForPrintMe();\n                data.SaveToFile(@\"c:\\tmp\\instance.txt\");  \n                Console.WriteLine(\"Finished\");\n                Console.ReadLine();\n            }\n    }\n}\n\nOutput text file:\nPrintMe\n{\n    TestTuple = new Tuple`4\n    {\n        Item1 = 1,\n        Item2 = 1,\n        Item3 = 1,\n        Item4 = \"1\",\n    },\n    ParentIntPrivatePropertyTest = 1000,\n    GrandParentIntPrivatePropertyTest = 1000,\n};"
         }]
+    }, {
+        "methodName": "GetNamespace",
+        "description": "Get object's namespace",
+        "samples": [{
+            "title": "",
+            "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\n\nvar ns = so1.GetNamespace();"
+        }]
+    }, {
+        "methodName": "GetBaseClassesNames",
+        "description": "Get the object base class names",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n\tpublic int Field1;\n\tpublic List<string> X { get; set; }\n\tprivate int Z=10;\n}\npublic class Parent:Grandparent\n{\n\tpublic int ParentProperty { get; set; }\n}\npublic class Grandparent \n{\n\tpublic int GrandparentProperty { get; set; }\n}\n\nvar baseClassNames=new SimpleObjectWithParent ().GetBaseClassesNames();"
+        }]
     }
 ]
