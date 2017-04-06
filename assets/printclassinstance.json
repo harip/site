@@ -10,9 +10,14 @@
         "methodName": "MemberNames",
         "description": "Get list of members (Fields,Properties) declared in the class, along with all members declared in all classes in its inheritance hierarchy and includes Private and Static members",
         "samples": [{
-            "title": "",
-            "code": "public class SimpleObjectNullable\n{\n    public List X { get; set; }\n    public int? Y { get; set; }\n    private int? Z { get; set; }\n}\n\nvar memberList = new SimpleObjectNullable().MemberNames().ToList();"
-        }]
+                "title": "",
+                "code": "public class SimpleObjectNullable\n{\n    public List X { get; set; }\n    public int? Y { get; set; }\n    private int? Z { get; set; }\n}\n\nvar memberList = new SimpleObjectNullable().MemberNames().ToList();"
+            },
+            {
+                "title": "Type Extension",
+                "code": "var memberList = typeof(SimpleObjectNullable).GetAllMemberNames();"
+            }
+        ]
     },
     {
         "methodName": "MemberValue",
@@ -55,15 +60,23 @@
         "methodName": "GetNamespace",
         "description": "Get object's namespace",
         "samples": [{
-            "title": "",
-            "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List<string> { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\n\nvar ns = so1.GetNamespace();"
-        }]
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List<string> { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\n\nvar ns = so1.GetNamespace();"
+            },
+            {
+                "title": "Type Extension",
+                "code": "var ns= typeof(SimpleObjectWithParent).GetNamespace();"
+            }
+        ]
     }, {
         "methodName": "GetBaseClassesNames",
         "description": "Get the object base class names",
         "samples": [{
             "title": "",
             "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n}\npublic class Grandparent \n{\n    public int GrandparentProperty { get; set; }\n}\n\nvar baseClassNames=new SimpleObjectWithParent ().GetBaseClassesNames();"
+        }, {
+            "title": "Type Extension",
+            "code": "var baseClassNames = typeof(SimpleObjectWithParent).GetBaseClassesNames();"
         }]
     }
 ]
