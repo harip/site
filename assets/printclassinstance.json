@@ -78,5 +78,35 @@
             "title": "Type Extension",
             "code": "var baseClassNames = typeof(SimpleObjectWithParent).GetBaseClassesNames();"
         }]
+    }, {
+        "methodName": "GetAllMethods",
+        "description": "Get all methods including private",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n\n    public int GetCount()\n    {\n        return Z;\n    }\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n\n    private int GetParentCount()\n    {\n        return 10;\n    }\n}"
+        }, {
+            "title": "",
+            "code": "var ns = typeof(SimpleObjectWithParent).GetAllMethods();"
+        }]
+    }, {
+        "methodName": "GetAllMethodsMetaData",
+        "description": "Get all methods meta data",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n\n    public int GetCount()\n    {\n        return Z;\n    }\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n\n    private int GetParentCount()\n    {\n        return 10;\n    }\n}"
+        }, {
+            "title": "",
+            "code": "var type = typeof(SimpleObjectWithParent).GetAllMethodsMetaData();\nforeach (var t in type)\n{\n    Console.WriteLine(t.NameSpace + \",\" + t.DeclaringType + \",\" + t.Name + \",\" + t.Signature);\n}\n\n\nConsole Output:\nTestPrintClassInstanceLib.TestData,Parent,GetParentCount,Int32 GetParentCount()\nTestPrintClassInstanceLib.TestData,SimpleObjectWithParent,GetCount,Int32 GetCount()\n"
+        }]
+    }, {
+        "methodName": "InvokeMethod",
+        "description": "Invoke method including private",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n\n    public int GetCount()\n    {\n        return Z;\n    }\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n\n    private int GetParentCount()\n    {\n        return 10;\n    }\n}"
+        }, {
+            "title": "",
+            "code": "var obj = new SimpleObjectWithParent();\nvar val=obj.InvokeMethod(\"GetParentCount\", null); //val is 10"
+        }]
     }
 ]
