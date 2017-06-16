@@ -108,5 +108,13 @@
             "title": "",
             "code": "var obj = new SimpleObjectWithParent();\nvar val=obj.InvokeMethod(\"GetParentCount\", null); //val is 10"
         }]
+    },
+    {
+        "methodName": "SaveToS3",
+        "description": "Save the object graph to a S3 container",
+        "samples": [{
+            "title": "",
+            "code": "//Save to S3\nvar contentData = new Dictionary<string, string>\n{\n\t{ \"AccessKeyId\",\"your access key\"},\n\t{\"SecretAccessKey\",\"your secret access key\"}\n};\nvar uploadMessage = new S3UploadMessage\n{\n\tS3Client = new AmazonS3Client(contentData[\"AccessKeyId\"], contentData[\"SecretAccessKey\"],\n\t\t\tAmazon.RegionEndpoint.USEast1),\n\tBucketName = \"your bucket name\",\n\tKey = \"objectgraph.txt\"\n};\nvar result = data.SaveToS3(uploadMessage).Result;"
+        }]
     }
 ]
