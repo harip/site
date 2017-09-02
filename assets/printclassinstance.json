@@ -1,4 +1,59 @@
 [{
+        "methodName": "Flatten",
+        "description": "Generates a flattened dictionary from member name and values",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar dict= so1.FlattenedJson().Result; "
+            },
+            {
+                "title": "Output",
+                "code": "{[X_0, \"1\"]}\n{[X_1, \"2\"]}\n{[X_2, \"3\"]}\n{[ParentProperty, 5]}\n{[GrandparentProperty, 5]}\n{[Field1, 5]}\n{[Z, 10]}"
+            }
+        ]
+    },
+    {
+        "methodName": "FlattenedJson",
+        "description": "Generates a flattened json string from member name and values",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar dict= so1.Flatten().Result; "
+            },
+            {
+                "title": "Output",
+                "code": "{  \n   \"X_0\":\"\\\"1\\\"\",\n   \"X_1\":\"\\\"2\\\"\",\n   \"X_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"GrandparentProperty\":5,\n   \"Field1\":5,\n   \"Z\":10\n}"
+            }
+        ]
+    },
+
+    {
+        "methodName": "CombineAndFlatten",
+        "description": "Creates a flattened dictionary for objects (same or different type)",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar so2 = new SimpleObject\n{\n\tX = 1,\n\tY = \"Y\",\n\tZ = \"Z\"\n};\nvar val = so1.CombineAndFlatten(so2).Result;"
+            },
+            {
+                "title": "Output",
+                "code": "{[obj0_X_0, \"1\"]}\n{[obj0_X_1, \"2\"]}\n{[obj0_X_2, \"3\"]}\n{[obj0_ParentProperty, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_Z, 10]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_Z, 10]}\n{[obj1_X, 1]}\n{[obj1_Y, \"Y\"]}\n{[obj1_Z, \"Z\"]}"
+            }
+        ]
+    },
+
+    {
+        "methodName": "CombineAndFlattenedJson",
+        "description": "Creates a combined flattened json for objects (same or different type)",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar so2 = new SimpleObject\n{\n\tX = 1,\n\tY = \"Y\",\n\tZ = \"Z\"\n};\nvar val = so1.CombineAndFlattenedJson(so2).Result;"
+            },
+            {
+                "title": "Output",
+                "code": "{  \n   \"obj0_X_0\":\"\\\"1\\\"\",\n   \"obj0_X_1\":\"\\\"2\\\"\",\n   \"obj0_X_2\":\"\\\"3\\\"\",\n   \"obj0_ParentProperty\":5,\n   \"obj0_GrandparentProperty\":5,\n   \"obj0_Field1\":5,\n   \"obj0_Z\":10,\n   \"obj1_X\":1,\n   \"obj1_Y\":\"\\\"Y\\\"\",\n   \"obj1_Z\":\"\\\"Z\\\"\"\n}"
+            }
+        ]
+    },
+
+    {
         "methodName": "CompareObjects",
         "description": "Deep compare any two objects - Supports classes with multilevel Hierarchies",
         "samples": [{
@@ -6,6 +61,7 @@
             "code": "public class Program\n{\n    public static void Main(string[] args)\n    {\n        var simpleObj1 = new Object1 {X = 1, Y=\"A\",Z=\"Z\"};\n        var simpleObj2 = new Object2 { X = \"1\", Y = \"B\",Z=\"Z\" };\n        var diff3 = simpleObj1.CompareObjects(simpleObj2, \"simpleObj1\", \"simpleObj2\");\n        Console.WriteLine(diff3.NoMatchList.Any() ? \"The objects differ\" : \"The objects are same\");\n        diff3.SaveToFile(@\"c:\\tmp\\compare3.txt\");\n    }\n}\npublic class Object1\n{\n    public int X { get; set; }\n    public string Y { get; set; }\n    public string Z { get; set; }\n}\npublic class Object2\n{\n    public string X { get; set; }\n    public string Y { get; set; }\n    public string Z { get; set; }\n}    "
         }]
     },
+
     {
         "methodName": "MemberNames",
         "description": "Get list of members (Fields,Properties) declared in the class, along with all members declared in all classes in its inheritance hierarchy and includes Private and Static members",
