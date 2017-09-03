@@ -7,7 +7,7 @@
             },
             {
                 "title": "Output",
-                "code": "{[X_0, \"1\"]}\n{[X_1, \"2\"]}\n{[X_2, \"3\"]}\n{[ParentProperty, 5]}\n{[GrandparentProperty, 5]}\n{[Field1, 5]}\n{[Z, 10]}"
+                "code": "{[X_0, \"1\"]}\n{[X_1, \"2\"]}\n{[X_2, \"3\"]}\n{[ParentProperty, 5]}\n{[GrandparentProperty, 5]}\n{[Field1, 5]}"
             }
         ]
     },
@@ -20,7 +20,7 @@
             },
             {
                 "title": "Output",
-                "code": "{  \n   \"X_0\":\"\\\"1\\\"\",\n   \"X_1\":\"\\\"2\\\"\",\n   \"X_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"GrandparentProperty\":5,\n   \"Field1\":5,\n   \"Z\":10\n}"
+                "code": "{  \n   \"X_0\":\"\\\"1\\\"\",\n   \"X_1\":\"\\\"2\\\"\",\n   \"X_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"GrandparentProperty\":5,\n   \"Field1\":5}"
             }
         ]
     },
@@ -34,7 +34,7 @@
             },
             {
                 "title": "Output",
-                "code": "{[obj0_X_0, \"1\"]}\n{[obj0_X_1, \"2\"]}\n{[obj0_X_2, \"3\"]}\n{[obj0_ParentProperty, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_Z, 10]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_Z, 10]}\n{[obj1_X, 1]}\n{[obj1_Y, \"Y\"]}\n{[obj1_Z, \"Z\"]}"
+                "code": "{[obj0_X_0, \"1\"]}\n{[obj0_X_1, \"2\"]}\n{[obj0_X_2, \"3\"]}\n{[obj0_ParentProperty, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_Z, 10]}\n{[obj1_X, 1]}\n{[obj1_Y, \"Y\"]}\n{[obj1_Z, \"Z\"]}"
             }
         ]
     },
@@ -48,7 +48,7 @@
             },
             {
                 "title": "Output",
-                "code": "{  \n   \"obj0_X_0\":\"\\\"1\\\"\",\n   \"obj0_X_1\":\"\\\"2\\\"\",\n   \"obj0_X_2\":\"\\\"3\\\"\",\n   \"obj0_ParentProperty\":5,\n   \"obj0_GrandparentProperty\":5,\n   \"obj0_Field1\":5,\n   \"obj0_Z\":10,\n   \"obj1_X\":1,\n   \"obj1_Y\":\"\\\"Y\\\"\",\n   \"obj1_Z\":\"\\\"Z\\\"\"\n}"
+                "code": "{  \n   \"obj0_X_0\":\"\\\"1\\\"\",\n   \"obj0_X_1\":\"\\\"2\\\"\",\n   \"obj0_X_2\":\"\\\"3\\\"\",\n   \"obj0_ParentProperty\":5,\n   \"obj0_GrandparentProperty\":5,\n   \"obj0_Field1\":5,\n   \"obj1_X\":1,\n   \"obj1_Y\":\"\\\"Y\\\"\",\n   \"obj1_Z\":\"\\\"Z\\\"\"\n}"
             }
         ]
     },
