@@ -3,11 +3,11 @@
         "description": "Generates a flattened dictionary from member name and values",
         "samples": [{
                 "title": "",
-                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar dict= so1.FlattenedJson().Result; "
+                "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List<string> { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\nvar dict= so1.Flatten().Result; \n\nOutput\n------\n{[X_0, \"1\"]}\n{[X_1, \"2\"]}\n{[X_2, \"3\"]}\n{[ParentProperty, 5]}\n{[GrandparentProperty, 5]}\n{[Field1, 5]}"
             },
             {
-                "title": "Output",
-                "code": "{[X_0, \"1\"]}\n{[X_1, \"2\"]}\n{[X_2, \"3\"]}\n{[ParentProperty, 5]}\n{[GrandparentProperty, 5]}\n{[Field1, 5]}"
+                "title": "Custom mappings",
+                "code": "var mps = new Mappings<SimpleObjectWithParent>()\n    .Map(m => m.X, \"A\")\n    .Map(m => m.Field1, \"B\")\n    .Map(m => m.GrandparentProperty, \"Field2\");\nvar dict= so1.Flatten(mps).Result; \n\nOutput\n------\n{[A_0, \"1\"]}\n{[A_1, \"2\"]}\n{[A_2, \"3\"]}\n{[ParentProperty, 5]}\n{[Field2, 5]}\n{[B, 5]}"
             }
         ]
     },
@@ -16,11 +16,11 @@
         "description": "Generates a flattened json string from member name and values",
         "samples": [{
                 "title": "",
-                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar dict= so1.Flatten().Result; "
+                "code": "var so1 = new SimpleObjectWithParent\n{\n   X = new List<string> { \"1\", \"2\", \"3\" },\n   Field1 = 5,\n   ParentProperty = 5,\n   GrandparentProperty = 5\n};\nvar dict= so1.FlattenedJson().Result; \n\nOutput\n------\n{  \n   \"X_0\":\"\\\"1\\\"\",\n   \"X_1\":\"\\\"2\\\"\",\n   \"X_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"GrandparentProperty\":5,\n   \"Field1\":5\n}"
             },
             {
-                "title": "Output",
-                "code": "{  \n   \"X_0\":\"\\\"1\\\"\",\n   \"X_1\":\"\\\"2\\\"\",\n   \"X_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"GrandparentProperty\":5,\n   \"Field1\":5}"
+                "title": "Custom mappings",
+                "code": "var mps = new Mappings<SimpleObjectWithParent>()\n    .Map(m => m.X, \"A\")\n    .Map(m => m.Field1, \"B\")\n    .Map(m => m.GrandparentProperty, \"Field2\");\nvar dict= so1.FlattenedJson(mps).Result; \n\nOutput\n------\n{  \n   \"A_0\":\"\\\"1\\\"\",\n   \"A_1\":\"\\\"2\\\"\",\n   \"A_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"Field2\":5,\n   \"B\":5\n}"
             }
         ]
     },
@@ -34,11 +34,10 @@
             },
             {
                 "title": "Output",
-                "code": "{[obj0_X_0, \"1\"]}\n{[obj0_X_1, \"2\"]}\n{[obj0_X_2, \"3\"]}\n{[obj0_ParentProperty, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj0_Z, 10]}\n{[obj1_X, 1]}\n{[obj1_Y, \"Y\"]}\n{[obj1_Z, \"Z\"]}"
+                "code": "{[obj0_X_0, \"1\"]}\n{[obj0_X_1, \"2\"]}\n{[obj0_X_2, \"3\"]}\n{[obj0_ParentProperty, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj1_X, 1]}\n{[obj1_Y, \"Y\"]}\n{[obj1_Z, \"Z\"]}"
             }
         ]
     },
-
     {
         "methodName": "CombineAndFlattenedJson",
         "description": "Creates a combined flattened json for objects (same or different type)",
