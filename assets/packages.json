@@ -2,6 +2,8 @@
         "packageId": "printclassinstance",
         "title": "ObjectExtensions",
         "description": "Extension methods to get object or type information.",
+        "buildbadge": "https://ci.appveyor.com/api/projects/status/ibo31s7d9vnbyrax/branch/master",
+        "buildstatus": "https://ci.appveyor.com/project/harip/printclassinstance/branch/master",
         "type": "nuget"
     },
     {
