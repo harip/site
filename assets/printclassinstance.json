@@ -1,4 +1,12 @@
 [{
+        "methodName": "CreateInstance",
+        "description": "Creates an instance from type. Mappings can be injected to create a new instance with default values.",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObject1WithList\n{\n    public List<string> X { get; set; }\n    public List<double> Y { get; set; }\n    public (int intItem1, int intItem2, int intItem3, string strItem4) TestValueTuple { get; set; }\n}\n\nvar mappings = new Mappings<SimpleObject1WithList>()\n    .Map(s => s.X, new List<string> {\"1\", \"2\", \"3\"})\n    .Map(s => s.TestValueTuple, (1, 2, 3, \"I am a value tuple\"));\n\nvar testObject = InstanceUtils.CreateInstance<SimpleObject1WithList>(mappings);"
+        }]
+    },
+    {
         "methodName": "Flatten",
         "description": "Generates a flattened dictionary from member name and values",
         "samples": [{
