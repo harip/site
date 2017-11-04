@@ -1,4 +1,20 @@
 [{
+        "methodName": "Snapshots",
+        "description": "Create object snapshots.",
+        "samples": [{
+            "title": "",
+            "code": "var simpleObj=new SimpleObject1();\nvar dictTracker=new DictionaryContainer();\nvar jsonTracker = new JsonContainer();\nfor (var i = 0; i < 10; i++)\n{\n    simpleObj.X = i;\n    \n    simpleObj.Snapshot(dictTracker);\n    simpleObj.Snapshot(jsonTracker);\n}\n\n//List of key value pair of object properties and their values\nList<Dictionary<string,object>> dictTrackings = dictTracker.GetSnapshots();\n\n\n//List of json strings. The json string represents key value pair of object properties and their values\nList<string> jsonTrackings = jsonTracker.GetSnapshots();"
+        }]
+    },
+    {
+        "methodName": "Copy",
+        "description": "Copy values to another object.",
+        "samples": [{
+            "title": "",
+            "code": "var simpleObj = new SimpleObject1WithList {X = new List<string> {\"1\", \"2\", \"3\"}};\nvar obj2=new SimpleObjectWithList {X = null};\nsimpleObj.CopyTo(obj2);"
+        }]
+    },
+    {
         "methodName": "CreateInstance",
         "description": "Creates an instance from a type. Mappings can be injected to create a new instance with default values.",
         "samples": [{
