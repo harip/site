@@ -13,7 +13,7 @@
  
     {
         "title": "Average Performance Curve by Group",
-        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1521062281/avgcurvebygroup.png",
+        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1521092368/avgcurveybygroup.png",
         "code":"\"\"\"Average performance curve for each group\"\"\"\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nPERF_DATA = pd.read_csv('timeseries.csv')\n\n# Get distinct groups\nGROUPS = PERF_DATA['Group'].unique()\nGROUPS = sorted(GROUPS[~np.isnan(GROUPS)])\n\n# Read column names and ignore Group column\nCOL_NAMES = [colname for colname in PERF_DATA.columns.values if \"Age_\" in colname]\n\nPERF_AVGDATA_GROUPS = pd.DataFrame()\nfor group in GROUPS:\n    group_values = PERF_DATA[PERF_DATA['Group'] == group]\n    group_name = f'Group {int(group)}'\n    group_means = [group_values[colname].mean() for colname in COL_NAMES]\n    group_avg_values = pd.Series(group_means, name=group_name)\n    PERF_AVGDATA_GROUPS = PERF_AVGDATA_GROUPS.append(group_avg_values)\n\nPERF_AVGDATA_GROUPS.T.plot()\nplt.show()\n"
     },
 
