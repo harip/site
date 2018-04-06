@@ -1,4 +1,11 @@
-[{
+{
+"title":"ObjectExtensions",
+"description":"ObjectExtensions - .NET Core 2.0 can be used to:",
+"packageLink":"https://www.nuget.org/packages/PrintClassInstance",
+"gitLink":"https://github.com/harip/printclassinstance",
+"location":"Nuget",
+"hideList":false,
+"data":[{
         "methodName": "Snapshots",
         "description": "Create object snapshots.",
         "samples": [{
@@ -197,3 +204,5 @@
         }]
     }
 ]
+
+}

@@ -7,7 +7,7 @@
         "type": "nuget"
     },
     {
-        "packageId": "AssemblyExtensions",
+        "packageId": "assemblyextensions",
         "title": "Assembly Extensions",
         "description": "Get metadata for an assembly.",
         "type": "nuget"
@@ -31,21 +31,25 @@
         "type": "nuget"
     },
     {
+        "packageId": "nugetstats",
         "git": "https://github.com/harip/nuget.stats",
         "title": "nuget.getstats",
         "npmLink": "https://www.npmjs.com/package/nuget.getstats",
         "description": "A Node.js package that gets a nuget package statistics.",
         "usage": "npm install nuget.getstats -S\n                \nvar nugetStats = require('nuget.getstats');\nnugetStats\n    .GetNugetPackageStats('printclassinstance')\n    .then(data => console.log(data));",
         "output": "{\n    Title: 'Object and Type Extensions',\n    ProjectUrl: 'https://harip.github.io/site/printclassinstance',\n    Version: '3.2.0',\n    TotalDownloads: 2306 \n}",
-        "type": "npm"
+        "type": "npm",
+        "hideCounts":false
     },
     {
+        "packageId": "npmstats",
         "git": "https://github.com/harip/npm.getstats",
         "title": "npm.getstats",
         "npmLink": "https://www.npmjs.com/package/npm.getstats",
         "description": "A Node.js package that gets a npm package statistics.",
         "usage": "npm install npm.getstats -S\n                \nvar npmStats = require('npm.getstats');\nnpmGetStats.getNpmStats('jquery')\n    .then(function(data) {\n        console.log(data);\n    })\n    .catch(function(data) {\n        console.log(data);\n    });",
         "output": "49800421",
-        "type": "npm"
+        "type": "npm",
+        "hideCounts":false
     }
 ]

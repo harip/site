@@ -1,6 +1,10 @@
-[{
-    "packageDescription": "AssemblyExtensions  is a .NET Core class library that can be used to to get metadata for an assembly.",
-    "packageData": [{
+{
+"title":"AssemblyExtensions",
+"description":"AssemblyExtensions  is a .NET Core class library that can be used to to get metadata for an assembly.",
+"packageLink":"https://www.nuget.org/packages/AssemblyExtensions",
+"location":"Nuget",
+"hideList":true,
+"data":[{
         "methodName": "Usage",
         "samples": [{
             "title": "Sample Test Data",
@@ -9,5 +13,5 @@
             "title": "Sample Test Program",
             "code": "class Program\n{\n    static void Main(string[] args)\n    {\n        var assembly = typeof(Program).GetTypeInfo().Assembly;\n\n        var typeNames = assembly.GetAllTypesNames();\n\n        var types = assembly.GetAllTypes();\n\n        var members = assembly.GetAllMemberNames();\n\n        var namespaces = assembly.GetAllNameSpacesNames();\n\n        var allMethods = assembly.GetAllMethods();\n\n        var allMethodsMeta = assembly.GetAllMethodsMetaData();\n    }\n}"
         }]
-    }]
 }]
+}

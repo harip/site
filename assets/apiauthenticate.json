@@ -1,6 +1,10 @@
-[{
-    "packageDescription": "ApiAuthenticate is a .NET Core class library that is a wrapper around HttpClient and can be used to obtain authentication tokens from client such as Salesforce, Blackboard using Grant_Type ClientCredentials or Password. AWS Connection is also supported.",
-    "packageData": [{
+{
+"title":"ApiAuthenticate",
+"description":"ApiAuthenticate is a .NET Core class library that is a wrapper around HttpClient and can be used to obtain authentication tokens from client such as Salesforce, Blackboard using Grant_Type ClientCredentials or Password. AWS Connection is also supported.",
+"packageLink":"https://www.nuget.org/packages/ApiAuthenticate",
+"location":"Nuget",
+"hideList":true,
+"data":[{
         "methodName": "Usage",
         "samples": [{
             "title": "Add a config.json file that contains your instance values with following format:",
@@ -9,5 +13,5 @@
             "title": "The following console app shows how to use the library",
             "code": "var httpClient = new HttpClient();\nvar builder = new ConfigurationBuilder()\n    .SetBasePath(Directory.GetCurrentDirectory())\n    .AddJsonFile(\"config.json\", true)\n    .Build();\n\nvar grantType = GrantType.Password;\n\n//Create a dictionary for content data, dictionary keys will usually be specified by the 3rd party client\nvar contentData = new Dictionary\n{\n    {\"client_id\", builder[\"Salesforce:ClientId\"]},\n    {\"client_secret\", builder[\"Salesforce:ClientSecret\"]},\n    {\"username\", builder[\"Salesforce:UserName\"]},\n    {\"password\", builder[\"Salesforce:Password\"] + builder[\"Salesforce:Token\"]}\n};\n\n//Call the library method\nvar auth = new Authenticate(httpClient);\nvar authData = auth.InvokeAsync(grantType, builder[\"Salesforce:TokenUrl\"], contentData);\nvar final = authData.Result;"
         }]
-    }]
 }]
+}

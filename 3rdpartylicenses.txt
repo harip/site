@@ -114,15 +114,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@angular/core@5.2.9
-MIT
-MIT
-
-ng2-page-scroll@4.0.0-beta.12
+ng2-codemirror-typescript@1.1.1
 MIT
 The MIT License (MIT)
 
-Copyright (c) 2015 Jan Kuri
+Copyright (c) 2016 Steven Guiheux
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -141,6 +137,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+@angular/core@5.2.9
+MIT
+MIT
 
 @angular/forms@5.2.9
 MIT
@@ -182,11 +182,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-ng2-codemirror-typescript@1.1.1
+ng2-page-scroll@4.0.0-beta.12
 MIT
 The MIT License (MIT)
 
-Copyright (c) 2016 Steven Guiheux
+Copyright (c) 2015 Jan Kuri
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -206,7 +206,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@angular/common@5.2.9
+@angular/platform-browser-dynamic@5.2.9
+MIT
+MIT
+
+@angular/animations@5.2.9
 MIT
 MIT
 
@@ -234,11 +238,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@angular/animations@5.2.9
-MIT
-MIT
-
-@angular/platform-browser-dynamic@5.2.9
+@angular/common@5.2.9
 MIT
 MIT
 

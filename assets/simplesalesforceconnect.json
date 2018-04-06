@@ -1,8 +1,12 @@
-[{
-    "packageDescription": "SimpleSalesforceConnect is a .NET Core class library that can be used to connect to Salesforce to obtain the Access Token and Instance Url to integrate your application with Salesforce and make API calls for CRUD operations. Wrappers are added to download Salesforce logs and then upload logs to Amazon S3 bucket.",
-    "packageData": [{
+{
+"title":"Simple Salesforce Connect",
+"description": "SimpleSalesforceConnect is a .NET Core class library that can be used to connect to Salesforce to obtain the Access Token and Instance Url to integrate your application with Salesforce and make API calls for CRUD operations. Wrappers are added to download Salesforce logs and then upload logs to Amazon S3 bucket.",
+"packageLink":"https://www.nuget.org/packages/SimpleSalesforceConnect",
+"gitLink":"",
+"location":"Nuget",
+"hideList":true,
+"data":[{    
         "methodName": "Usage",
-        "description": "The connection details to connect to Salesforce to get the Access Token can be provided by including config.json file at the applications root directory. The json file format should be as follows:",
         "samples": [{
             "title": "",
             "code": "{\n  \"Salesforce\": {\n    \"UserName\": \"username\",\n    \"Password\": \"password\",\n    \"Token\": \"token\",\n    \"ClientId\": \"clientid\",\n    \"ClientSecret\": \"clientsecret\",\n    \"TokenUrl\": \"tokenurl\",\n    \"ApiVerson\": \"37.0\"\n  },\n    \"Aws\": {\n    \"AccessKeyId\": \"enter\",\n    \"SecretAccessKey\": \"enter\",\n    \"SalesforceLogBucket\": \"bucketname\"\n  } \n}    "
@@ -10,5 +14,5 @@
             "title": "",
             "code": "using System;\nusing System.Linq;\nusing System.Net.Http;\nusing System.Threading.Tasks;\nusing SalesforceConnect.Aws;\nusing SalesforceConnect.Enums;\nusing SalesforceConnect.SalesforceApiCalls;\nusing SalesforceConnect.Settings;\n\nnamespace SalesforceConnectTestClient\n{\n    public class Program\n    {\n        public static void Main(string[] args)\n        {\n            var httpClient = new HttpClient();\n\n            //Connect to Salesforce\n            var salesforceConnect = new Connect(httpClient);\n            var data = salesforceConnect.TryConnect();\n            Console.WriteLine($\"Error : {data.Error}\");\n            Console.WriteLine($\"Instance Url : {data.InstanceUrl}\");\n            Console.WriteLine($\"Access Token : {data.AccessToken}\");\n\n            //Get EventLog object based on a date\n            var restCalls = new RestCalls(httpClient, data);\n            var eventLogData = restCalls.GetEventLogsInfo(EventType.Login,DateTime.Now.AddDays(-10));\n            Task.WaitAll(eventLogData);\n            var eventData = eventLogData.Result;\n\n            //Download log files to a folder\n            var downloadLocation = @\"C:\\Projects\\SimpleSalesforceConnect\\download_logs\";\n            var downloadTasks = restCalls.DownloadLogfiles(downloadLocation, eventData);\n            Task.WaitAll(downloadTasks.ToArray());\n\n            //Connect to Aws\n            var s3Client = new AwsConnect();\n            var client = s3Client.S3Client(Amazon.RegionEndpoint.USEast1);\n            var uploadLogFiles = eventData.Records.Select(s => $@\"{downloadLocation}\\{s.Id}.log\").ToList();\n\n            //Upload files to S3\n            var s3=new S3Operations(client);\n            var tasks = s3.UploadFiles(uploadLogFiles, AwsSettings.ConnectionParams);\n            Task.WaitAll(tasks.ToArray());\n\n            Console.ReadLine();\n        }\n    }\n}                    "
         }]
-    }]
 }]
+}

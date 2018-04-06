@@ -1,6 +1,10 @@
-[{
-    "packageDescription": "SimpleBlackboardConnect is a .NET Core class library that can be used to connect to Blackboard to obtain the Access Token to integrate your application with Blackboard and make API calls for CRUD operations.",
-    "packageData": [{
+{
+"title":"Simple Blackboard Connect",
+"description":"SimpleBlackboardConnect is a .NET Core class library that can be used to connect to Blackboard to obtain the Access Token to integrate your application with Blackboard and make API calls for CRUD operations.",
+"packageLink":"https://www.nuget.org/packages/SimpleBlackboardConnect",
+"location":"Nuget",
+"hideList":true,
+"data":[{  
         "methodName": "Usage",
         "description": "The connection details to connect to Blackboard to get the Access Token can be provided by any of the following options",
         "samples": [{
@@ -16,5 +20,5 @@
             "title": "The usage is follows:",
             "code": "using System;\nusing BlackboardConnect;\n\nnamespace BlackboardConnectTestClient\n{\n    public class Program\n    {\n        public static void Main(string[] args)\n        {\n            //Authentication details by adding config.json at application's current directory and/or by adding environmental variables\n            var bbConnect = new Connect();\n            var data = bbConnect.TryConnect();\n\n            Console.WriteLine($\"Error : {data.Error}\");\n            Console.WriteLine($\"Instance Url : {data.AccessToken}\");\n            Console.WriteLine($\"Access Token : {data.ExpiresIn}\");\n\n            Console.ReadLine();\n        }\n    }\n}      "
         }]
-    }]
 }]
+}
