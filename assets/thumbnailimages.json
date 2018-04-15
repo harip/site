@@ -32,8 +32,5 @@
             "code":"\"\"\"Average performance curve\"\"\"\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nPERF_DATA = pd.read_csv('timeseries.csv')\n\n# Read column names\nCOL_NAMES = list(PERF_DATA.columns.values)\n\n# get average values for each column as a series\nAVG_VALUES = pd.Series([PERF_DATA[col_name].mean() for col_name in COL_NAMES])\n\n# plot series\nAVG_VALUES.plot(kind='line', grid=True, ylim={0, 100})\nplt.show()\n"
         }
     ]
-},
-{
-    "title":"Coming soon"
-}    
+} 
 ]
