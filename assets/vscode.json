@@ -5,7 +5,7 @@
     {
         "methodName": "Python Coding Conventions",
         "description": "Visual studio code extension that can auto apply python coding conventions (PEP 8)",
-        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1526446520/general/oN0nK1cQJw.gif",
+        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1526781841/oN0nK1cQJw.gif",
         "samples": [],
         "plotSize":"500px",
         "gitLink":"https://github.com/harip/python-coding-conventions",
