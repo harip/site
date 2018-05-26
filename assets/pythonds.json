@@ -6,12 +6,39 @@
 "hideList":false,
 "data":[
     {
-        "methodName": "plot",
+        "methodName": "plot_tree",
         "description": "draws a plot of the data structure",
-        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1524106770/general/Figure_2.png",
+        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1527335948/plot_tree.png",
         "samples": [{
             "title": "",
-            "code":"def test_tree_plot():\n    t=Tree()\n\n    # Add a parent node\n    n=NodeInfo(\"Html\",None,NodeType.ROOT) \n    t.add_node(n,None)\n\n    # Add a child node\n    cn=NodeInfo(\"head\",None,None) \n    t.add_node(cn,n)\n\n    # Add a child node\n    cn5=NodeInfo(\"js\",None,None) \n    t.add_node(cn5,cn)    \n\n    # # Add a child node\n    cn6=NodeInfo(\"stylesheet\",None,None) \n    t.add_node(cn6,cn)       \n\n    # # Add a child node\n    cn1=NodeInfo(\"body\",None,None) \n    t.add_node(cn1,n)    \n\n    # # Add a child node to body\n    cn2=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn2,cn1)        \n\n    # Add a child node to body\n    cn3=NodeInfo(\"<p>\",None,None)\n    t.add_node(cn3,cn1)     \n\n    # Add a child node to body\n    cn4=NodeInfo(\"<p>\",None,None)\n    t.add_node(cn4,cn1)     \n \n     # Add a child node to body\n    cn7=NodeInfo(\"<b>\",None,None)\n    t.add_node(cn7,cn4)    \n\n    t.plot_tree()"
+            "code":"def test_tree_plot():\n    t = Tree()\n\n    # Add a parent node\n    n = NodeInfo(\"Html\",None,NodeType.ROOT) \n    t.add_node(n,None)\n\n    # Add a child node\n    cn = NodeInfo(\"head\",None,None) \n    t.add_node(cn,n)\n\n    # Add a child node\n    cn1=NodeInfo(\"meta\",None,None) \n    t.add_node(cn1,cn)    \n\n    cn2=NodeInfo(\"meta\",None,None) \n    t.add_node(cn2,cn)    \n\n    cn3=NodeInfo(\"meta\",None,None) \n    t.add_node(cn3,cn)   \n\n    cn4=NodeInfo(\"meta\",None,None) \n    t.add_node(cn4,cn)   \n     \n\n    cn6=NodeInfo(\"script\",None,None) \n    t.add_node(cn6,cn)   \n\n    cn7=NodeInfo(\"style\",None,None) \n    t.add_node(cn7,cn) \n\n    cn8=NodeInfo(\"body\",None,None) \n    t.add_node(cn8,n)   \n  \n    cn5=NodeInfo(\"title\",\"google.com\",None) \n    t.add_node(cn5,cn) \n\n    cn10=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn10,cn5)  \n    cn11=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn11,cn5)  \n\n    cn12=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn12,cn8)  \n\n    t.plot_tree()"
+        }]
+    },
+    {
+        "methodName": "plot_paths",
+        "description": "draws a plot of all paths",
+        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1527336101/plot_paths.png",
+        "samples": [{
+            "title": "",
+            "code":"def test_tree_plot():\n    t=Tree()\n\n    # Add a parent node\n    n=NodeInfo(\"Html\",None,NodeType.ROOT) \n    t.add_node(n,None)\n\n    # Add a child node\n    cn=NodeInfo(\"head\",None,None) \n    t.add_node(cn,n)\n\n    # Add a child node\n    cn5=NodeInfo(\"js\",None,None) \n    t.add_node(cn5,cn)    \n\n    # # Add a child node\n    cn6=NodeInfo(\"stylesheet\",None,None) \n    t.add_node(cn6,cn)       \n\n    # # Add a child node\n    cn1=NodeInfo(\"body\",None,None) \n    t.add_node(cn1,n)    \n\n    # # Add a child node to body\n    cn2=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn2,cn1)        \n\n    # Add a child node to body\n    cn3=NodeInfo(\"<p>\",None,None)\n    t.add_node(cn3,cn1)     \n\n    # Add a child node to body\n    cn4=NodeInfo(\"<p>\",None,None)\n    t.add_node(cn4,cn1)     \n \n     # Add a child node to body\n    cn7=NodeInfo(\"<b>\",None,None)\n    t.add_node(cn7,cn4)    \n\n    t.plot_paths()"
+        }]
+    },
+    {
+        "methodName": "export_tree_tocsv",
+        "description": "export data to a csv file",
+        "ploturl":"https://res.cloudinary.com/harip/image/upload/v1527336616/export_to_csv.png",
+        "samples": [{
+            "title": "",
+            "code":"def test_tree_plot():\n    t = Tree()\n\n    # Add a parent node\n    n = NodeInfo(\"Html\",None,NodeType.ROOT) \n    t.add_node(n,None)\n\n    # Add a child node\n    cn = NodeInfo(\"head\",None,None) \n    t.add_node(cn,n)\n\n    # Add a child node\n    cn1=NodeInfo(\"meta\",None,None) \n    t.add_node(cn1,cn)    \n\n    cn2=NodeInfo(\"meta\",None,None) \n    t.add_node(cn2,cn)    \n\n    cn3=NodeInfo(\"meta\",None,None) \n    t.add_node(cn3,cn)   \n\n    cn4=NodeInfo(\"meta\",None,None) \n    t.add_node(cn4,cn)   \n     \n\n    cn6=NodeInfo(\"script\",None,None) \n    t.add_node(cn6,cn)   \n\n    cn7=NodeInfo(\"style\",None,None) \n    t.add_node(cn7,cn) \n\n    cn8=NodeInfo(\"body\",None,None) \n    t.add_node(cn8,n)   \n  \n    cn5=NodeInfo(\"title\",\"google.com\",None) \n    t.add_node(cn5,cn) \n\n    cn10=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn10,cn5)  \n    cn11=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn11,cn5)  \n\n    cn12=NodeInfo(\"<p>\",None,None) \n    t.add_node(cn12,cn8)  \n\n    t.export_tree_tocsv(\"test.csv\")"
+        }]
+    },
+    {
+        "methodName": "export_tree_todf",
+        "description": "export tree data to a dataframe",
+        "ploturl":"",
+        "samples": [{
+            "title": "",
+            "code":"def test_tree_plot():\n    t = Tree()\n\n    ...  \n\n    t.export_tree_todf(\"test.csv\")"
         }]
     },
     {
