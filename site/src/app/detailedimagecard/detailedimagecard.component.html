@@ -1,0 +1,21 @@
+<aside>
+    <p>        
+    </p>
+</aside>
+
+<div class="card ui card" style="max-height: 100%;">
+    <div class="uicontent">
+        {{packageData.title}}
+        <span class="right floated">            
+            <a href="#" [routerLink]="['/python']">
+                <i class="fas fa-backward fa-2x"></i>
+            </a> 
+        </span>        
+    </div>
+    <div class="uicontent">
+    <div class="ui image">
+        <img style="width: 75%;" src="{{packageData.ploturl}}">
+    </div> 
+    <codemirror style="height: auto;  line-height:1em;" [(ngModel)]="packageData.code" [config]="config"></codemirror> 
+    </div>
+</div>

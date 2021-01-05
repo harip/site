@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="layout">
+        <textarea id="ta" rows="20" cols="100"></textarea>
+        <button id="btn" onclick="convertJson()">Convert</button>
+        <textarea id="taJson" rows="20" cols="100"></textarea>
+    </div>
+
+    <script>
+        function convertJson() {
+            var data = document.getElementById("ta");
+
+            var jsonData = {
+                code: data.value
+            };
+
+            document.getElementById("taJson").value = JSON.stringify(jsonData);
+        };
+    </script>
+</body>
+
+</html>

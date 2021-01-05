@@ -1,0 +1,16 @@
+<div class="ui card" id="list">
+    <div class="uicontent">
+        <div class="uiheader">List</div>
+    </div>
+    <div class="uicontent">
+        <div class="uidescription" *ngFor="let s of extensionsList">
+            <a pageScroll class="uilink" href="#{{s}}">{{s}}</a>
+        </div>
+    </div>
+    <div class="extra uimeta">
+        <span class="right floated">
+            18
+        </span>
+    </div>
+</div>
+<br/>

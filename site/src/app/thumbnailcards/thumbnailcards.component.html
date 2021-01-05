@@ -1,0 +1,23 @@
+<aside>
+    <p>
+        {{sectionTitle}}
+    </p>
+</aside>
+<div style="padding-left: 20px;" class="ui raised cards">
+    <div class="card thumbCardSize" *ngFor="let nData of sectionData">
+        <div class="uicontent">
+            <a class="uiheader" href="#" [routerLink]="['/detailedcard' , nData.packageId]">
+                {{nData.title}}
+            </a>
+            <div class="uimeta">
+                {{nData.description}}
+            </div>
+            <a href="{{nData.buildstatus}}">
+                <img src="{{nData.buildbadge}}" alt="">
+            </a>
+        </div>
+        <div class="extra uimeta">
+            <app-nugetstats [dontGetStats]="nData.hasOwnProperty('hideCounts')" [hidden]="nData.hasOwnProperty('hideCounts')" packageId="{{nData.packageId}}">Getting Nuget Stats</app-nugetstats>
+        </div>
+    </div>
+</div>

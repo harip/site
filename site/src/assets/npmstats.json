@@ -1,0 +1,17 @@
+{
+"title":"npm.getstats",
+"description":"A Node.js package that gets a npm package statistics.",
+"packageLink":"https://www.npmjs.com/package/npm.getstats",
+"gitLink":"https://github.com/harip/npm.getstats",
+"location":"Npm",
+"hideList":true,
+"data":[{
+        "methodName": "Usage",
+        "samples": [{
+            "code":"npm install npm.getstats -S\n                \nvar npmStats = require('npm.getstats');\nnpmGetStats.getNpmStats('jquery')\n    .then(function(data) {\n        console.log(data);\n    })\n    .catch(function(data) {\n        console.log(data);\n    });"
+        }, {
+            "title": "Output",
+            "code":"49800421"
+        }]
+}]
+}

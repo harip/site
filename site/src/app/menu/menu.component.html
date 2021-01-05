@@ -1,0 +1,25 @@
+<a id="menuLink" class="{{clickClass}}" (click)="menuLinkClick()">
+    <!-- Hamburger icon -->
+    <span></span>
+</a>
+<div id="menu">
+  <div class="ui vertical menu">
+    <div class="item">
+      <div class="uimenuheader">Packages</div>
+      <div class="menu">
+        <a href="#"  [routerLink]="['/home' , 'nuget']" (click)='menuItemClick()' class="item">nuget + npm</a>    
+        <a href="#"  [routerLink]="['/detailedcard','vscode']" (click)='menuItemClick()' class="item">vscode</a>
+      </div>
+    </div>
+    <div class="item">
+      <div class="uimenuheader">Python</div>
+      <div class="menu">
+        <a href="#"  [routerLink]="['/pythonds']" (click)='menuItemClick()' class="item">Data Structures</a>
+        <a href="#"  [routerLink]="['/python']" (click)='menuItemClick()' class="item">Charts</a>        
+      </div>
+    </div>
+    <div class="item">
+      <a href="#"  [routerLink]="['/about']" (click)='menuItemClick()' class="about">About</a>        
+    </div>
+  </div>
+</div>

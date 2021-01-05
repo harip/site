@@ -1,0 +1,35 @@
+<div class="ui card" id="{{extMethod.methodName}}">
+    <div class="uicontent">
+        <div class="uiheader">{{extMethod.methodName}}
+        </div>
+        <div class="uimeta">
+            {{extMethod.description}}
+        </div>
+    </div>
+    <div class="uicontent">
+        <div class="ui image">
+            <img  [style.width]="size" src="{{extMethod.ploturl}}">
+        </div>         
+        <div class="uidescription" *ngFor="let s of extMethod.samples">
+            <extensionMethodSample [methodSample]="s"></extensionMethodSample>
+        </div>
+    </div>
+    <div class="extra uimeta">
+        <span class="right floated">
+            <a pageScroll class="uisummary" href="#main"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
+        </span>
+        <span class="left floated">
+                <a class="uisummary"
+                   [hidden]="showSourceLink" 
+                   href="{{extMethod.gitLink}}">
+                   <i class="fab fa-git-square fa-2x"></i>
+                </a>
+                <a class="uisummary" 
+                    [hidden]="showExtensionLink" 
+                    href="{{extMethod.extensionLink}}"> 
+                    <img src="{{extMethod.imageLink}}" height="20px;"> 
+                </a>
+            </span>        
+    </div>
+</div>
+<br/>

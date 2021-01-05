@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": ["es2015", "dom"],
+        "noImplicitAny": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "noStrictGenericChecks": true,
+        "skipLibCheck": true
+    },
+    "files": [
+        "../node_modules/ng2-codemirror-typescript/Codemirror.ts",
+        "./main.ts",
+        "./polyfills.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "typings/main",
+        "typings/main.d.ts"
+    ]
+}

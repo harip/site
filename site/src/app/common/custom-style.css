@@ -1,0 +1,64 @@
+.extensionBlock {
+    font-size: small;
+}
+
+.extensionMethod {
+    color: black;
+}
+
+.extensionMethodName {
+    text-decoration: underline;
+    font-size: large;
+}
+
+.extensionMethodSample {
+    padding: 10px;
+}
+
+.codeFont {
+    font-size: 12px;
+    line-height: 1.3em;
+}
+
+.thumbCardSize {
+    width: 290px;
+}
+
+aside {
+    background: #1f8dd6;
+    /* same color as selected state on site menu */
+    margin: 1em 0;
+    padding: 0.3em 1em;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.uilink {
+    margin: 0;
+    font-size: 0.8em;
+    color: #4183c4;
+}
+
+.uilabel {
+    background-color: #2185d0!important;
+    border-color: #2185d0!important;
+    color: #fff!important;
+}
+
+.uiimagelabel {
+    width: auto!important;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 9999px;
+    vertical-align: baseline;
+    text-transform: none;
+    background: #e8e8e8;
+    padding: .5833em .833em .5833em .5em;
+    border-radius: .28571429rem;
+    box-shadow: none;
+}
+
+.uiimagecontent{
+    border: none;
+    box-shadow:0px;
+}

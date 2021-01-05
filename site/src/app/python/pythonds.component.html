@@ -1,0 +1,18 @@
+<div id="main">
+    <div class="header">
+        <aside>
+            <h1>{{packageData.title}}</h1>
+        </aside>
+        <p>
+            <a href="{{packageData.gitLink}}" [hidden]="!showhideSourceLink" style="padding-left: 20px;">Source Code</a>
+        </p>
+    </div>
+    <div class="content">
+        {{packageData.description}}
+        <p></p>
+         <extensionsList [hidden]="packageData.hideList" [extensionsList]="methodNames"></extensionsList>
+        <div *ngFor="let extMethod of packageData.data">
+            <extensionMethod [extMethod]="extMethod"></extensionMethod>
+        </div>
+    </div>
+</div>

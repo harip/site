@@ -1,0 +1,14 @@
+<div class="ui card" *ngFor="let nData of sectionData">
+    <div class="uiheader">
+        <h4 class="ui header">{{nData.title}}</h4>
+    </div> 
+    <div class="uicontent">                
+        <div class="ui four stackable link raised cards" >
+            <div class="ui card" *ngFor="let data of nData.images">   
+                <div class="image" href="#" [routerLink]="['/detailedimagecard' , nData.title, data.key]">
+                    <img src="{{data.ploturl}}">
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,208 @@
+{
+"title":"ObjectExtensions",
+"description":"ObjectExtensions - .NET Core 2.0 can be used to:",
+"packageLink":"https://www.nuget.org/packages/PrintClassInstance",
+"gitLink":"https://github.com/harip/printclassinstance",
+"location":"Nuget",
+"hideList":false,
+"data":[{
+        "methodName": "Snapshots",
+        "description": "Create object snapshots.",
+        "samples": [{
+            "title": "",
+            "code": "var simpleObj=new SimpleObject1();\nvar dictTracker=new DictionaryContainer();\nvar jsonTracker = new JsonContainer();\nfor (var i = 0; i < 10; i++)\n{\n    simpleObj.X = i;\n    \n    simpleObj.Snapshot(dictTracker);\n    simpleObj.Snapshot(jsonTracker);\n}\n\n//List of key value pair of object properties and their values\nList<Dictionary<string,object>> dictTrackings = dictTracker.GetSnapshots();\n\n\n//List of json strings. The json string represents key value pair of object properties and their values\nList<string> jsonTrackings = jsonTracker.GetSnapshots();"
+        }]
+    },
+    {
+        "methodName": "Copy",
+        "description": "Copy values to another object.",
+        "samples": [{
+            "title": "",
+            "code": "var simpleObj = new SimpleObject1WithList {X = new List<string> {\"1\", \"2\", \"3\"}};\nvar obj2=new SimpleObjectWithList {X = null};\nsimpleObj.CopyTo(obj2);"
+        }]
+    },
+    {
+        "methodName": "CreateInstance",
+        "description": "Creates an instance from a type. Mappings can be injected to create a new instance with default values.",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObject1WithList\n{\n    public List<string> X { get; set; }\n    public List<double> Y { get; set; }\n    public (int intItem1, int intItem2, int intItem3, string strItem4) TestValueTuple { get; set; }\n}\n\nvar mappings = new Mappings<SimpleObject1WithList>()\n    .Map(s => s.X, new List<string> {\"1\", \"2\", \"3\"})\n    .Map(s => s.TestValueTuple, (1, 2, 3, \"I am a value tuple\"));\n\nvar testObject = InstanceUtils.CreateInstance<SimpleObject1WithList>(mappings);"
+        }]
+    },
+    {
+        "methodName": "Flatten",
+        "description": "Generates a flattened dictionary from member name and values",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List<string> { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\nvar dict= so1.Flatten().Result; \n\nOutput\n------\n{[X_0, \"1\"]}\n{[X_1, \"2\"]}\n{[X_2, \"3\"]}\n{[ParentProperty, 5]}\n{[GrandparentProperty, 5]}\n{[Field1, 5]}"
+            },
+            {
+                "title": "Custom mappings",
+                "code": "var mps = new Mappings<SimpleObjectWithParent>()\n    .Map(m => m.X, \"A\")\n    .Map(m => m.Field1, \"B\")\n    .Map(m => m.GrandparentProperty, \"Field2\");\nvar dict= so1.Flatten(mps).Result; \n\nOutput\n------\n{[A_0, \"1\"]}\n{[A_1, \"2\"]}\n{[A_2, \"3\"]}\n{[ParentProperty, 5]}\n{[Field2, 5]}\n{[B, 5]}"
+            }
+        ]
+    },
+    {
+        "methodName": "FlattenedJson",
+        "description": "Generates a flattened json string from member name and values",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n   X = new List<string> { \"1\", \"2\", \"3\" },\n   Field1 = 5,\n   ParentProperty = 5,\n   GrandparentProperty = 5\n};\nvar dict= so1.FlattenedJson().Result; \n\nOutput\n------\n{  \n   \"X_0\":\"\\\"1\\\"\",\n   \"X_1\":\"\\\"2\\\"\",\n   \"X_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"GrandparentProperty\":5,\n   \"Field1\":5\n}"
+            },
+            {
+                "title": "Custom mappings",
+                "code": "var mps = new Mappings<SimpleObjectWithParent>()\n    .Map(m => m.X, \"A\")\n    .Map(m => m.Field1, \"B\")\n    .Map(m => m.GrandparentProperty, \"Field2\");\nvar dict= so1.FlattenedJson(mps).Result; \n\nOutput\n------\n{  \n   \"A_0\":\"\\\"1\\\"\",\n   \"A_1\":\"\\\"2\\\"\",\n   \"A_2\":\"\\\"3\\\"\",\n   \"ParentProperty\":5,\n   \"Field2\":5,\n   \"B\":5\n}"
+            }
+        ]
+    },
+
+    {
+        "methodName": "CombineAndFlatten",
+        "description": "Creates a flattened dictionary for objects (same or different type)",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar so2 = new SimpleObject\n{\n\tX = 1,\n\tY = \"Y\",\n\tZ = \"Z\"\n};\nvar val = so1.CombineAndFlatten(so2).Result;"
+            },
+            {
+                "title": "Output",
+                "code": "{[obj0_X_0, \"1\"]}\n{[obj0_X_1, \"2\"]}\n{[obj0_X_2, \"3\"]}\n{[obj0_ParentProperty, 5]}\n{[obj0_GrandparentProperty, 5]}\n{[obj0_Field1, 5]}\n{[obj1_X, 1]}\n{[obj1_Y, \"Y\"]}\n{[obj1_Z, \"Z\"]}"
+            }
+        ]
+    },
+    {
+        "methodName": "CombineAndFlattenedJson",
+        "description": "Creates a combined flattened json for objects (same or different type)",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n\tX = new List<string> { \"1\", \"2\", \"3\" },\n\tField1 = 5,\n\tParentProperty = 5,\n\tGrandparentProperty = 5\n};\nvar so2 = new SimpleObject\n{\n\tX = 1,\n\tY = \"Y\",\n\tZ = \"Z\"\n};\nvar val = so1.CombineAndFlattenedJson(so2).Result;"
+            },
+            {
+                "title": "Output",
+                "code": "{  \n   \"obj0_X_0\":\"\\\"1\\\"\",\n   \"obj0_X_1\":\"\\\"2\\\"\",\n   \"obj0_X_2\":\"\\\"3\\\"\",\n   \"obj0_ParentProperty\":5,\n   \"obj0_GrandparentProperty\":5,\n   \"obj0_Field1\":5,\n   \"obj1_X\":1,\n   \"obj1_Y\":\"\\\"Y\\\"\",\n   \"obj1_Z\":\"\\\"Z\\\"\"\n}"
+            }
+        ]
+    },
+
+    {
+        "methodName": "CompareObjects",
+        "description": "Deep compare any two objects - Supports classes with multilevel Hierarchies",
+        "samples": [{
+            "title": "",
+            "code": "public class Program\n{\n    public static void Main(string[] args)\n    {\n        var simpleObj1 = new Object1 {X = 1, Y=\"A\",Z=\"Z\"};\n        var simpleObj2 = new Object2 { X = \"1\", Y = \"B\",Z=\"Z\" };\n        var diff3 = simpleObj1.CompareObjects(simpleObj2, \"simpleObj1\", \"simpleObj2\");\n        Console.WriteLine(diff3.NoMatchList.Any() ? \"The objects differ\" : \"The objects are same\");\n        diff3.SaveToFile(@\"c:\\tmp\\compare3.txt\");\n    }\n}\npublic class Object1\n{\n    public int X { get; set; }\n    public string Y { get; set; }\n    public string Z { get; set; }\n}\npublic class Object2\n{\n    public string X { get; set; }\n    public string Y { get; set; }\n    public string Z { get; set; }\n}    "
+        }]
+    },
+
+    {
+        "methodName": "MemberNames",
+        "description": "Get list of members (Fields,Properties) declared in the class, along with all members declared in all classes in its inheritance hierarchy and includes Private and Static members",
+        "samples": [{
+                "title": "",
+                "code": "public class SimpleObjectNullable\n{\n    public List X { get; set; }\n    public int? Y { get; set; }\n    private int? Z { get; set; }\n}\n\nvar memberList = new SimpleObjectNullable().MemberNames().ToList();"
+            },
+            {
+                "title": "Type Extension",
+                "code": "var memberList = typeof(SimpleObjectNullable).GetAllMemberNames();"
+            }
+        ]
+    },
+    {
+        "methodName": "MemberValue",
+        "description": "Get value of a member",
+        "samples": [{
+            "title": "",
+            "code": "var memberValue = new SimpleObjectNullable().MemberValue(\"X\");"
+        }]
+    },
+    {
+        "methodName": "NullMembers",
+        "description": "Get all member names that are Null",
+        "samples": [{
+            "title": "",
+            "code": "var nullMembers = new SimpleObjectNullable().NullMembers().ToList();"
+        }]
+    },
+    {
+        "methodName": "DeepClone",
+        "description": "Create a deep clone (including private variables and values on Class Hierarchies)",
+        "samples": [{
+            "title": "",
+            "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\nvar so1DeepClone = so1.DeepClone();"
+        }]
+    }, {
+        "methodName": "SetMemberValue",
+        "description": "Set member value including Private members. Supports setting values on Class Hierarchies. Returns a string with error message if the operation failed",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List X { get; set; }\n    private int Z=10;\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n}\npublic class Grandparent \n{\n    public int GrandparentProperty { get; set; }\n}\n\nvar so1 = new SimpleObjectWithParent\n{\n    X = new List { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\nso1.SetMemberValue(\"X\", new List { \"4\",\"5\" });\nso1.SetMemberValue(\"Field1\", 100);\nso1.SetMemberValue(\"ParentProperty\", 100);\nso1.SetMemberValue(\"GrandparentProperty\", 100);\nso1.SetMemberValue(\"Z\", 100);"
+        }]
+    }, {
+        "methodName": "SaveToFile",
+        "description": "View or save object graph",
+        "samples": [{
+            "title": "",
+            "code": "namespace PrintClassInstance\n{\n    public class PrintMeGrandParent\n    {\n        private int GrandParentIntPrivatePropertyTest { get; set; }\n    }\n\n    public class PrintMeParent : PrintMeGrandParent\n    {\n        private int ParentIntPrivatePropertyTest { get; set; }\n    }\n\n    public class PrintMe: PrintMeParent\n    {\n        public Tuple TestTuple { get; set; }\n    }\n}\n\nnamespace PrintClassInstance\n{\n    public class Program\n    {\n            static void Main(string[] args)\n            {\n                PrintMe data = GenerateTestDataForPrintMe();\n                data.SaveToFile(@\"c:\\tmp\\instance.txt\");  \n                Console.WriteLine(\"Finished\");\n                Console.ReadLine();\n            }\n    }\n}\n\nOutput text file:\nPrintMe\n{\n    TestTuple = new Tuple`4\n    {\n        Item1 = 1,\n        Item2 = 1,\n        Item3 = 1,\n        Item4 = \"1\",\n    },\n    ParentIntPrivatePropertyTest = 1000,\n    GrandParentIntPrivatePropertyTest = 1000,\n};"
+        }]
+    }, {
+        "methodName": "GetNamespace",
+        "description": "Get object's namespace",
+        "samples": [{
+                "title": "",
+                "code": "var so1 = new SimpleObjectWithParent\n{\n    X = new List<string> { \"1\", \"2\", \"3\" },\n    Field1 = 5,\n    ParentProperty = 5,\n    GrandparentProperty = 5\n};\n\nvar ns = so1.GetNamespace();"
+            },
+            {
+                "title": "Type Extension",
+                "code": "var ns= typeof(SimpleObjectWithParent).GetNamespace();"
+            }
+        ]
+    }, {
+        "methodName": "GetBaseClassesNames",
+        "description": "Get the object base class names",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n}\npublic class Grandparent \n{\n    public int GrandparentProperty { get; set; }\n}\n\nvar baseClassNames=new SimpleObjectWithParent ().GetBaseClassesNames();"
+        }, {
+            "title": "Type Extension",
+            "code": "var baseClassNames = typeof(SimpleObjectWithParent).GetBaseClassesNames();"
+        }]
+    }, {
+        "methodName": "GetAllMethods",
+        "description": "Get all methods including private",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n\n    public int GetCount()\n    {\n        return Z;\n    }\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n\n    private int GetParentCount()\n    {\n        return 10;\n    }\n}"
+        }, {
+            "title": "",
+            "code": "var ns = typeof(SimpleObjectWithParent).GetAllMethods();"
+        }]
+    }, {
+        "methodName": "GetAllMethodsMetaData",
+        "description": "Get all methods meta data",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n\n    public int GetCount()\n    {\n        return Z;\n    }\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n\n    private int GetParentCount()\n    {\n        return 10;\n    }\n}"
+        }, {
+            "title": "",
+            "code": "var type = typeof(SimpleObjectWithParent).GetAllMethodsMetaData();\nforeach (var t in type)\n{\n    Console.WriteLine(t.NameSpace + \",\" + t.DeclaringType + \",\" + t.Name + \",\" + t.Signature);\n}\n\n\nConsole Output:\nTestPrintClassInstanceLib.TestData,Parent,GetParentCount,Int32 GetParentCount()\nTestPrintClassInstanceLib.TestData,SimpleObjectWithParent,GetCount,Int32 GetCount()\n"
+        }]
+    }, {
+        "methodName": "InvokeMethod",
+        "description": "Invoke method including private",
+        "samples": [{
+            "title": "",
+            "code": "public class SimpleObjectWithParent : Parent\n{\n    public int Field1;\n    public List<string> X { get; set; }\n    private int Z=10;\n\n    public int GetCount()\n    {\n        return Z;\n    }\n}\npublic class Parent:Grandparent\n{\n    public int ParentProperty { get; set; }\n\n    private int GetParentCount()\n    {\n        return 10;\n    }\n}"
+        }, {
+            "title": "",
+            "code": "var obj = new SimpleObjectWithParent();\nvar val=obj.InvokeMethod(\"GetParentCount\", null); //val is 10"
+        }]
+    },
+    {
+        "methodName": "SaveToS3",
+        "description": "Save the object graph to a S3 container",
+        "samples": [{
+            "title": "",
+            "code": "//Save to S3\nvar contentData = new Dictionary<string, string>\n{\n\t{ \"AccessKeyId\",\"your access key\"},\n\t{\"SecretAccessKey\",\"your secret access key\"}\n};\nvar uploadMessage = new S3UploadMessage\n{\n\tS3Client = new AmazonS3Client(contentData[\"AccessKeyId\"], contentData[\"SecretAccessKey\"],\n\t\t\tAmazon.RegionEndpoint.USEast1),\n\tBucketName = \"your bucket name\",\n\tKey = \"objectgraph.txt\"\n};\nvar result = data.SaveToS3(uploadMessage).Result;"
+        }]
+    }
+]
+
+}
