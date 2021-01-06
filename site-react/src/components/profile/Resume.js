@@ -1,32 +1,17 @@
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid'; 
+import React, { useContext } from 'react'; 
 import Experience from '../experience/Experience';
+import ProfileContext from '../../context/ProfileContext'; 
 
-const useStyles= makeStyles( (theme)=> ({
-  root: {
-    margin: 10,
-    display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    flexWrap: 'wrap',
-    listStyle: 'none',
-    padding: theme.spacing(0.5)  
-  },
-  header : {
-    background: 'aqua',
-    textAlign: 'center'
-  }
-}));
+const Resume = () =>{ 
+  const { profile :  {  experience = []  } = {} } = useContext(ProfileContext) || {}  ;
 
-const Resume = () =>{
-  const classes = useStyles();
-
-  return(   
-      <Experience/> 
+  return( 
+      experience.map( (item,index)=>{
+        return (
+          <Experience key={index} experienceItem={item} /> 
+        );
+      })     
   )
-
-
 };
 
 export default Resume;

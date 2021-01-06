@@ -38,7 +38,7 @@ const NavBar = (props) => {
         indicatorColor="primary" 
         onChange={handleChange}
       >
-        <Tab  className={classes.initials} label="HP"> 
+        <Tab  className={classes.initials} label="HP">  
         </Tab>
         <Tab icon={<FindInPage />} label="Skill Cloud"/>
         <Tab icon={<AssignmentInd />} label="Resume"/>

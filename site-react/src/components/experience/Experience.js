@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Project from './Project';
+import Project from './Project'; 
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -12,46 +12,61 @@ const useStyles= makeStyles( (theme)=> ({
       alignContent: 'center',
       flexWrap: 'wrap',
       listStyle: 'none',
-      padding: theme.spacing(0.5)  
+      padding: theme.spacing(0.5),
+      fontFamily: "monospace"  
     },
     paperStyle: {
-        borderRadius: 0
+        borderRadius: 0,
+        marginRight: 10,
     },
     header : {
-      background: 'aqua',
-      textAlign: 'center'
+      background: 'chartreuse',
+      textAlign: 'left',
+      padding: 6,
+      fontSize: 16
+    },
+    contentSpacing: {
+      padding: 10
     }
   }));
 
-const Experience = () => {
+const Experience = ({experienceItem}) => {
     const classes=useStyles();
 
-    const expHeaderClass = `${classes.paperStyle} ${classes.header}`
+    const getProjects = () =>{
+      const projects = experienceItem.projects.map(p=>{
+        return <Project key={p.id} project= {p}/>
+      });   
+      return projects;
+    }
+
+    const expHeaderClass = `${classes.paperStyle} `
     return (
         <Grid container 
             direction="row" 
+            wrap="nowrap"
             className={classes.root}
             justify="center"
             alignItems="center"
-        >
-            
-            <Grid item xs={12} sm={8} className={classes.header}> 
-                <Paper className={expHeaderClass}>
-                    <div>SWISS RE / June 2018-Present / Senior Full Stack Developer</div>  
+        > 
+            <Grid item xs={12}  sm={7} > 
+                <Paper className={expHeaderClass} elevation={10}>
+                    <div className={classes.header}>{experienceItem.companyHeader}</div>  
                 </Paper>
             </Grid>
 
-            <Grid item xs={12} sm={8}> 
-                <Paper className={classes.paperStyle}>
-                    <div>Working as a senior full stack developer in creating B2B2C platforms with focus on Life
-    insurance and Medicare supplement products.</div>  
+            <Grid item xs={12}  sm={7}> 
+                <Paper className={classes.paperStyle}   >
+                    <div className={classes.contentSpacing}>{experienceItem.jobDescription}</div>    
                     <br/>
                 </Paper>
             </Grid>
 
-            <Grid item xs={12} sm={8}> 
-                <Paper className={classes.paperStyle}>
-                    <Project/>
+            <Grid item xs={12}  sm={7}> 
+                <Paper className={classes.paperStyle}   >
+                  <div className={classes.contentSpacing}>
+                    {getProjects()}
+                  </div>
                 </Paper>
             </Grid>
         </Grid>

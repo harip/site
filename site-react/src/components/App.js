@@ -3,10 +3,9 @@ import { HashRouter, Route  } from 'react-router-dom';
 import NavBar from './navbar/NavBar';
 import Resume from './profile/Resume';
 import SkillCloud from './skill/SkillCloud';
+import { ProfileProvider } from '../context/ProfileContext';
 
 const App = () => {
- 
-
   return (
     <HashRouter  >
       <NavBar />
@@ -16,4 +15,12 @@ const App = () => {
   )
 };
 
-export default App;
+export const profileApp = () => {
+  return (
+    <ProfileProvider>
+      <App/>
+    </ProfileProvider>
+  );
+};
+
+export default profileApp;
