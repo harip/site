@@ -53,7 +53,7 @@ const SkillCloud = () =>{
     justify="center"
     alignItems="center">
 
-      <Grid item xs={12} sm={6}>
+      <Grid item xs={12} sm={8}>
 
       <Paper component="ul" className={classes.root} elevation={0}>
             {chipData.map((data) => { 
