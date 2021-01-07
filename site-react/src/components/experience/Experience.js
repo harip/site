@@ -30,7 +30,9 @@ const useStyles= makeStyles( (theme)=> ({
     }
   }));
 
-const Experience = ({experienceItem}) => {
+const Experience = (props) => {
+    const { experienceItem } = props;
+
     const classes=useStyles();
 
     const getProjects = () =>{

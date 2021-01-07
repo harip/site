@@ -13,9 +13,9 @@ const SkillSearch = (props) =>{
     includeMatches: true,
     findAllMatches: true,
     shouldSort: false,
+    ignoreLocation: true, // https://fusejs.io/concepts/scoring-theory.html
     keys: ['projects.responsibilities']
-  }
-  
+  } 
 
   const search = () => {
     if (searchTerm === '') {
@@ -25,9 +25,13 @@ const SkillSearch = (props) =>{
     const fuse = new Fuse(profile.experience, searchOptions); 
     const result = fuse.search(searchTerm)[0]; 
 
-    return(
-      <Experience key={0} experienceItem={result.item} /> 
-    )
+    if (!result) { 
+      onClose();
+    } else {
+      return (
+        <Experience key={0} experienceItem={result.item} highlighters={result.item.matches}/> 
+      );
+    }
   };
 
   return( 

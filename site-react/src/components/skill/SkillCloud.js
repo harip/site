@@ -59,8 +59,7 @@ const SkillCloud = (props) =>{
           />
       </li>
     );
-  }
-
+  } 
   
   if (!data){
     return <div>Loading...</div>
@@ -69,15 +68,10 @@ const SkillCloud = (props) =>{
   return(  
     <Grid container direction="row"
     justify="center"
-    alignItems="center">
-
-      <Grid item xs={12} sm={8}>
-
-        <Paper component="ul" className={classes.root} elevation={1}>
-          <SkillSearch open={open} onClose={handleClose} searchTerm={selectedSkill}/>
-        </Paper>
-
-        <Paper component="ul" className={classes.root} elevation={1}>
+    alignItems="center"> 
+      <Grid item xs={12} sm={8}> 
+        <SkillSearch open={open} onClose={handleClose} searchTerm={selectedSkill}/> 
+        <Paper component="ul" className={classes.root} elevation={0}>
             {data.skills.map((data) => { 
               return (
                 <React.Fragment key={data.id}>
@@ -85,14 +79,9 @@ const SkillCloud = (props) =>{
                 </React.Fragment>
               );
             })}
-        </Paper>
-
-      </Grid>
-
-    </Grid>
-
-
-
+        </Paper> 
+      </Grid> 
+    </Grid> 
   )
 };
 
