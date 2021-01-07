@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Tab } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs';
 import FindInPage from '@material-ui/icons/FindInPage';
-import ContactPhone from '@material-ui/icons/ContactPhone';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 import AssignmentInd from '@material-ui/icons/AssignmentInd';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles'; 
@@ -48,7 +48,7 @@ const NavBar = (props) => {
         indicatorColor="primary" 
         onChange={handleChange}
       >
-        <Tab icon={<ContactPhone style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" />
+        <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" />
         <Tab icon={<FindInPage />} label="Skill Cloud"/>
         <Tab icon={<AssignmentInd />} label="Resume"/> 
       </Tabs>  
