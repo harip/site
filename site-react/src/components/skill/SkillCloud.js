@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper'; 
 import Chip from '@material-ui/core/Chip';
@@ -37,6 +37,10 @@ const SkillCloud = (props) =>{
   const classes = useStyles(); 
   const [selectedSkill, setSelectedSkill] = useState('');  
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.title="Skills";
+  }, []);
 
   const handleSkillClick = (item)=>{
     // Open Dialog

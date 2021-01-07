@@ -1,9 +1,13 @@
-import React, { useContext } from 'react'; 
+import React, { useContext, useEffect } from 'react'; 
 import Experience from '../experience/Experience';
 import ProfileContext from '../../context/ProfileContext'; 
 
 const Resume = () =>{ 
   const { profile :  {  experience = []  } = {} } = useContext(ProfileContext) || {}  ;
+
+  useEffect(() => {
+    document.title="Profile";
+  }, []);
 
   return( 
       experience.map( (item,index)=>{
