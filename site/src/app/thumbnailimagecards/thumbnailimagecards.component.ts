@@ -18,11 +18,8 @@ export class ThumbNailImageCardsComponent implements OnInit {
     ngOnInit() {
         this._packageDataService
             .getExtensionsData(this.URL)
-            .then((data) => {   
+            .subscribe((data:any) => {   
                 this.sectionData=data;
-            })
-            .catch((err) => {
-                console.log(err);
             });
         }
 }

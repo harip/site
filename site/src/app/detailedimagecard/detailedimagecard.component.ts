@@ -33,12 +33,9 @@ export class DetailedImageCardComponent implements OnInit {
 
         this._packageDataService
             .getExtensionsData(baseUrl)
-            .then((returnData) => {
-                this.packageData=returnData.find((d:any)=> {return d.title.toLowerCase()==id} );    
+            .subscribe( (res:any) => {
+                this.packageData=res.find((d:any)=> {return d.title.toLowerCase()==id} );    
                 this.packageData=this.packageData.images.find((d:any)=>d.key.toLowerCase()==key);
-            })
-            .catch((err) => {
-                console.log(err); // dont do this, show the user a nice message
-            });      
+            });   
     }
 }

@@ -35,12 +35,14 @@ import {DetailedImageCardComponent} from './detailedimagecard/detailedimagecard.
 
 
 import { Routing } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports:      [ BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule,
+    JsonpModule,    
+    HttpClientModule,
     Routing,
     BrowserAnimationsModule,
     CodemirrorModule,

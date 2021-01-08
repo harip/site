@@ -25,13 +25,11 @@ export class DetailedCardComponent implements OnInit {
 
         this._packageDataService
             .getExtensionsData(baseUrl)
-            .then((returnData) => {
+            .subscribe((returnData) => {
+                debugger
                 this.packageData = returnData
-                this.methodNames=returnData.data.map((d:any)=> d.methodName);
+                this.methodNames=returnData['data'].map((d:any)=> d.methodName);
                 this.showhideSourceLink=this.packageData.gitLink ? true : false;  
-            })
-            .catch((err) => {
-                console.log(err); // dont do this, show the user a nice message
             });
     }
 }

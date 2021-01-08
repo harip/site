@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuHelper } from './common/menuHelper';
 
-@Component({
-  moduleId: module.id,
+@Component({ 
   selector: 'my-app',
   templateUrl:'app.component.html'
 })

@@ -1,6 +1,4 @@
-import { Component, OnInit, Input,ViewChild, ElementRef  } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-import { Injectable } from '@angular/core';
+import { Component, OnInit,  ElementRef  } from '@angular/core'; 
 import {PackageDataService} from '../common/packageDataService';
 
 @Component({
@@ -21,15 +19,11 @@ export class PythonDsComponent implements OnInit {
 
         this._packageDataService
             .getExtensionsData(baseUrl)
-            .then((returnData) => {
-                debugger
+            .subscribe((returnData:any) => { 
                 this.packageData = returnData
                 this.methodNames=returnData.data.map((d:any)=> d.methodName);
                 this.showhideSourceLink=this.packageData.gitLink ? true : false;
-            })
-            .catch((err) => {
-                console.log(err); // dont do this, show the user a nice message
-            });        
+            });     
 
     }
 }
