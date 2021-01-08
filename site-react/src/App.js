@@ -1,9 +1,10 @@
 import React from 'react';
 import { HashRouter, Route  } from 'react-router-dom';  
-import NavBar from './navbar/NavBar';
-import Resume from './profile/Resume';
-import SkillCloud from './skill/SkillCloud';
-import { ProfileProvider } from '../context/ProfileContext'; 
+import NavBar from './common/components/navbar/NavBar';
+import { ProfileProvider } from './context/ProfileContext'; 
+import PythonDs from './pthonds/PythonDs';
+import Resume from './resume/Resume';
+import SkillCloud from './skills/SkillCloud';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <NavBar />  
       <Route path="/" exact component={SkillCloud} />
       <Route path="/resume" exact component={Resume} /> 
+      <Route path="/pythonds" exact component={PythonDs} /> 
     </HashRouter>
   )
 };

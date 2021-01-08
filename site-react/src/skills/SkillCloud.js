@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper'; 
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid'; 
-import ProfileContext from '../../context/ProfileContext';
-import SkillSearch from '../search/SkillSearch';
+import ProfileContext from '../context/ProfileContext';
+import SkillSearch from './SkillSearch';
 
 const useStyles= makeStyles( (theme)=> ({
   root: {

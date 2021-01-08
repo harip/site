@@ -7,7 +7,7 @@ import FindInPage from '@material-ui/icons/FindInPage';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import AssignmentInd from '@material-ui/icons/AssignmentInd';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles'; 
+import { makeStyles } from '@material-ui/core/styles';  
 import Contact from '../contact/Contact';
 
 const useStyles = makeStyles({

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react'; 
-import Experience from '../experience/Experience';
-import ProfileContext from '../../context/ProfileContext'; 
+import React, { useContext, useEffect } from 'react';  
+import Experience from '../common/components/experience/Experience';
+import ProfileContext from '../context/ProfileContext';
 
 const Resume = () =>{ 
   const { profile :  {  experience = []  } = {} } = useContext(ProfileContext) || {}  ;

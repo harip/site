@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';  
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import ProfileContext from '../../context/ProfileContext';
+import ProfileContext from '../context/ProfileContext';
 import Fuse from 'fuse.js';
-import Experience from '../experience/Experience';
+import Experience from '../common/components/experience/Experience';
 
 const SkillSearch = (props) =>{   
   const {profile} = useContext(ProfileContext); 
