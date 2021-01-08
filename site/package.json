@@ -12,25 +12,26 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.2.11",
+    "@angular/animations": "^7.2.16",
     "@angular/cdk": "^5.2.5",
-    "@angular/common": "^5.2.11",
-    "@angular/compiler": "^5.2.11",
-    "@angular/compiler-cli": "^5.2.11",
-    "@angular/core": "^5.2.11",
-    "@angular/forms": "^5.2.11",
-    "@angular/platform-browser": "^5.2.11",
-    "@angular/platform-browser-dynamic": "^5.2.11",
-    "@angular/router": "^5.2.11",
+    "@angular/common": "^7.2.16",
+    "@angular/compiler": "^7.2.16",
+    "@angular/compiler-cli": "^7.2.16",
+    "@angular/core": "^7.2.16",
+    "@angular/forms": "^7.2.16",
+    "@angular/platform-browser": "^7.2.16",
+    "@angular/platform-browser-dynamic": "^7.2.16",
+    "@angular/router": "^7.2.16",
     "codemirror": "^5.59.1",
     "core-js": "^2.6.12",
     "ng2-codemirror-typescript": "1.1.1",
     "ng2-page-scroll": "^4.0.0-beta.9",
-    "rxjs": "^5.5.12",
+    "rxjs": "^6.6.3",
     "systemjs": "^0.21.6",
     "ts-node": "^1.7.3",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "rxjs-compat": "^6.0.0-rc.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.6",
@@ -47,7 +48,7 @@
     "protractor": "~7.0.0",
     "ts-node": "^5.0.1",
     "tslint": "~6.1.0",
-    "typescript": "^2.9.2",
+    "typescript": "^3.2.4",
     "uglifyjs": "^2.4.11"
   }
 }
