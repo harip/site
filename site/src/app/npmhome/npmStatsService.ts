@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, Response,Jsonp,Headers,URLSearchParams  } from '@angular/http';
+import { HttpClient  } from '@angular/common/http';
 
 @Injectable()
 export class NpmStatsService{
     URL_Base='https://api.npmjs.org/downloads/point/1900-01-01';
     
-    constructor(private _http:Http){}
+    constructor(private _http:HttpClient){}
 
     getNpmDownloadCount(packageId:any){
 
