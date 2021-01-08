@@ -1,6 +1,5 @@
 import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; 
-import { JsonpModule }    from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';  
 import { Routes, RouterModule } from '@angular/router'; 
 import { FormsModule } from '@angular/forms';
 
@@ -38,8 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports:      [ BrowserModule,
-    FormsModule, 
-    JsonpModule,    
+    FormsModule,  
     HttpClientModule,
     Routing,
     BrowserAnimationsModule,
