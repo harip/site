@@ -1,4 +1,4 @@
-import { ModuleWithProviders }  from '@angular/core';
+// import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {HomeComponent} from './home/home.component';
@@ -25,4 +25,4 @@ export const routes: Routes = [
   { path: '', redirectTo: '/pythonds', pathMatch: 'full' },
 ];
 
-export const Routing: ModuleWithProviders = RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' });
+export const Routing: any = RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' });

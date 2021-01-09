@@ -1,14 +1,12 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';  
-import { Routes, RouterModule } from '@angular/router'; 
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';   
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {CodemirrorModule} from 'ng2-codemirror-typescript/Codemirror';
-import {Ng2PageScrollModule} from 'ng2-page-scroll'; 
-import 'rxjs/Rx'; // get everything from Rx
-import { AppComponent }  from './app.component';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';  
+import { AppComponent } from './app.component';
 import {PackageDataService} from './common/packageDataService';
 import {NugetService} from './nugetstats/nugetService';
 import {NpmStatsService} from './npmhome/npmStatsService';
