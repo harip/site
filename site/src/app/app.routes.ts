@@ -25,4 +25,4 @@ export const routes: Routes = [
   { path: '', redirectTo: '/pythonds', pathMatch: 'full' },
 ];
 
-export const Routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const Routing: ModuleWithProviders = RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' });
