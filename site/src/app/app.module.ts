@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';   
 import { FormsModule } from '@angular/forms';
 
@@ -33,6 +33,8 @@ import {DetailedImageCardComponent} from './detailedimagecard/detailedimagecard.
 import { Routing } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 
+import { createCustomElement } from '@angular/elements';
+
 @NgModule({
   imports:      [ BrowserModule,
     FormsModule,  
@@ -65,4 +67,13 @@ import { HttpClientModule } from '@angular/common/http';
     NpmStatsService
   ]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(private injector: Injector) {
+    const PythonDsElement = createCustomElement(PythonDsComponent, {injector});
+    customElements.define('app-pythonds-element', PythonDsElement);
+  }
+
+  ngDoBootstrap() {}
+
+}

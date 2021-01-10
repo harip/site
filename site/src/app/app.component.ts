@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Injector } from '@angular/core';
 import { MenuHelper } from './common/menuHelper';
+import { createCustomElement } from '@angular/elements';
+import { PythonDsComponent } from './python/pythonds.component';
 
 @Component({ 
   selector: 'my-app',
@@ -13,7 +15,9 @@ export class AppComponent implements OnInit {
     cssClass:''
   };
 
-  constructor(private _menuHelper:MenuHelper){}
+  constructor(private _menuHelper:MenuHelper, injector: Injector){
+
+  }
 
   ngOnInit(): void {
   }
