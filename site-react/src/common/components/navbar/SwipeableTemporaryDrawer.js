@@ -1,15 +1,15 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from 'react'; 
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'; 
 import List from '@material-ui/core/List'; 
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail'; 
+import ListItemText from '@material-ui/core/ListItemText'; 
 import { Typography } from '@material-ui/core'; 
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import FindInPage from '@material-ui/icons/FindInPage';
+import AssignmentInd from '@material-ui/icons/AssignmentInd';
+import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 
 const useStyles = makeStyles({
   list: {
@@ -38,12 +38,20 @@ const  SwipeableTemporaryDrawer =(props)=> {
       </MuiDialogTitle>
 
       <List>
-        {['Skill Cloud', 'Resume', 'Projects'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button key={'Skill Cloud'} onClick={()=>props.onHandleChange(null,1)}>
+          <ListItemIcon><FindInPage /></ListItemIcon>
+          <ListItemText primary="Skill Cloud" />
+        </ListItem>
+
+        <ListItem button key={'Resume'} onClick={()=>props.onHandleChange(null,2)}>
+        <ListItemIcon><AssignmentInd /></ListItemIcon>
+          <ListItemText primary="Resume" />
+        </ListItem>
+
+        <ListItem button key={'Projects'} onClick={()=>props.onHandleChange(null,3)}>
+          <ListItemIcon> <DynamicFeedIcon /> </ListItemIcon>
+          <ListItemText primary="Projects" />
+        </ListItem>  
       </List>
     </div>
   );

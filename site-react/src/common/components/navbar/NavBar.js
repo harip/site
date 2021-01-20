@@ -1,18 +1,19 @@
 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; 
-import { Button, Tab } from '@material-ui/core';
-import Tabs from '@material-ui/core/Tabs';
-import FindInPage from '@material-ui/icons/FindInPage';
+import { Tab } from '@material-ui/core';
+import Tabs from '@material-ui/core/Tabs'; 
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import FindInPage from '@material-ui/icons/FindInPage';
 import AssignmentInd from '@material-ui/icons/AssignmentInd';
+import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';  
 import Contact from '../contact/Contact';
 import Hidden from '@material-ui/core/Hidden'; 
 import SwipeableTemporaryDrawer from './SwipeableTemporaryDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@material-ui/core/IconButton'; 
 
 const useStyles = makeStyles({
   initials: {
@@ -47,36 +48,44 @@ const NavBar = (props) => {
       history.push('/');
       return;
     }
-    history.push('/resume');
+
+    if (value === 2) {
+      history.push('/resume');
+      return;
+    }
+
+    return (
+      <div>Coming soon!</div>
+    );
   };
  
   return ( 
     <Paper square>
-      <Contact open={openContact} close={handleContactClose}/>
+      <Contact open={openContact} close={handleContactClose}/> 
+      
+        <Tabs 
+          value={0}
+          indicatorColor="primary"  
+        >
+          <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" /> 
 
-      <Tabs 
-        value={0}
-        indicatorColor="primary" 
-        onChange={handleChange}
-      >
-        <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" />
+          <Hidden xsDown> 
+          <Tab icon={<FindInPage />} onClick={(e)=>handleChange(e,1)} label="Skill Cloud"/>
+          <Tab icon={<AssignmentInd />} onClick={(e)=>handleChange(e,2)} label="Resume"/> 
+          <Tab icon={<DynamicFeedIcon />} onClick={(e)=>handleChange(e,3)} label="Projects"/>  
+          </Hidden>
 
-        <Hidden xsDown> 
-          <Tab icon={<FindInPage />} label="Skill Cloud"/>
-          <Tab icon={<AssignmentInd />} label="Resume"/> 
-          <Tab icon={<AssignmentInd />} label="Projects"/> 
-        </Hidden> 
+          <Hidden smUp>    
+            <IconButton className={classes.mobileMenuLoc} onClick={()=>settoggleMenu(!toggleMenu)} color="primary" >
+              <MenuIcon  className={classes.mobileMenu}/>
+            </IconButton> 
+            <SwipeableTemporaryDrawer toggle={toggleMenu} setToggle={settoggleMenu} onHandleChange={handleChange}/>
+          </Hidden>           
 
-        <Hidden smUp>   
+        </Tabs>   
+        
 
-          <IconButton className={classes.mobileMenuLoc} onClick={()=>settoggleMenu(!toggleMenu)} color="primary" >
-            <MenuIcon  className={classes.mobileMenu}/>
-          </IconButton>
-
-          <SwipeableTemporaryDrawer toggle={toggleMenu} setToggle={settoggleMenu}/>
-        </Hidden>
-      </Tabs>  
-      </Paper>
+    </Paper>
   );
 }
 
