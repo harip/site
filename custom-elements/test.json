@@ -1,0 +1,6730 @@
+{
+	"questionnaire": {
+		"qCurrentPage": "qQuestionnaire.pgBasicInformation",
+		"qDefaultBooleanAnswerDisplayValues": {
+			"trueDisplayValue": "Yes",
+			"falseDisplayValue": "No"
+		},
+		"qDefaultValidationMessages": {
+			"Mandatory": "Required.",
+			"MinLength": "The value of \"${field.templateOptions.label}\" should have at least ${field.templateOptions.minLength} characters.",
+			"MaxLength": "The value of \"${field.templateOptions.label}\" should be less than ${field.templateOptions.maxLength} characters.",
+			"Pattern": "Invalid.",
+			"MinValue": "Invalid.",
+			"MaxValue": "Invalid.",
+			"Step": "The value of \"${field.templateOptions.label}\" must be a multiple of ${field.templateOptions.step}.",
+			"MinCount": "The number of values for \"${field.templateOptions.label}\" should not be less than ${field.templateOptions.min}.",
+			"MaxCount": "The number of values for \"${field.templateOptions.label}\" should not be greater than ${field.templateOptions.max}.",
+			"Rule": "Invalid."
+		},
+		"pgBasicInformation": {
+			"GroupName": {
+				"qIndex": 0,
+				"qDescription": "##Basic Information\n\nNow we will go through information that we need from you for your life insurance application. It should take just about 10-15 minutes to complete. If at any time if you wish to save your progress so you can come back at a later time, simply click save for later above.\n \n ",
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false,
+				"qFirstName": {
+					"qIndex": 0,
+					"qLabel": "First Name",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-4 ui-lg-4 ui-md-4 ui-sm-12",
+					"qAnswer": {
+						"value": ""
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				},
+				"qMiddleName": {
+					"qIndex": 1,
+					"qLabel": "Middle Name",
+					"qAnswerPresentation": "Text",
+					"qPresentationClasses": "ui-g-4 ui-lg-4 ui-md-4 ui-sm-12",
+					"qAnswer": {
+						"value": ""
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				},
+				"qLastName": {
+					"qIndex": 2,
+					"qLabel": "Last Name",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-4 ui-lg-4 ui-md-4 ui-sm-12",
+					"qAnswer": {
+						"value": ""
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				}
+			},
+			"qIndex": 0,
+			"GroupDOB": {
+				"qIndex": 1,
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false,
+				"qDOB": {
+					"qIndex": 0,
+					"qLabel": "Birth Date",
+					"qQuestionType": "Date",
+					"qAnswerPresentation": "Picker",
+					"qIsMandatory": true,
+					"qAnswerPlaceholder": "MM/DD/YYYY",
+					"qPresentationClasses": "ui-lg-4 ui-g-4 ui-md-4 ui-sm-12 ",
+					"qAnswer": {
+						"value": "0001-01-01T00:00:00Z"
+					},
+					"qValidations": [
+						{
+							"validationType": "MinValue",
+							"validationValue": "Mon Jan 01 1900 01:00:00 GMT-0600 (Central Standard Time)"
+						}
+					]
+				}
+			},
+			"GroupAddress": {
+				"qIndex": 2,
+				"qDescription": "",
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false,
+				"qAddress": {
+					"qIndex": 0,
+					"qLabel": "Residence Street Address",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qIsHidden": false,
+					"qPresentationClasses": "ui-g-8 ui-lg-8 ui-md-8 ui-sm-12",
+					"qAnswer": {
+						"value": ""
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "30"
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^([0-9a-zA-Z-',  ]*)$"
+						}
+					]
+				}
+			},
+			"GroupCityStateZip": {
+				"qIndex": 3,
+				"qDescription": "",
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false,
+				"qPresentationClasses": "iptiq-separator",
+				"qCity": {
+					"qIndex": 0,
+					"qLabel": "City",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-4 ui-lg-3 ui-md-3 ui-sm-12",
+					"qAnswer": {
+						"value": ""
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "26"
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "2"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$"
+						}
+					]
+				},
+				"qState": {
+					"qIndex": 1,
+					"qLabel": "State",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-2 ui-md-2 ui-sm-4 slq-native-select",
+					"qAnswer": {
+						"value": ""
+					},
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MinLength",
+							"validationMessage": "Required.",
+							"validationValue": "2"
+						}
+					]
+				},
+				"qZipcode": {
+					"qIndex": 2,
+					"qLabel": "Zip Code",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-3 ui-md-3 ui-sm-8",
+					"qAnswer": {
+						"value": ""
+					},
+					"qValidations": [
+						{
+							"validationType": "Pattern",
+							"validationValue": "^\\d{5}(\\-\\d{4})?$"
+						}
+					]
+				}
+			}
+		},
+		"pgPersonalInformation1": {
+			"qIndex": 1,
+			"GroupBMI": {
+				"qIndex": 0,
+				"qDescription": "### Personal Info",
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false,
+				"qWeight": {
+					"qIndex": 0,
+					"qLabel": "Weight",
+					"qQuestionType": "Integer",
+					"qAnswerPresentation": "NumericText",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-lg-2 ui-g-2 ui-md-2 ui-sm-12 ",
+					"qAnswer": {
+						"value": 0,
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxValue",
+							"validationValue": "600"
+						},
+						{
+							"validationType": "MinValue",
+							"validationValue": "50"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "If you are currently pregnant, please use your pre-pregnancy weight.",
+						"qTitle": "Weight",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					},
+					"qRightAddons": [
+						{
+							"qLabel": "lbs"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qHeight": {
+					"qIndex": 1,
+					"qLabel": "Height",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "Dropdown",
+					"qIsMandatory": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "ui-lg-2 ui-g-2 ui-md-2 ui-sm-12 ",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "4'"
+						},
+						{
+							"value": "4'1\""
+						},
+						{
+							"value": "4'2\""
+						},
+						{
+							"value": "4'3\""
+						},
+						{
+							"value": "4'4\""
+						},
+						{
+							"value": "4'5\""
+						},
+						{
+							"value": "4'6\""
+						},
+						{
+							"value": "4'7\""
+						},
+						{
+							"value": "4'8\""
+						},
+						{
+							"value": "4'9\""
+						},
+						{
+							"value": "4'10\""
+						},
+						{
+							"value": "4'11\""
+						},
+						{
+							"value": "5'"
+						},
+						{
+							"value": "5'1\""
+						},
+						{
+							"value": "5'2\""
+						},
+						{
+							"value": "5'3\""
+						},
+						{
+							"value": "5'4\""
+						},
+						{
+							"value": "5'5\""
+						},
+						{
+							"value": "5'6\""
+						},
+						{
+							"value": "5'7\""
+						},
+						{
+							"value": "5'8\""
+						},
+						{
+							"value": "5'9\""
+						},
+						{
+							"value": "5'10\""
+						},
+						{
+							"value": "5'11\""
+						},
+						{
+							"value": "6'"
+						},
+						{
+							"value": "6'1\""
+						},
+						{
+							"value": "6'2\""
+						},
+						{
+							"value": "6'3\""
+						},
+						{
+							"value": "6'4\""
+						},
+						{
+							"value": "6'5\""
+						},
+						{
+							"value": "6'6\""
+						},
+						{
+							"value": "6'7\""
+						},
+						{
+							"value": "6'8\""
+						},
+						{
+							"value": "6'9\""
+						},
+						{
+							"value": "6'10\""
+						},
+						{
+							"value": "6'11\""
+						},
+						{
+							"value": "7'"
+						},
+						{
+							"value": "7'1\""
+						},
+						{
+							"value": "7'2\""
+						},
+						{
+							"value": "7'3\""
+						},
+						{
+							"value": "7'4\""
+						},
+						{
+							"value": "7'5\""
+						},
+						{
+							"value": "7'6\""
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qBirthCountry": {
+					"qIndex": 2,
+					"qLabel": "Birth Country",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-lg-2 ui-g-2 ui-md-2 ui-sm-12  slq-native-select",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "United States of America and Other Territories (USA)"
+						},
+						{
+							"value": "Afghanistan"
+						},
+						{
+							"value": "Albania"
+						},
+						{
+							"value": "Algeria"
+						},
+						{
+							"value": "Andorra"
+						},
+						{
+							"value": "Angola"
+						},
+						{
+							"value": "Antigua and Barbuda"
+						},
+						{
+							"value": "Argentina"
+						},
+						{
+							"value": "Armenia"
+						},
+						{
+							"value": "Australia"
+						},
+						{
+							"value": "Austria"
+						},
+						{
+							"value": "Azerbaijan"
+						},
+						{
+							"value": "Bahamas"
+						},
+						{
+							"value": "Bahrain"
+						},
+						{
+							"value": "Bangladesh"
+						},
+						{
+							"value": "Barbados"
+						},
+						{
+							"value": "Belarus"
+						},
+						{
+							"value": "Belgium"
+						},
+						{
+							"value": "Belize"
+						},
+						{
+							"value": "Benin"
+						},
+						{
+							"value": "Bhutan"
+						},
+						{
+							"value": "Bolivia"
+						},
+						{
+							"value": "Bosnia and Herzegovina"
+						},
+						{
+							"value": "Botswana"
+						},
+						{
+							"value": "Brazil"
+						},
+						{
+							"value": "Brunei"
+						},
+						{
+							"value": "Bulgaria"
+						},
+						{
+							"value": "Burkina Faso"
+						},
+						{
+							"value": "Burundi"
+						},
+						{
+							"value": "Cabo Verde"
+						},
+						{
+							"value": "Cambodia"
+						},
+						{
+							"value": "Cameroon"
+						},
+						{
+							"value": "Canada"
+						},
+						{
+							"value": "Central African Republic (CAR)"
+						},
+						{
+							"value": "Chad"
+						},
+						{
+							"value": "Chile"
+						},
+						{
+							"value": "China"
+						},
+						{
+							"value": "Colombia"
+						},
+						{
+							"value": "Comoros"
+						},
+						{
+							"value": "Democratic Republic of the Congo"
+						},
+						{
+							"value": "Republic of the Congo"
+						},
+						{
+							"value": "Costa Rica"
+						},
+						{
+							"value": "Cote d'Ivoire"
+						},
+						{
+							"value": "Croatia"
+						},
+						{
+							"value": "Cuba"
+						},
+						{
+							"value": "Cyprus"
+						},
+						{
+							"value": "Czech Republic"
+						},
+						{
+							"value": "Denmark"
+						},
+						{
+							"value": "Djibouti"
+						},
+						{
+							"value": "Dominica"
+						},
+						{
+							"value": "Dominican Republic"
+						},
+						{
+							"value": "Ecuador"
+						},
+						{
+							"value": "Egypt"
+						},
+						{
+							"value": "El Salvador"
+						},
+						{
+							"value": "Equatorial Guinea"
+						},
+						{
+							"value": "Eritrea"
+						},
+						{
+							"value": "Estonia"
+						},
+						{
+							"value": "Ethiopia"
+						},
+						{
+							"value": "Fiji"
+						},
+						{
+							"value": "Finland"
+						},
+						{
+							"value": "France"
+						},
+						{
+							"value": "Gabon"
+						},
+						{
+							"value": "Gambia"
+						},
+						{
+							"value": "Georgia"
+						},
+						{
+							"value": "Germany"
+						},
+						{
+							"value": "Ghana"
+						},
+						{
+							"value": "Greece"
+						},
+						{
+							"value": "Grenada"
+						},
+						{
+							"value": "Guatemala"
+						},
+						{
+							"value": "Guinea"
+						},
+						{
+							"value": "Guinea-Bissau"
+						},
+						{
+							"value": "Guyana"
+						},
+						{
+							"value": "Haiti"
+						},
+						{
+							"value": "Honduras"
+						},
+						{
+							"value": "Hungary"
+						},
+						{
+							"value": "Iceland"
+						},
+						{
+							"value": "India"
+						},
+						{
+							"value": "Indonesia"
+						},
+						{
+							"value": "Iran"
+						},
+						{
+							"value": "Iraq"
+						},
+						{
+							"value": "Ireland"
+						},
+						{
+							"value": "Israel"
+						},
+						{
+							"value": "Italy"
+						},
+						{
+							"value": "Jamaica"
+						},
+						{
+							"value": "Japan"
+						},
+						{
+							"value": "Jordan"
+						},
+						{
+							"value": "Kazakhstan"
+						},
+						{
+							"value": "Kenya"
+						},
+						{
+							"value": "Kiribati"
+						},
+						{
+							"value": "Kosovo"
+						},
+						{
+							"value": "Kuwait"
+						},
+						{
+							"value": "Kyrgyzstan"
+						},
+						{
+							"value": "Laos"
+						},
+						{
+							"value": "Latvia"
+						},
+						{
+							"value": "Lebanon"
+						},
+						{
+							"value": "Lesotho"
+						},
+						{
+							"value": "Liberia"
+						},
+						{
+							"value": "Libya"
+						},
+						{
+							"value": "Liechtenstein"
+						},
+						{
+							"value": "Lithuania"
+						},
+						{
+							"value": "Luxembourg"
+						},
+						{
+							"value": "Macedonia"
+						},
+						{
+							"value": "Madagascar"
+						},
+						{
+							"value": "Malawi"
+						},
+						{
+							"value": "Malaysia"
+						},
+						{
+							"value": "Maldives"
+						},
+						{
+							"value": "Mali"
+						},
+						{
+							"value": "Malta"
+						},
+						{
+							"value": "Marshall Islands"
+						},
+						{
+							"value": "Mauritania"
+						},
+						{
+							"value": "Mauritius"
+						},
+						{
+							"value": "Mexico"
+						},
+						{
+							"value": "Micronesia"
+						},
+						{
+							"value": "Moldova"
+						},
+						{
+							"value": "Monaco"
+						},
+						{
+							"value": "Mongolia"
+						},
+						{
+							"value": "Montenegro"
+						},
+						{
+							"value": "Morocco"
+						},
+						{
+							"value": "Mozambique"
+						},
+						{
+							"value": "Myanmar (Burma)"
+						},
+						{
+							"value": "Namibia"
+						},
+						{
+							"value": "Nauru"
+						},
+						{
+							"value": "Nepal"
+						},
+						{
+							"value": "Netherlands"
+						},
+						{
+							"value": "New Zealand"
+						},
+						{
+							"value": "Nicaragua"
+						},
+						{
+							"value": "Niger"
+						},
+						{
+							"value": "Nigeria"
+						},
+						{
+							"value": "North Korea"
+						},
+						{
+							"value": "Norway"
+						},
+						{
+							"value": "Oman"
+						},
+						{
+							"value": "Pakistan"
+						},
+						{
+							"value": "Palau"
+						},
+						{
+							"value": "Palestine"
+						},
+						{
+							"value": "Panama"
+						},
+						{
+							"value": "Papua New Guinea"
+						},
+						{
+							"value": "Paraguay"
+						},
+						{
+							"value": "Peru"
+						},
+						{
+							"value": "Philippines"
+						},
+						{
+							"value": "Poland"
+						},
+						{
+							"value": "Portugal"
+						},
+						{
+							"value": "Qatar"
+						},
+						{
+							"value": "Romania"
+						},
+						{
+							"value": "Russia"
+						},
+						{
+							"value": "Rwanda"
+						},
+						{
+							"value": "Saint Kitts and Nevis"
+						},
+						{
+							"value": "Saint Lucia"
+						},
+						{
+							"value": "Saint Vincent and the Grenadines"
+						},
+						{
+							"value": "Samoa"
+						},
+						{
+							"value": "San Marino"
+						},
+						{
+							"value": "Sao Tome and Principe"
+						},
+						{
+							"value": "Saudi Arabia"
+						},
+						{
+							"value": "Senegal"
+						},
+						{
+							"value": "Serbia"
+						},
+						{
+							"value": "Seychelles"
+						},
+						{
+							"value": "Sierra Leone"
+						},
+						{
+							"value": "Singapore"
+						},
+						{
+							"value": "Slovakia"
+						},
+						{
+							"value": "Slovenia"
+						},
+						{
+							"value": "Solomon Islands"
+						},
+						{
+							"value": "Somalia"
+						},
+						{
+							"value": "South Africa"
+						},
+						{
+							"value": "South Korea"
+						},
+						{
+							"value": "South Sudan"
+						},
+						{
+							"value": "Spain"
+						},
+						{
+							"value": "Sri Lanka"
+						},
+						{
+							"value": "Sudan"
+						},
+						{
+							"value": "Suriname"
+						},
+						{
+							"value": "Swaziland"
+						},
+						{
+							"value": "Sweden"
+						},
+						{
+							"value": "Switzerland"
+						},
+						{
+							"value": "Syria"
+						},
+						{
+							"value": "Taiwan"
+						},
+						{
+							"value": "Tajikistan"
+						},
+						{
+							"value": "Tanzania"
+						},
+						{
+							"value": "Thailand"
+						},
+						{
+							"value": "Timor-Leste"
+						},
+						{
+							"value": "Togo"
+						},
+						{
+							"value": "Tonga"
+						},
+						{
+							"value": "Trinidad and Tobago"
+						},
+						{
+							"value": "Tunisia"
+						},
+						{
+							"value": "Turkey"
+						},
+						{
+							"value": "Turkmenistan"
+						},
+						{
+							"value": "Tuvalu"
+						},
+						{
+							"value": "Uganda"
+						},
+						{
+							"value": "Ukraine"
+						},
+						{
+							"value": "United Arab Emirates (UAE)"
+						},
+						{
+							"value": "United Kingdom (UK)"
+						},
+						{
+							"value": "United States of America and Other Territories (USA)"
+						},
+						{
+							"value": "Uruguay"
+						},
+						{
+							"value": "Uzbekistan"
+						},
+						{
+							"value": "Vanuatu"
+						},
+						{
+							"value": "Vatican City (Holy See)"
+						},
+						{
+							"value": "Venezuela"
+						},
+						{
+							"value": "Vietnam"
+						},
+						{
+							"value": "Yemen"
+						},
+						{
+							"value": "Zambia"
+						},
+						{
+							"value": "Zimbabwe"
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MinLength",
+							"validationMessage": "Required.",
+							"validationValue": "2"
+						}
+					]
+				},
+				"qBirthState": {
+					"qIndex": 3,
+					"qLabel": "Birth State",
+					"qAnswerPresentation": "Dropdown",
+					"qIsHidden": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "sl-ui-width-auto ui-sm-12 slq-native-select",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "United States of America and Other Territories (USA)",
+									"itemName": "qBirthCountry"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						},
+						{
+							"value": "--"
+						},
+						{
+							"value": "AS"
+						},
+						{
+							"value": "GU"
+						},
+						{
+							"value": "MP"
+						},
+						{
+							"value": "PR"
+						},
+						{
+							"value": "VI"
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MinLength",
+							"validationMessage": "Required.",
+							"validationValue": "2"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupCitizenship": {
+				"qIndex": 1,
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false,
+				"qUSCitizen": {
+					"qIndex": 0,
+					"qLabel": "Are you a United States citizen?",
+					"qAnswerPresentation": "SelectButton",
+					"qIsMandatory": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qQuestionType": "String",
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					]
+				},
+				"qGreenCard": {
+					"qIndex": 1,
+					"qLabel": "Do you have Permanent Resident (Green Card) status?",
+					"qAnswerPresentation": "SelectButton",
+					"qQuestionType": "String",
+					"qIsHidden": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "False",
+									"itemName": "qUSCitizen"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupDL": {
+				"qIndex": 2,
+				"qIsHidden": false,
+				"qQuestionsLayout": "Responsive",
+				"qDriverLicenseNumber": {
+					"qIndex": 0,
+					"qLabel": "Driver's License Number",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-sm-12 ui-md-6",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "250"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "We use this information to confirm your identity. It may also be used if we need to order a record of your driving history to evaluate your application.",
+						"qTitle": "Why do you need my Driver License?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					}
+				},
+				"qDLState": {
+					"qIndex": 1,
+					"qLabel": "State of Issue",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-sm-12 ui-md-6 slq-native-select",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						},
+						{
+							"value": "AS"
+						},
+						{
+							"value": "GU"
+						},
+						{
+							"value": "MP"
+						},
+						{
+							"value": "PR"
+						},
+						{
+							"value": "VI"
+						}
+					],
+					"qPresentationRules": [
+					],
+					"qValidations": [
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupNoDL": {
+				"qIndex": 3,
+				"qQuestionsLayout": "TwelveColumns",
+				"qIsHidden": false,
+				"qNoDL": {
+					"qIndex": 0,
+					"qLabel": "I don't have a current Driver License",
+					"qQuestionType": "Boolean",
+					"qAnswerPresentation": "Checkbox",
+					"qIsHidden": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "ui-g-12",
+					"qAnswer": {
+						"value": false,
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": true,
+							"displayValue": "Yes"
+						},
+						{
+							"value": false,
+							"displayValue": "No"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "True",
+									"itemName": "",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qNoDLReason",
+									"itemKey": ""
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qNoDLReason",
+									"itemKey": ""
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "False",
+									"itemName": "qDriverLicenseNumber",
+									"itemKey": ""
+								}
+							]
+						},
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "",
+									"itemName": "qDriverLicenseNumber",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "",
+									"itemKey": ""
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "",
+									"itemKey": ""
+								}
+							]
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "You do not need a current, active license to continue the application. Your license status doesn't make you ineligible to apply.",
+						"qTitle": "Do I need a current, active license to apply?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					}
+				},
+				"qNoDLReason": {
+					"qIndex": 1,
+					"qLabel": "Select from the following:",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qAnswerPresentation": "Dropdown",
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-12",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "I do not have a Driver License due to a medical condition"
+						},
+						{
+							"value": "My Driver License was revoked"
+						},
+						{
+							"value": "I have never had a Driver License"
+						},
+						{
+							"value": "I did not renew my Driver License"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "I did not renew my Driver License",
+									"itemName": "",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "GroupOldDL"
+								}
+							]
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupOldDL": {
+				"qIndex": 4,
+				"qIsHidden": true,
+				"qQuestionsLayout": "FourColumns",
+				"qOldDriverLicenseNumber": {
+					"qIndex": 0,
+					"qLabel": "Old Driver's License Number (optional)",
+					"qAnswerPresentation": "Text",
+					"qIsHidden": false,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "250"
+						}
+					]
+				},
+				"qOldDLState": {
+					"qIndex": 1,
+					"qLabel": "Old Driver License State (optional) ",
+					"qAnswerPresentation": "Dropdown",
+					"qPresentationClasses": "slq-native-select",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": false,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						},
+						{
+							"value": "--"
+						},
+						{
+							"value": "AS"
+						},
+						{
+							"value": "GU"
+						},
+						{
+							"value": "MP"
+						},
+						{
+							"value": "PR"
+						},
+						{
+							"value": "VI"
+						}
+					],
+					"qValidations": [
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupAdditionalInfo": {
+				"qIndex": 5,
+				"qDescription": "###Additional Info",
+				"qIsHidden": false,
+				"qGender": {
+					"qIndex": 0,
+					"qLabel": "Please select your gender",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qAnswerPresentation": "SelectButton",
+					"qIsMandatory": true,
+					"qPresentationClasses": "iptiq-gender sl-ui-width-auto",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "M",
+							"displayValue": "Male",
+							"qIconUri": "/assets/img/Male_n.png",
+							"qSelectedIconUri": "/assets/img/Male_a.png"
+						},
+						{
+							"value": "F",
+							"displayValue": "Female",
+							"qIconUri": "/assets/img/Female_n.png",
+							"qSelectedIconUri": "/assets/img/Female_a.png"
+						}
+					]
+				},
+				"qFamilyStatus": {
+					"qIndex": 1,
+					"qLabel": "Please select your family status",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qAnswerPresentation": "SelectButton",
+					"qIsMandatory": true,
+					"qPresentationClasses": "iptiq-family-status sl-ui-width-auto",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Single",
+							"qIconUri": "/assets/img/Single_n.png",
+							"qSelectedIconUri": "/assets/img/Single_a.png",
+							"displayValue": "Single"
+						},
+						{
+							"value": "Couple",
+							"qIconUri": "/assets/img/Couple_n.png",
+							"qSelectedIconUri": "/assets/img/Couple_a.png",
+							"displayValue": "Couple"
+						},
+						{
+							"value": "Single with Kids",
+							"qIconUri": "/assets/img/Single_w_family_n.png",
+							"qSelectedIconUri": "/assets/img/Single_w_family_a.png",
+							"displayValue": "Single w/ Kids"
+						},
+						{
+							"value": "Couple with Kids",
+							"qIconUri": "/assets/img/Couple_w_family_n.png",
+							"qSelectedIconUri": "/assets/img/Couple_w_family_a.png",
+							"displayValue": "Couple w/ Kids"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupMailingAddress": {
+				"qIndex": 6,
+				"qDescription": "###Contact Info",
+				"qIsHidden": false,
+				"qQuestionsLayout": "Responsive",
+				"qSameAsResidenceAddress": {
+					"qIndex": 0,
+					"qLabel": "Same as Residence Address",
+					"qSelectAnswerFromAllowedAnswers": false,
+					"qAnswerPresentation": "Checkbox",
+					"qPresentationClasses": "ui-g-offset-4 ui-g-4",
+					"qAnswer": {
+						"value": false,
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qQuestionType": "Boolean",
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "False"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qMAddress"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qMAddress"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qMCity"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qMCity"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qMState"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qMState"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qMZipcode"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qMZipcode"
+								}
+							]
+						}
+					]
+				},
+				"qMAddress": {
+					"qIndex": 1,
+					"qLabel": "Mailing Street Address",
+					"qSelectAnswerFromAllowedAnswers": false,
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-8 ui-md-8 ui-sm-12",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "30"
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^([0-9a-zA-Z-',  ]*)$"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupCityStateZip": {
+				"qIndex": 7,
+				"qQuestionsLayout": "Responsive",
+				"qMCity": {
+					"qIndex": 0,
+					"qLabel": "City",
+					"qAnswerPresentation": "Text",
+					"qIsHidden": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "ui-g-4 ui-lg-4 ui-md-4 ui-sm-12",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "26",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "2",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				},
+				"qMState": {
+					"qIndex": 1,
+					"qLabel": "State",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "ui-lg-1 ui-md-1 ui-sm-12 slq-native-select",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						},
+						{
+							"value": "--"
+						},
+						{
+							"value": "AS"
+						},
+						{
+							"value": "GU"
+						},
+						{
+							"value": "MP"
+						},
+						{
+							"value": "PR"
+						},
+						{
+							"value": "VI"
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MinLength",
+							"validationMessage": "Required.",
+							"validationValue": "2"
+						}
+					]
+				},
+				"qMZipcode": {
+					"qIndex": 2,
+					"qLabel": "Zip Code",
+					"qAnswerPresentation": "Text",
+					"qIsHidden": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "ui-md-offset-1 ui-lg-offset-1 ui-g-2 ui-lg-2 ui-md-2 ui-sm-12",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "Pattern",
+							"validationValue": "^\\d{5}(\\-\\d{4})?$"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupContactInfo": {
+				"qIndex": 8,
+				"qIsHidden": false,
+				"qQuestionsLayout": "Responsive",
+				"qEmail": {
+					"qIndex": 0,
+					"qLabel": "Email Address",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qAnswerPlaceholder": "name@email.com",
+					"qPresentationClasses": "ui-g-4 ui-lg-4 ui-md-12 ui-sm-12",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "250",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "6",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+							"validationMessage": "Please enter a valid email address."
+						}
+					]
+				},
+				"qPhoneNumber": {
+					"qIndex": 1,
+					"qLabel": "Phone Number",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qAnswerPlaceholder": "000-000-0000",
+					"qTextMask": "999-999-9999",
+					"qPresentationClasses": "ui-g-4 ui-lg-4 ui-md-12 ui-sm-12",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qValidations": [
+						{
+							"validationType": "Pattern",
+							"validationValue": "^\\d{3}\\-?\\d{3}\\-?\\d{4}$"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupInsuranceHistory": {
+				"qIndex": 9,
+				"qDescription": "###Insurance History",
+				"qQuestionsLayout": "Vertical",
+				"qIsHidden": false,
+				"qPastDeclinesPostpones": {
+					"qLabel": "Have you ever had an application or reinstatement request for life, health or disability insurance declined or postponed?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qIsMandatory": false,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qIsHidden": false,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 0,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "Postponed means that during an insurance application process, you were advised coverage was not available for you at that time but you may re-apply in the future.",
+						"qTitle": "What does \"postponed\" mean?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					},
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "",
+									"itemKey": ""
+								}
+							]
+						},
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "True"
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetServerContextValue",
+									"actionValue": "True",
+									"itemName": "GroupInsuranceHistory",
+									"itemKey": "PastDeclineAnswer"
+								}
+							]
+						}
+					]
+				},
+				"qPreExistingPolicy": {
+					"qIndex": 1,
+					"qLabel": "Do you have any existing life insurance or annuity contracts in force with this company or any other company?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qIsMandatory": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "\"In force\" means you have an active life insurance policy or annuity contract with any company. This does not include any group insurance you may have through an employer or member organization.",
+						"qTitle": "What does \"in force\" mean?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					}
+				},
+				"qReplaceContract": {
+					"qLabel": "Will the policy that you are applying for replace, terminate, or change any life insurance policies or annuity contracts you have?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qIsHidden": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 2,
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "True",
+									"itemName": "qPreExistingPolicy"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					},
+					"PastDeclineAnswer": ""
+				}
+			},
+			"GroupOccupation": {
+				"qIndex": 10,
+				"qQuestionsLayout": "TwelveColumns",
+				"qDescription": "### Occupation Info",
+				"qIsHidden": false,
+				"qOccupation": {
+					"qLabel": "Employment Status",
+					"qAnswerPresentation": "Dropdown",
+					"qIsMandatory": true,
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Student",
+							"displayValue": ""
+						},
+						{
+							"value": "Currently Employed",
+							"displayValue": ""
+						},
+						{
+							"value": "Military",
+							"displayValue": ""
+						},
+						{
+							"value": "Unemployed",
+							"displayValue": ""
+						},
+						{
+							"value": "Stay at Home",
+							"displayValue": ""
+						},
+						{
+							"value": "Retired",
+							"displayValue": ""
+						},
+						{
+							"value": "Disabled",
+							"displayValue": ""
+						}
+					],
+					"qIndex": 0,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "Currently Employed"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qOccupationEmployed"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qOccupationEmployed"
+								}
+							]
+						},
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "Unemployed"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qOccupationUnemployed"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qOccupationUnemployed"
+								}
+							]
+						},
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "Stay at Home"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qOccupationStayAtHome"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qOccupationStayAtHome"
+								}
+							]
+						},
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "Military"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qOccupationMilitary1"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qOccupationMilitary1"
+								}
+							]
+						}
+					]
+				},
+				"qOccupationEmployed": {
+					"qIndex": 1,
+					"qLabel": "Select any that apply",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qAnswerPresentation": "Checkbox",
+					"qIsHidden": true,
+					"qIsAnswerMultivalued": true,
+					"qPresentationClasses": "ui-g-offset-1 ui-g-6",
+					"qAnswer": {
+						"value": [
+						],
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Job requires handling of explosives",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Bridge, dam, or reservoir construction",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Nuclear geophysical construction",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Work underground",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Radium and uranium mills",
+							"qIsExclusive": false
+						},
+						{
+							"value": "I am a professional athlete",
+							"qIsExclusive": false
+						},
+						{
+							"value": "None of the above",
+							"qIsExclusive": true
+						}
+					]
+				},
+				"qOccupationMilitary1": {
+					"qIndex": 2,
+					"qLabel": "Are you involved in any of the following military special forces?",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qAnswerPresentation": "Checkbox",
+					"qIsAnswerMultivalued": true,
+					"qPresentationClasses": "ui-g-offset-1 ui-g-6",
+					"qFieldsLayout": "Vertical",
+					"qAnswer": {
+						"value": [
+						],
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Army Rangers",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Delta Force",
+							"qIsExclusive": false
+						},
+						{
+							"value": "U. S. Army Special Forces (a.k.a. The Green Berets)",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Navy SEALs or Navy Special Warfare Development Group",
+							"qIsExclusive": false
+						},
+						{
+							"value": "Air Force Special Forces",
+							"qIsExclusive": false
+						},
+						{
+							"value": "None of the above",
+							"qIsExclusive": true
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnyAnswerValue",
+									"testValue": "None of the above",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qOccupationMilitary2",
+									"itemKey": ""
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qOccupationMilitary2",
+									"itemKey": ""
+								}
+							]
+						}
+					]
+				},
+				"qOccupationMilitary2": {
+					"qIndex": 3,
+					"qLabel": "Are you currently deployed or have you been notified of deployment in Afghanistan or Iraq? ",
+					"qQuestionType": "String",
+					"qIsHidden": true,
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 ui-g-6",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					]
+				},
+				"qOccupationUnemployed": {
+					"qIndex": 4,
+					"qLabel": "Is this a temporary layoff or seasonal unemployment of 6 months or less?",
+					"qQuestionType": "String",
+					"qIsHidden": true,
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 ui-g-6",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					]
+				},
+				"qOccupationStayAtHome": {
+					"qIndex": 5,
+					"qLabel": "Is there a wage earner in your household?",
+					"qQuestionType": "String",
+					"qIsHidden": true,
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 ui-g-6",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "Yes"
+						},
+						{
+							"value": "False",
+							"displayValue": "No"
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			}
+		},
+		"pgPrimaryBeneficiarySelect": {
+			"qIndex": 2,
+			"GroupPrimaryBeneficiarynumber": {
+				"qIndex": 0,
+				"qPBCount": {
+					"qIndex": 0,
+					"qLabel": "",
+					"qDescription": "",
+					"qQuestionType": "Integer",
+					"qAnswerPresentation": "PlusMinusSpinner",
+					"qAnswer": {
+						"value": 2
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxValue",
+							"validationValue": "6"
+						},
+						{
+							"validationType": "MinValue",
+							"validationValue": "1"
+						},
+						{
+							"validationType": "Step",
+							"validationValue": "1"
+						}
+					]
+				}
+			}
+		},
+		"pgPrimaryBeneficiary": {
+			"qIndex": 3,
+			"GroupLabel": {
+				"qIndex": 0,
+				"qLabel": "",
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false
+			},
+			"GroupPrimaryBeneficiary": {
+				"qQuestionsLayout": "Responsive",
+				"qIndex": 1,
+				"qLabel": "####Beneficiary",
+				"qGroupMayBeRepeated": true,
+				"qIsHidden": false,
+				"qMaxRepeatCount": 6,
+				"qMinRepeatCount": 1,
+				"qRemoveButtonPosition": "TopRight",
+				"qPresentationClasses": "iptiq-add-button2",
+				"qPBRelationshipToInsured": {
+					"qIndex": 0,
+					"qLabel": "Relationship to Insured",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qAnswerPresentation": "Dropdown",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": ""
+						},
+						{
+							"value": ""
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": "Spouse / Partner"
+						},
+						{
+							"value": "Parent"
+						},
+						{
+							"value": "Child"
+						},
+						{
+							"value": "Other family member"
+						},
+						{
+							"value": "Business partner"
+						},
+						{
+							"value": "Trust"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "Trust"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "True",
+									"itemName": "qPBFirstName"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "False",
+									"itemName": "qPBFirstName"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "True",
+									"itemName": "qPBLastName"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "False",
+									"itemName": "qPBLastName"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qPBName"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qPBName"
+								},
+								{
+									"actionType": "SetLabel",
+									"actionValue": "Date",
+									"itemName": "qPBDOB"
+								}
+							]
+						}
+					]
+				},
+				"qPBDOB": {
+					"qIndex": 1,
+					"qLabel": "Date of Birth",
+					"qQuestionType": "Date",
+					"qAnswerPresentation": "Picker",
+					"qIsMandatory": true,
+					"qAnswerPlaceholder": "MM/DD/YYYY",
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": "0001-01-01T00:00:00Z",
+							"localTimeOffsetMinutes": "",
+							"qServerContext": {
+							}
+						},
+						{
+							"value": "0001-01-01T00:00:00Z",
+							"localTimeOffsetMinutes": "",
+							"qServerContext": {
+							}
+						}
+					]
+				},
+				"qPBFirstName": {
+					"qIndex": 2,
+					"qLabel": "First Name",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qIsHidden": false,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": ""
+						},
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1",
+							"validationMessage": ""
+						}
+					]
+				},
+				"qPBLastName": {
+					"qIndex": 3,
+					"qLabel": "Last Name",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": ""
+						},
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				},
+				"qPBName": {
+					"qIndex": 4,
+					"qLabel": "Name",
+					"qAnswerPresentation": "Text",
+					"qIsHidden": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": "",
+							"qServerContext": {
+							}
+						},
+						{
+							"value": "",
+							"qServerContext": {
+							}
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "160",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters Only."
+						}
+					]
+				},
+				"qSameAsInsuredAddressPB": {
+					"qIndex": 5,
+					"qLabel": "Use my address",
+					"qSelectAnswerFromAllowedAnswers": false,
+					"qAnswerPresentation": "Checkbox",
+					"qPresentationClasses": "ui-g-offset-8 ui-g-4",
+					"qAnswer": [
+						{
+							"value": false
+						},
+						{
+							"value": false
+						}
+					],
+					"qQuestionType": "Boolean",
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "False"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qPBAddress"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qPBAddress"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qPBCity"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qPBCity"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qPBState"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qPBState"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qPBZipcode"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qPBZipcode"
+								}
+							]
+						}
+					]
+				},
+				"qPBAddress": {
+					"qIndex": 6,
+					"qLabel": "Address",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "sl-ui-width-100 ui-sm-12",
+					"qAnswer": [
+						{
+							"value": "",
+							"qServerContext": {
+							}
+						},
+						{
+							"value": "",
+							"qServerContext": {
+							}
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "30"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^([0-9a-zA-Z-',  ]*)$"
+						}
+					]
+				},
+				"qPBCity": {
+					"qIndex": 7,
+					"qLabel": "City",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-3 ui-md-3 ui-sm-12",
+					"qAnswer": [
+						{
+							"value": ""
+						},
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "26"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$"
+						}
+					]
+				},
+				"qPBState": {
+					"qIndex": 8,
+					"qLabel": "State",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-2 ui-md-2 ui-sm-4 slq-native-select",
+					"qAnswer": [
+						{
+							"value": ""
+						},
+						{
+							"value": ""
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						},
+						{
+							"value": "--"
+						},
+						{
+							"value": "AS"
+						},
+						{
+							"value": "GU"
+						},
+						{
+							"value": "MP"
+						},
+						{
+							"value": "PR"
+						},
+						{
+							"value": "VI"
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MinLength",
+							"validationMessage": "Required.",
+							"validationValue": "2"
+						}
+					]
+				},
+				"qPBZipcode": {
+					"qIndex": 9,
+					"qLabel": "Zip Code",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-3 ui-md-3 ui-sm-8",
+					"qAnswer": [
+						{
+							"value": ""
+						},
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "Pattern",
+							"validationValue": "^\\d{5}(\\-\\d{4})?$"
+						}
+					]
+				},
+				"qPBShare": {
+					"qIndex": 10,
+					"qLabel": "Share %",
+					"qQuestionType": "Double",
+					"qAnswerPresentation": "NumericText",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-3 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": 0.0
+						},
+						{
+							"value": 0.0
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxValue",
+							"validationValue": "100",
+							"validationMessage": "Share cannot exceed 100%"
+						}
+					],
+					"qRightAddons": [
+						{
+							"qLabel": "%"
+						}
+					]
+				},
+				"qAddButtonSettings": {
+					"qLabel": "Add Another Beneficiary"
+				}
+			}
+		},
+		"pgContingentBeneficiarySelect": {
+			"qIndex": 4,
+			"GroupContingentBeneficiaryNumber": {
+				"qIndex": 0,
+				"qCBCount": {
+					"qIndex": 0,
+					"qLabel": "",
+					"qDescription": "",
+					"qQuestionType": "Integer",
+					"qAnswerPresentation": "PlusMinusSpinner",
+					"qAnswer": {
+						"value": 0
+					},
+					"qValidations": [
+						{
+							"validationType": "MaxValue",
+							"validationValue": "6"
+						},
+						{
+							"validationType": "MinValue",
+							"validationValue": "0"
+						},
+						{
+							"validationType": "Step",
+							"validationValue": "1"
+						}
+					]
+				}
+			}
+		},
+		"pgContingentBeneficiary": {
+			"qIndex": 5,
+			"GroupLabel": {
+				"qIndex": 0,
+				"qLabel": "",
+				"qQuestionsLayout": "Responsive",
+				"qIsHidden": false
+			},
+			"GroupContingentBeneficiary": {
+				"qQuestionsLayout": "Responsive",
+				"qIndex": 1,
+				"qLabel": "####Beneficiary",
+				"qGroupMayBeRepeated": true,
+				"qIsHidden": false,
+				"qMinRepeatCount": 0,
+				"qMaxRepeatCount": 6,
+				"qRemoveButtonPosition": "TopRight",
+				"qPresentationClasses": "iptiq-add-button2",
+				"qCBRelationshipToInsured": {
+					"qIndex": 0,
+					"qLabel": "Relationship to Insured",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qIsMandatory": true,
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": "Spouse / Partner"
+						},
+						{
+							"value": "Parent"
+						},
+						{
+							"value": "Child"
+						},
+						{
+							"value": "Other family member"
+						},
+						{
+							"value": "Business partner"
+						},
+						{
+							"value": "Trust"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "Trust"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "True",
+									"itemName": "qCBFirstName"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "False",
+									"itemName": "qCBFirstName"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "True",
+									"itemName": "qCBLastName"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "False",
+									"itemName": "qCBLastName"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCBName"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCBName"
+								},
+								{
+									"actionType": "SetLabel",
+									"actionValue": "Date",
+									"itemName": "qCBDOB"
+								}
+							]
+						}
+					]
+				},
+				"qCBDOB": {
+					"qIndex": 1,
+					"qLabel": "Date of Birth",
+					"qQuestionType": "Date",
+					"qAnswerPresentation": "Picker",
+					"qIsMandatory": true,
+					"qAnswerPlaceholder": "MM/DD/YYYY",
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": "0001-01-01T00:00:00Z"
+						}
+					]
+				},
+				"qCBFirstName": {
+					"qIndex": 2,
+					"qLabel": "First Name",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				},
+				"qCBLastName": {
+					"qIndex": 3,
+					"qLabel": "Last Name",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "20",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters only."
+						}
+					]
+				},
+				"qCBName": {
+					"qIndex": 4,
+					"qLabel": "Name",
+					"qAnswerPresentation": "Text",
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-6 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "160",
+							"validationMessage": ""
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$",
+							"validationMessage": "Letters Only"
+						}
+					]
+				},
+				"qSameAsInsuredAddressCB": {
+					"qIndex": 5,
+					"qLabel": "Use my address",
+					"qSelectAnswerFromAllowedAnswers": false,
+					"qAnswerPresentation": "Checkbox",
+					"qPresentationClasses": "ui-g-offset-8 ui-g-4",
+					"qAnswer": [
+						{
+							"value": false
+						}
+					],
+					"qQuestionType": "Boolean",
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "False"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCBAddress"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCBAddress"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCBCity"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCBCity"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCBState"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCBState"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCBZipcode"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCBZipcode"
+								}
+							]
+						}
+					]
+				},
+				"qCBAddress": {
+					"qIndex": 6,
+					"qLabel": "Address",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "sl-ui-width-100 ui-sm-12",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "30"
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "1"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^([0-9a-zA-Z-',  ]*)$"
+						}
+					]
+				},
+				"qCBCity": {
+					"qIndex": 7,
+					"qLabel": "City",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-3 ui-md-3 ui-sm-12",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxLength",
+							"validationValue": "26"
+						},
+						{
+							"validationType": "MinLength",
+							"validationValue": "2"
+						},
+						{
+							"validationType": "Pattern",
+							"validationValue": "^[a-zA-Z' \\-]*$"
+						}
+					]
+				},
+				"qCBState": {
+					"qIndex": 8,
+					"qLabel": "State",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-2 ui-md-2 ui-sm-4  slq-native-select",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qAllowedAnswers": [
+						{
+							"value": ""
+						},
+						{
+							"value": "AK"
+						},
+						{
+							"value": "AL"
+						},
+						{
+							"value": "AR"
+						},
+						{
+							"value": "AZ"
+						},
+						{
+							"value": "CA"
+						},
+						{
+							"value": "CO"
+						},
+						{
+							"value": "CT"
+						},
+						{
+							"value": "DC"
+						},
+						{
+							"value": "DE"
+						},
+						{
+							"value": "FL"
+						},
+						{
+							"value": "GA"
+						},
+						{
+							"value": "HI"
+						},
+						{
+							"value": "IA"
+						},
+						{
+							"value": "ID"
+						},
+						{
+							"value": "IL"
+						},
+						{
+							"value": "IN"
+						},
+						{
+							"value": "KS"
+						},
+						{
+							"value": "KY"
+						},
+						{
+							"value": "LA"
+						},
+						{
+							"value": "MA"
+						},
+						{
+							"value": "MD"
+						},
+						{
+							"value": "ME"
+						},
+						{
+							"value": "MI"
+						},
+						{
+							"value": "MN"
+						},
+						{
+							"value": "MO"
+						},
+						{
+							"value": "MS"
+						},
+						{
+							"value": "MT"
+						},
+						{
+							"value": "NC"
+						},
+						{
+							"value": "ND"
+						},
+						{
+							"value": "NE"
+						},
+						{
+							"value": "NH"
+						},
+						{
+							"value": "NJ"
+						},
+						{
+							"value": "NM"
+						},
+						{
+							"value": "NV"
+						},
+						{
+							"value": "NY"
+						},
+						{
+							"value": "OH"
+						},
+						{
+							"value": "OK"
+						},
+						{
+							"value": "OR"
+						},
+						{
+							"value": "PA"
+						},
+						{
+							"value": "RI"
+						},
+						{
+							"value": "SC"
+						},
+						{
+							"value": "SD"
+						},
+						{
+							"value": "TN"
+						},
+						{
+							"value": "TX"
+						},
+						{
+							"value": "UT"
+						},
+						{
+							"value": "VA"
+						},
+						{
+							"value": "VT"
+						},
+						{
+							"value": "WA"
+						},
+						{
+							"value": "WI"
+						},
+						{
+							"value": "WV"
+						},
+						{
+							"value": "WY"
+						},
+						{
+							"value": "--"
+						},
+						{
+							"value": "AS"
+						},
+						{
+							"value": "GU"
+						},
+						{
+							"value": "MP"
+						},
+						{
+							"value": "PR"
+						},
+						{
+							"value": "VI"
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MinLength",
+							"validationMessage": "Required.",
+							"validationValue": "2"
+						}
+					]
+				},
+				"qCBZipcode": {
+					"qIndex": 9,
+					"qLabel": "Zip Code",
+					"qAnswerPresentation": "Text",
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-8 ui-lg-3 ui-md-3 ui-sm-8",
+					"qAnswer": [
+						{
+							"value": ""
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "Pattern",
+							"validationValue": "^\\d{5}(\\-\\d{4})?$"
+						}
+					]
+				},
+				"qCBShare": {
+					"qIndex": 10,
+					"qLabel": "Share",
+					"qQuestionType": "Double",
+					"qAnswerPresentation": "NumericText",
+					"qIsMandatory": true,
+					"qPresentationClasses": "ui-g-3 ui-sm-12 ui-md-6",
+					"qAnswer": [
+						{
+							"value": 0.0
+						}
+					],
+					"qValidations": [
+						{
+							"validationType": "MaxValue",
+							"validationValue": "100",
+							"validationMessage": "Share cannot exceed 100%"
+						}
+					],
+					"qRightAddons": [
+						{
+							"qLabel": "%"
+						}
+					]
+				},
+				"qAddButtonSettings": {
+					"qLabel": "Add Another Beneficiary"
+				}
+			}
+		},
+		"pgGreatWork": {
+			"qIndex": 6,
+			"GroupLabel": {
+				"qIndex": 0,
+				"qLabel": "##Great Work. ",
+				"qDescription": "#We will now move on to some questions about your personal history. "
+			}
+		},
+		"pgHonestyStatement1": {
+			"qIndex": 7,
+			"GroupHonestyStatement": {
+				"qDescription": "##Honesty Statement 1\r\rI declare that all of the statements and answers I provide in this application are true and complete to the best of my knowledge and belief.",
+				"qIndex": 0,
+				"qQuestionsLayout": "Responsive",
+				"qHonestyStatement": {
+					"qIndex": 0,
+					"qLabel": "I Agree",
+					"qQuestionType": "Boolean",
+					"qAnswerPresentation": "Checkbox",
+					"qIsMandatory": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-green-checkbox  iptiq-separator",
+					"qAnswer": {
+						"value": false,
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					}
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			}
+		},
+		"pgHonestyStatement2": {
+			"qIndex": 8,
+			"GroupProposedInsuredDeclaration": {
+				"qDescription": "##Honesty Statement 2\nI declare that I am the proposed insured that is applying for this life insurance policy.",
+				"qIndex": 0,
+				"qQuestionsLayout": "Responsive",
+				"qHonestyStatement2": {
+					"qIndex": 0,
+					"qLabel": "I Agree",
+					"qQuestionType": "Boolean",
+					"qAnswerPresentation": "Checkbox",
+					"qIsMandatory": true,
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-green-checkbox  iptiq-separator",
+					"qAnswer": {
+						"value": false,
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					}
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			}
+		},
+		"pgPersonalAndMedicalInfo": {
+			"qIndex": 9,
+			"GroupMedical1": {
+				"qIndex": 0,
+				"qLabel": "##Personal and Medical Information",
+				"qQuestionsLayout": "Vertical",
+				"qMedicalFacility": {
+					"qIndex": 0,
+					"qLabel": "Are you currently hospitalized, in a nursing facility, confined to a bed, or receiving hospice care?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qTerminalIllness": {
+					"qIndex": 1,
+					"qLabel": "Have you been diagnosed by a member of the medical profession as having a terminal condition (terminal condition means a medical condition resulting from injury or illness that is reasonably expected to result in the drastically limited life span of the Insured within 12 months or less)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "By member of the medical profession, we mean any person you are seeing for healthcare or medical advice.",
+						"qTitle": "What do you mean by \"qualified member of the medical profession\"?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCOVID": {
+					"qIndex": 2,
+					"qLabel": "In the past 5 years, have you tested positive for COVID-19 or self-isolated based on advice of a medical professional?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qIsHidden": false,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					},
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "True",
+									"itemName": "qCOVID"
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qCOVID"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCOVIDawaitingresult"
+								},
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False",
+									"itemName": "qCOVID30days"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCOVID30days"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True",
+									"itemName": "qCOVIDawaitingresult"
+								}
+							]
+						}
+					]
+				},
+				"qCOVID30days": {
+					"qIndex": 3,
+					"qLabel": "Has it been at least 30 days since you completed self-isolation and are considered fully recovered?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qIsHidden": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCOVIDawaitingresult": {
+					"qIndex": 4,
+					"qLabel": "Are you awaiting results of a test for COVID-19?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qIsHidden": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCOVIDhospitalization": {
+					"qIndex": 5,
+					"qLabel": "Were you hospitalized due to COVID-19?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qPresentationClasses": "iptiq-horizontal-yes-no",
+					"qIsHidden": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					},
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnswerValue",
+									"testValue": "True",
+									"itemName": "qCOVID30days"
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qCOVID30days"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					]
+				},
+				"qPresentationRules": [
+					{
+						"condition": [
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qMedicalFacility",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qTerminalIllness",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCOVID",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "IsHidden",
+								"testValue": "False",
+								"itemName": "qCOVID",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "NotEqual",
+								"itemAttribute": "ServerContextValue",
+								"testValue": "True",
+								"itemName": "GroupInsuranceHistory",
+								"itemKey": "PastDeclineAnswer"
+							}
+						],
+						"action": [
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupTobacco"
+							},
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupMedical2"
+							}
+						]
+					},
+					{
+						"condition": [
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qMedicalFacility",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qTerminalIllness",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "IsHidden",
+								"testValue": "True",
+								"itemName": "qCOVID",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "NotEqual",
+								"itemAttribute": "ServerContextValue",
+								"testValue": "True",
+								"itemName": "GroupInsuranceHistory",
+								"itemKey": "PastDeclineAnswer"
+							}
+						],
+						"action": [
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupTobacco"
+							},
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupMedical2"
+							}
+						]
+					}
+				],
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupTobacco": {
+				"qIndex": 1,
+				"qQuestionsLayout": "TwelveColumns",
+				"qIsHidden": true,
+				"qTobacco": {
+					"qIndex": 0,
+					"qLabel": "In the last 12 months, how often have you used tobacco or nicotine products including any electronic nicotine delivery systems such as e-cigarettes or vaping  (excluding celebratory cigar use less than 4 times a year)?",
+					"qAnswerPresentation": "Radio",
+					"qFieldsLayout": "Vertical",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Daily"
+						},
+						{
+							"value": "Only on the weekends"
+						},
+						{
+							"value": "A few times a year"
+						},
+						{
+							"value": "I have not used tobacco or nicotine products in the last 12 months"
+						},
+						{
+							"value": "I have never used tobacco or nicotine products"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qTobaccoType": {
+					"qIndex": 1,
+					"qLabel": "Please identify type of tobacco used:",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qIsAnswerMultivalued": true,
+					"qPresentationClasses": "iptiq-pills ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": [
+						],
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Cigarettes"
+						},
+						{
+							"value": "Cigar"
+						},
+						{
+							"value": "Pipe"
+						},
+						{
+							"value": "Nicotine Patch"
+						},
+						{
+							"value": "Nicotine Gum"
+						},
+						{
+							"value": "Other Smoking Cessation"
+						},
+						{
+							"value": "eCigarettes"
+						},
+						{
+							"value": "Hookah Pipe"
+						},
+						{
+							"value": "Chewing Tobacco"
+						},
+						{
+							"value": "Other Nicotine Product"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "NotEqual",
+									"itemAttribute": "AnswerValue",
+									"testValue": "I have not used tobacco or nicotine products in the last 12 months",
+									"itemName": "qTobacco"
+								},
+								{
+									"qOperator": "NotEqual",
+									"itemAttribute": "AnswerValue",
+									"testValue": "I have never used tobacco or nicotine products",
+									"itemName": "qTobacco"
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qTobacco"
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					]
+				},
+				"qTobaccoCigarettes": {
+					"qIndex": 2,
+					"qLabel": "How many packs of cigarettes do you smoke per day?",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "Less than 2 packs a day"
+						},
+						{
+							"value": "More than 2 packs a day"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnyAnswerValue",
+									"testValue": "Cigarettes",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					]
+				},
+				"qTobaccoCigar": {
+					"qIndex": 3,
+					"qLabel": "Advise number of cigars smoked per year:",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "1-2"
+						},
+						{
+							"value": "3-4"
+						},
+						{
+							"value": "5-6"
+						},
+						{
+							"value": ">6"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnyAnswerValue",
+									"testValue": "Cigar",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					]
+				},
+				"qTobaccoPipe": {
+					"qIndex": 4,
+					"qLabel": "Advise number of pipes smoked per year:",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "1-2"
+						},
+						{
+							"value": "3-4"
+						},
+						{
+							"value": "5-6"
+						},
+						{
+							"value": ">6"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnyAnswerValue",
+									"testValue": "Pipe",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								},
+								{
+									"actionType": "SetMandatory",
+									"actionValue": "True"
+								}
+							]
+						}
+					]
+				},
+				"qTobaccoHookahPipe": {
+					"qIndex": 5,
+					"qLabel": "How many time do you use the hookah pipe per month?",
+					"qAnswerPresentation": "Dropdown",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsHidden": true,
+					"qPresentationClasses": "ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "0-7 times"
+						},
+						{
+							"value": "8-15 times"
+						},
+						{
+							"value": "16 plus"
+						}
+					],
+					"qPresentationRules": [
+						{
+							"condition": [
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "AnyAnswerValue",
+									"testValue": "Hookah Pipe",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								},
+								{
+									"qOperator": "Equals",
+									"itemAttribute": "IsHidden",
+									"testValue": "False",
+									"itemName": "qTobaccoType",
+									"itemKey": ""
+								}
+							],
+							"action": [
+								{
+									"actionType": "SetHidden",
+									"actionValue": "False"
+								}
+							]
+						}
+					]
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupMedical2": {
+				"qIndex": 2,
+				"qQuestionsLayout": "TwelveColumns",
+				"qIsHidden": true,
+				"qOxygenUse": {
+					"qLabel": "Have you been prescribed oxygen by a medical professional ?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no sl-ui-width-100",
+					"qAcceptsRepeatedAnswerValues": false,
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 0,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qSurgeryTests": {
+					"qLabel": "In the past 5 years, have you been advised by a medical professional to have a medical procedure including surgery, a diagnostic test, or medical treatment of any kind which has not been done or, if completed, the results are not yet known, (other than for routine screening purposes or screening related to HIV/AIDS)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 1,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qADL": {
+					"qLabel": "Do you require assistance with any of the following activities of daily living:  walking, bathing, dressing, eating, toileting, getting in and out of a chair or bed, or control of bowel or bladder problems?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 2,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"Label21": {
+					"qIndex": 3,
+					"qLabel": "At any time, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qDescription": "At any time, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qQuestionType": "Markdown",
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qOrganTransplant": {
+					"qLabel": "Any condition requiring bone marrow, stem cell or organ transplant?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 4,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qDialysis": {
+					"qLabel": "Kidney disease requiring dialysis?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 5,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qAlzheimerS": {
+					"qLabel": "Alzheimer's disease, dementia, or mental incapacity?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 6,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qLouGehrigSDiseaseALS": {
+					"qLabel": "Lou Gehrig's Disease (ALS)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 7,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qHIVAIDS": {
+					"qLabel": "Human Immunodeficiency Virus (HIV), Acquired Immune Deficiency Syndrome (AIDS), or AIDS Related Complex (ARC)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": true,
+					"qIsHidden": false,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 8,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "It's used as part of the application process to customize your policy.  \rWhat if I am unsure of my medical condition?  \rPlease answer to the best of your ability. If more information is needed, a representative from our company may reach out to you to discuss additional details.",
+						"qTitle": "Why do you need my health information?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCongestiveHeartFailure": {
+					"qLabel": "Congestive heart failure or cardiomyopathy?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 9,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qHIVAIDSFL": {
+					"qLabel": "Have you tested positive for exposure to the HIV infection or been diagnosed by a member of the medical profession as having ARC or AIDS caused by the HIV infection or other sickness or condition derived from such infection?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 10,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "It's used as part of the application process to customize your policy.  \rWhat if I am unsure of my medical condition?  \rPlease answer to the best of your ability. If more information is needed, a representative from our company may reach out to you to discuss additional details.",
+						"qTitle": "Why do you need my health information?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					}
+				},
+				"qHIVAIDSCA": {
+					"qLabel": "Have you ever been diagnosed by a member of the medical profession with Acquired Immune Deficiency Syndrome (AIDS) or AIDS Related Complex (ARC)? ",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qIsMandatory": false,
+					"qIsHidden": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 11,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "It's used as part of the application process to customize your policy.  \rWhat if I am unsure of my medical condition?  \rPlease answer to the best of your ability. If more information is needed, a representative from our company may reach out to you to discuss additional details.",
+						"qTitle": "Why do you need my health information?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					}
+				},
+				"Label22": {
+					"qIndex": 12,
+					"qLabel": "Are you currently receiving treatment or been prescribed medication by a medical professional for diabetes that:",
+					"qDescription": "Are you currently receiving treatment or been prescribed medication by a medical professional for diabetes that:",
+					"qQuestionType": "Markdown",
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qDiabetesBefore40": {
+					"qLabel": "Was diagnosed by a medical professional before age 40? ",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 13,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qHeartAndDiabetes": {
+					"qLabel": "Is combined with any heart or circulatory disorder (other than high blood pressure) diagnosed by a medical professional?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 14,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qInsulinDosage": {
+					"qLabel": "Requires 40 or more units of insulin daily?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 15,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"Label23": {
+					"qIndex": 16,
+					"qLabel": "Within the past 12 months, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qDescription": "Within the past 12 months, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qQuestionType": "Markdown",
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qHeartDisease": {
+					"qLabel": "Heart attack, heart valve disorder, heart blockage, stroke, or Transient Ischemic Attack (TIA/mini stroke)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 17,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qLungDisease": {
+					"qLabel": "Lung disease (except controlled, mild asthma not requiring any hospitalization in the past 12 months)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 18,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCancer": {
+					"qLabel": "Any cancer (other than non-metastatic basal cell carcinoma or squamous cell carcinoma), or systemic lupus?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 19,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qLiverDisease": {
+					"qLabel": "Chronic pancreatitis, chronic hepatitis, or cirrhosis?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 20,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qPresentationRules": [
+					{
+						"condition": [
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qOxygenUse",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qSurgeryTests",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qADL",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qOrganTransplant",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qDialysis",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qAlzheimerS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLouGehrigSDiseaseALS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHIVAIDS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCongestiveHeartFailure",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qDiabetesBefore40",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHeartAndDiabetes",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qInsulinDosage",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHeartDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLungDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCancer",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLiverDisease",
+								"itemKey": ""
+							}
+						],
+						"action": [
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupMedical3"
+							},
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupFelonyHistoryMVR"
+							}
+						]
+					},
+					{
+						"condition": [
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qOxygenUse",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qSurgeryTests",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qADL",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qOrganTransplant",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qDialysis",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qAlzheimerS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLouGehrigSDiseaseALS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCongestiveHeartFailure",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qDiabetesBefore40",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHeartAndDiabetes",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qInsulinDosage",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHeartDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLungDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCancer",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLiverDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHIVAIDSCA",
+								"itemKey": ""
+							}
+						],
+						"action": [
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupMedical3"
+							},
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupFelonyHistoryMVR"
+							}
+						]
+					},
+					{
+						"condition": [
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qOxygenUse",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qSurgeryTests",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qADL",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qOrganTransplant",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qDialysis",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qAlzheimerS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLouGehrigSDiseaseALS",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHIVAIDSFL",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCongestiveHeartFailure",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qDiabetesBefore40",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHeartAndDiabetes",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qInsulinDosage",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qHeartDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLungDisease",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qCancer",
+								"itemKey": ""
+							},
+							{
+								"qOperator": "Equals",
+								"itemAttribute": "AnswerValue",
+								"testValue": "False",
+								"itemName": "qLiverDisease",
+								"itemKey": ""
+							}
+						],
+						"action": [
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupMedical3"
+							},
+							{
+								"actionType": "SetHidden",
+								"actionValue": "False",
+								"itemName": "GroupFelonyHistoryMVR"
+							}
+						]
+					}
+				],
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupMedical3": {
+				"qIndex": 3,
+				"qQuestionsLayout": "TwelveColumns",
+				"qIsHidden": true,
+				"Label31": {
+					"qIndex": 0,
+					"qLabel": "At any time, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qDescription": "At any time, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qQuestionType": "Markdown",
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qParkinsonSDisease": {
+					"qIndex": 1,
+					"qLabel": "Parkinson's disease?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qParalysis": {
+					"qLabel": "Any permanent paralysis or amputation caused by a disease?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 2,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qWheelchair": {
+					"qLabel": "Are you currently dependent on a wheelchair or motorized mobility device?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 3,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"Label32": {
+					"qIndex": 4,
+					"qLabel": "Within the past 24 months, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qDescription": "Within the past 24 months, have you been diagnosed, treated, or had surgery by a medical professional for any of the following:",
+					"qQuestionType": "Markdown",
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCirculatoryDisease": {
+					"qIndex": 5,
+					"qLabel": "Aneurysm, heart attack, any circulatory disorder (other than high blood pressure), stroke or Transient Ischemic Attack (TIA/mini stroke)?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qChronicKidneyDisease": {
+					"qIndex": 6,
+					"qLabel": "Chronic kidney disease?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qCancer24Months": {
+					"qLabel": "Any cancer (other than non-metastatic basal cell carcinoma or squamous cell carcinoma)?       ",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 7,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qNeuromuscularDisorder": {
+					"qLabel": "Neuromuscular disorder including, but not limited to, cerebral palsy, multiple sclerosis, muscular dystrophy? ",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 8,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qConnectiveTissueDisorder": {
+					"qLabel": "Any connective tissue disorder, ulcerative colitis, or Crohn's disease?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 9,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qPsychiatricCondition": {
+					"qLabel": "Any psychiatric condition requiring inpatient treatment?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 10,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			},
+			"GroupFelonyHistoryMVR": {
+				"qIndex": 4,
+				"qQuestionsLayout": "TwelveColumns",
+				"qIsHidden": true,
+				"Label33": {
+					"qIndex": 0,
+					"qLabel": "Within the past 24 months, have you:",
+					"qDescription": "Within the past 24 months, have you:",
+					"qQuestionType": "Markdown",
+					"qPresentationClasses": "sl-ui-width-100",
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qMovingViolations": {
+					"qLabel": "Plead guilty to or been convicted of more than 4 moving violations?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 1,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qDUI": {
+					"qLabel": "Plead guilty to or been convicted of driving under the influence more than once? ",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 2,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qSubstanceAbuse": {
+					"qLabel": "Received or been advised by a medical professional to seek medical treatment or counseling to reduce consumption  or been prescribed medication for alcohol or substance abuse?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 3,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qPendingCharge": {
+					"qLabel": "Plead guilty to or been convicted of a felony or have any currently pending charges?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 4,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qHelpDialog": {
+						"qHelpText": "Having a criminal record does not necessarily impact your eligibility. Each case is individually reviewed.",
+						"qTitle": "Will a criminal record impact my chances of getting approved for life insurance?",
+						"qWidth": 750,
+						"qFooterCloseButtonSettings": {
+							"qLabel": "CLOSE"
+						}
+					},
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qProbation": {
+					"qLabel": "Been on probation or parole?",
+					"qQuestionType": "String",
+					"qAnswerPresentation": "SelectButton",
+					"qDescription": "",
+					"qSelectAnswerFromAllowedAnswers": true,
+					"qPresentationClasses": "iptiq-horizontal-yes-no ui-g-offset-1 sl-ui-width-100",
+					"qIsMandatory": true,
+					"qAnswer": {
+						"value": "",
+						"qServerContext": {
+							"qQuestionUIState": {
+								"qIsHidden": false
+							}
+						}
+					},
+					"qIndex": 5,
+					"qAllowedAnswers": [
+						{
+							"value": "True",
+							"displayValue": "YES"
+						},
+						{
+							"value": "False",
+							"displayValue": "NO"
+						}
+					],
+					"qServerContext": {
+						"qLocation": ""
+					}
+				},
+				"qServerContext": {
+					"qGroupUIState": {
+						"qIsHidden": false
+					}
+				}
+			}
+		}
+	},
+	"questionnaireState": {
+		"sCurrentState": "Page 1",
+		"sStateTrace": [
+			""
+		],
+		"sIsFinalState": false,
+		"sForceNonInteractive": false
+	},
+	"url": "/questionnaire/?token=767a3a100-4cbe-4655-b330-9c5c96632cff",
+	"initialState": "IL",
+	"currentStage": "Basic Info"
+}

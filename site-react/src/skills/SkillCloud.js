@@ -5,6 +5,7 @@ import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid'; 
 import ProfileContext from '../context/ProfileContext';
 import SkillSearch from './SkillSearch';
+import PythonDs from '../pthonds/PythonDs';
 
 const useStyles= makeStyles( (theme)=> ({
   root: {
@@ -54,14 +55,14 @@ const SkillCloud = (props) =>{
 
   const getSkillChip = (item) => { 
     const chipClass= `${classes.chip} ${classes[item.experience]}`;
-    return (
+    return ( 
       <li> 
         <Chip   
             onClick = {() => handleSkillClick(item)}
             label={item.skill} 
             className={chipClass}
           />
-      </li>
+      </li> 
     );
   } 
   
@@ -74,7 +75,11 @@ const SkillCloud = (props) =>{
     justify="center"
     alignItems="center"> 
       <Grid item xs={12} sm={8}> 
+
+        {/* <PythonDs></PythonDs> */}
+
         <SkillSearch open={open} onClose={handleClose} searchTerm={selectedSkill}/> 
+
         <Paper component="ul" className={classes.root} elevation={0}>
             {data.skills.map((data) => { 
               return (

@@ -1,13 +1,10 @@
 import React from 'react';   
-import { Dialog, ListItemText, makeStyles, Typography } from '@material-ui/core';
+import { Button, Dialog, makeStyles, Typography } from '@material-ui/core';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'; 
+import ListItem from '@material-ui/core/ListItem'; 
 import MailOutlineIcon from '@material-ui/icons/MailOutline'; 
 import Card from '@material-ui/core/Card'; 
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions'; 
-import Avatar from '@material-ui/core/Avatar';
+import CardContent from '@material-ui/core/CardContent'; 
 import IconButton from '@material-ui/core/IconButton'; 
 import { red } from '@material-ui/core/colors'; 
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
@@ -42,9 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
   contactHeader: {
     fontSize: 20,
-    // color: 'white',
-    // backgroundColor: 'black'
-    borderBottom: 2
+    borderBottom: 2,
+    backgroundColor: 'antiquewhite'
   },
   actionsRoot: {
     // backgroundColor: 'aqua'
@@ -55,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500]
   },
+  label: {
+    // Aligns the content of the button vertically.
+    flexDirection: 'column'
+  },
 }));
 
 const Contact = (props) =>{  
@@ -64,6 +64,7 @@ const Contact = (props) =>{
   const handleClose = () =>{
     close();
   }
+ 
 
   return( 
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}> 
@@ -77,34 +78,59 @@ const Contact = (props) =>{
       <CardContent>
  
       <List>
-        <ListItem  >
-          <ListItemAvatar>
-            <Avatar variant="square" className={classes.square}>
-              <MailOutlineIcon  />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="charanp@gmail.com" />
+        <ListItem  > 
+            <Button
+            variant="contained"
+            color="primary"
+            size="large" 
+            className={classes.button}
+            onClick={()=>window.location.href = `mailto:charanp@gmail.com` }
+            startIcon={<MailOutlineIcon />}
+          >
+            charanp@gmail.com
+          </Button>
+        </ListItem>  
+
+        <ListItem  > 
+            <Button
+            variant="contained"
+            color="primary"
+            size="large" 
+            className={classes.button}
+            startIcon={<PhoneIphoneIcon />}
+          >
+            419-450-1795
+          </Button>
+        </ListItem>        
+
+        <ListItem  > 
+            <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={()=> window.open('https://github.com/harip/Resume/blob/master/format1/HARI_Resume.pdf') }
+            className={classes.button}
+            startIcon={<PictureAsPdfIcon />}
+          >
+            Resume
+          </Button>
         </ListItem>
 
-        <ListItem  >
-          <ListItemAvatar>
-            <Avatar variant="square" className={classes.square}>
-              <PhoneIphoneIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="419-450-1795" />
-        </ListItem>
+        <ListItem  > 
+            <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={()=> window.open('https://github.com/harip') }
+            className={classes.button}
+            startIcon={<GitHubIcon />}
+          >
+            Github/Projects
+          </Button>
+        </ListItem>        
       </List>
 
       </CardContent>
-      <CardActions disableSpacing className={classes.actionsRoot}>
-        <IconButton aria-label="share" target="_blank"  href="https://github.com/harip" rel="noopener">
-          <GitHubIcon />
-        </IconButton> 
-        <IconButton aria-label="share" target="_blank"  href="https://github.com/harip/Resume/blob/master/format1/HARI_Resume.pdf" rel="noopener">
-          <PictureAsPdfIcon />
-        </IconButton>              
-      </CardActions>
     </Card>
 
     </Dialog>

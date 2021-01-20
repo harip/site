@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "tags": [
+    {
+      "name": "custom-pythonds",
+      "path": "./custom-elements.js",
+      "properties": [
+        {
+          "name": "ngElementStrategy"
+        }
+      ]
+    }
+  ]
+}

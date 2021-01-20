@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';   
+import React, { useEffect } from 'react'; 
+import 'custom-elements';
 
 const PythonDs = () =>{ 
   useEffect(() => {
     document.title="Python Web Tree";
   }, []);
-
+ 
   return(   
-    <div>Python web tree</div>
+    <div>
+      <custom-pythonds></custom-pythonds> 
+    </div>
   );
 };
 

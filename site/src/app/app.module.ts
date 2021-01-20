@@ -36,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { createCustomElement } from '@angular/elements';
 
 @NgModule({
-  imports:      [ BrowserModule,
+  imports:      [ 
+    BrowserModule,
     FormsModule,  
     HttpClientModule,
     Routing,
@@ -44,7 +45,8 @@ import { createCustomElement } from '@angular/elements';
     CodemirrorModule,
     Ng2PageScrollModule.forRoot()
   ],
-  declarations: [ AppComponent,
+  declarations: [ 
+    AppComponent,
     ExtensionMethodComponent,
     ExtensionMethodSampleComponent,
     HomeComponent,
@@ -54,24 +56,30 @@ import { createCustomElement } from '@angular/elements';
     AboutComponent,
     RecipesComponent,
     PythonComponent,
-    PythonDsComponent,
     ThumbNailCardsComponent,
     DetailedCardComponent,
     ThumbNailImageCardsComponent,
-    DetailedImageCardComponent
+    DetailedImageCardComponent,
+    
+    PythonDsComponent
   ],
-  bootstrap:    [ AppComponent ],
-  providers:[PackageDataService,
+  // bootstrap:    [ AppComponent ],
+  providers:[
+    PackageDataService,
     MenuHelper,
     NugetService,
     NpmStatsService
-  ]
+  ],
+  entryComponents: [PythonDsComponent, PythonComponent]
 })
 export class AppModule { 
 
   constructor(private injector: Injector) {
     const PythonDsElement = createCustomElement(PythonDsComponent, {injector});
-    customElements.define('app-pythonds-element', PythonDsElement);
+    customElements.define('cs-pythonds', PythonDsElement);
+
+    const PythonElement = createCustomElement(PythonComponent, {injector});
+    customElements.define('cs-PythonElement', PythonDsElement);    
   }
 
   ngDoBootstrap() {}
