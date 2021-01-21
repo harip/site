@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper'; 
-import Chip from '@material-ui/core/Chip';
+import Paper from '@material-ui/core/Paper';  
 import Grid from '@material-ui/core/Grid'; 
 import ProfileContext from '../context/ProfileContext';
 import SkillSearch from './SkillSearch';
@@ -17,10 +16,21 @@ const useStyles= makeStyles( (theme)=> ({
     listStyle: 'none',
     padding: theme.spacing(0.5)  
   },
-  chip: {
-    margin: theme.spacing(0.1),
-    borderRadius: 0,
-    padding: 32
+  skillItem: {
+    alignSelf: 'center'
+  },
+  skillContainer: {
+    display: 'flex',
+    margin: '0.8px', 
+    paddingRight: 24, 
+    paddingLeft: 24,
+    backgroundColor: '#e0e0e0',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap', 
+    textOverflow: 'ellipsis',
+    cursor: 'pointer',
+    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+    height: 64, 
   },
   low : {
     fontSize: 15, 
@@ -54,14 +64,17 @@ const SkillCloud = (props) =>{
   }
 
   const getSkillChip = (item) => { 
-    const chipClass= `${classes.chip} ${classes[item.experience]}`;
+    const chipClass= `${classes.skillContainer} ${classes[item.experience]}`;
     return ( 
       <li> 
-        <Chip   
-            onClick = {() => handleSkillClick(item)}
-            label={item.skill} 
-            className={chipClass}
-          />
+        <div
+           onClick = {() => handleSkillClick(item)}
+           className={chipClass}
+        >
+          <div className={classes.skillItem}>
+          {item.skill}
+          </div>
+        </div>
       </li> 
     );
   } 
