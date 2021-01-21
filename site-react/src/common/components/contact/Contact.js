@@ -12,6 +12,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import CloseIcon from '@material-ui/icons/Close';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -84,7 +85,7 @@ const Contact = (props) =>{
             color="primary"
             size="large" 
             className={classes.button}
-            onClick={()=>window.location.href = `mailto:charanp@gmail.com` }
+            onClick={()=>window.location.href = 'mailto:charanp@gmail.com' }
             startIcon={<MailOutlineIcon />}
           >
             charanp@gmail.com
@@ -127,7 +128,20 @@ const Contact = (props) =>{
           >
             Github/Projects
           </Button>
-        </ListItem>        
+        </ListItem>     
+
+        <ListItem  > 
+            <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={()=> window.open('https://www.linkedin.com/in/charanp') }
+            className={classes.button}
+            startIcon={<LinkedInIcon />}
+          >
+            LinkedIn
+          </Button>
+        </ListItem>             
       </List>
 
       </CardContent>

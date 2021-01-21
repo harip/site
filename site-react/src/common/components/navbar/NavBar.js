@@ -67,7 +67,7 @@ const NavBar = (props) => {
           value={0}
           indicatorColor="primary"  
         >
-          <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" /> 
+          <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" onClick={(e)=>handleChange(e,0)}/> 
 
           <Hidden xsDown> 
           <Tab icon={<FindInPage />} onClick={(e)=>handleChange(e,1)} label="Skill Cloud"/>
