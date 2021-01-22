@@ -54,6 +54,11 @@ const NavBar = (props) => {
       return;
     }
 
+    if (value === 3) {
+      history.push('/projects');
+      return;
+    }
+
     return (
       <div>Coming soon!</div>
     );
@@ -70,9 +75,9 @@ const NavBar = (props) => {
           <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" onClick={(e)=>handleChange(e,0)}/> 
 
           <Hidden xsDown> 
-          <Tab icon={<FindInPage />} onClick={(e)=>handleChange(e,1)} label="Skill Cloud"/>
-          <Tab icon={<AssignmentInd />} onClick={(e)=>handleChange(e,2)} label="Resume"/> 
-          <Tab icon={<DynamicFeedIcon />} onClick={(e)=>handleChange(e,3)} label="Projects"/>  
+            <Tab icon={<FindInPage />} onClick={(e)=>handleChange(e,1)} label="Skill Cloud"/>
+            <Tab icon={<AssignmentInd />} onClick={(e)=>handleChange(e,2)} label="Resume"/> 
+            <Tab icon={<DynamicFeedIcon />} onClick={(e)=>handleChange(e,3)} label="Projects"/>  
           </Hidden>
 
           <Hidden smUp>    
