@@ -68,7 +68,7 @@ export default function Projects() {
   const getProjectCard = () =>{
       return (
         <Grid item xs={12}  sm={6} > 
-            <div onClick={()=>alert('test')} className={classes.card}>
+            <div onClick={()=>window.open('https://g-math.netlify.app')} className={classes.card}>
                 <Card  >
                 <CardHeader
                     className={classes.contactHeader}
@@ -105,8 +105,8 @@ export default function Projects() {
         alignItems="center"
     >
         {getProjectCard()}
-        {getProjectCard()}
-        {getProjectCard()}
+
+        <div>...</div>
     </Grid>       
 
   );

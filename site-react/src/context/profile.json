@@ -226,6 +226,7 @@
     { "id": 33, "skill": "Cloud Functions", "experience": "low" },
     { "id": 34, "skill": "Nodejs", "experience": "med" },
     { "id": 35, "skill": "Jest", "experience": "high" },
-    { "id": 36, "skill": "Karma", "experience": "med" }
+    { "id": 36, "skill": "Karma", "experience": "med" },
+    { "id": 37, "skill": "Knockout", "experience": "high" }
   ]
 }
