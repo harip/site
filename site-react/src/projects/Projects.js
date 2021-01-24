@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography'; 
 import LaunchIcon from '@material-ui/icons/Launch';
 import ProfileContext from '../context/ProfileContext';
+import { Badge, withStyles } from '@material-ui/core';
 
 const useStyles= makeStyles( (theme)=> ({
   root: {
@@ -56,8 +57,19 @@ const useStyles= makeStyles( (theme)=> ({
     card: {
       marginRight: 5,
       marginBottom: 5
-  }
+  },
+  badge: {
+    borderRadius: 5
+  },
 }));
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -40, 
+    top: -5,
+    borderRadius: 5
+  },
+}))(Badge);
 
 const Projects = (props) =>{
   const data = useContext(ProfileContext);
@@ -67,32 +79,42 @@ const Projects = (props) =>{
     document.title="Personal Projects";
   }, []);  
 
+  const cardTitle = (item) => {
+    return (
+      <div> 
+        <StyledBadge badgeContent={item.language} color="primary"> 
+          <Typography>{item.title}</Typography>
+        </StyledBadge>
+      </div>
+    );
+  }
+
   const getSkillChip = (item) => {  
     return ( 
       <li>  
-              <div onClick={()=>window.open(item.url)} className={classes.card}>
-                 <Card  >
-                 <CardHeader
-                    className={classes.contactHeader}
-                    title={item.title} 
-                    action={
-                        <IconButton aria-label="launch-app">
-                        <LaunchIcon />
-                        </IconButton>
-                    }
-                /> 
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                    {item.description}
-                    </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                    {/* <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                    </IconButton>   */}
-                </CardActions> 
-                </Card>
-            </div> 
+        <div onClick={()=>window.open(item.url)} className={classes.card}>
+          <Card  > 
+            <CardHeader
+              className={classes.contactHeader}
+              title={cardTitle(item)} 
+              action={
+                <IconButton aria-label="launch-app">
+                  <LaunchIcon />
+                </IconButton>
+              }
+          /> 
+          <CardContent>
+              <Typography variant="body2" color="textSecondary" component="p">
+              {item.description}
+              </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+              {/* <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+              </IconButton>   */}
+          </CardActions> 
+          </Card>
+        </div> 
       </li> 
     );
   } 
