@@ -228,5 +228,11 @@
     { "id": 35, "skill": "Jest", "experience": "high" },
     { "id": 36, "skill": "Karma", "experience": "med" },
     { "id": 37, "skill": "Knockout", "experience": "high" }
+  ],
+  "projects": [
+    { "id":0, "title": "gMath", "description": "tiny math app created for my kid using React and Redux", "url":"https://g-math.netlify.app", "github":"" },
+    { "id":1, "title": "Python Coding Conventions", "description": "Visual Studio Code extension for implementing python conventions", "url":"https://marketplace.visualstudio.com/items?itemName=igress.python-coding-conventions", "github":"" },
+    { "id":2, "title": "Print Class Instance", "description": "Reflection methods created for extracting C# class properties created using C#", "url":"https://www.nuget.org/packages/PrintClassInstance", "github":"" },
+    { "id":3, "title": "Custom Data Structure", "description": "Custom tree data structure created in python and is used to represent a HTML DOM structure", "url":"https://github.com/harip/python-html-ml", "github":"" }
   ]
 }
