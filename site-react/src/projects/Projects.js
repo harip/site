@@ -1,5 +1,5 @@
 
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';  
 import Grid from '@material-ui/core/Grid';  
@@ -61,24 +61,13 @@ const useStyles= makeStyles( (theme)=> ({
 
 const Projects = (props) =>{
   const data = useContext(ProfileContext);
-  const classes = useStyles(); 
-  const [selectedSkill, setSelectedSkill] = useState('');  
-  const [open, setOpen] = useState(false);
+  const classes = useStyles();   
 
   useEffect(() => {
     document.title="Personal Projects";
-  }, []);
+  }, []);  
 
-  const handleSkillClick = (item)=>{ 
-    setOpen(true);
-  };
-
-  const handleClose = () => { 
-    setOpen(false);
-  }
-
-  const getSkillChip = (item) => { 
-    const chipClass= `${classes.skillContainer} ${classes['high']}`;
+  const getSkillChip = (item) => {  
     return ( 
       <li>  
               <div onClick={()=>window.open(item.url)} className={classes.card}>

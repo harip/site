@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid'; 
 import ProfileContext from '../context/ProfileContext';
 import SkillSearch from './SkillSearch';
-import PythonDs from '../pthonds/PythonDs';
+// import PythonDs from '../pthonds/PythonDs';
 
 const useStyles= makeStyles( (theme)=> ({
   root: {
