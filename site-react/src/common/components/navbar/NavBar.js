@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; 
-import { Tab } from '@material-ui/core';
+import { Tab, Typography } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs'; 
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import FindInPage from '@material-ui/icons/FindInPage';
@@ -13,7 +13,7 @@ import Contact from '../contact/Contact';
 import Hidden from '@material-ui/core/Hidden'; 
 import SwipeableTemporaryDrawer from './SwipeableTemporaryDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton'; 
+import IconButton from '@material-ui/core/IconButton';  
 
 const useStyles = makeStyles({
   initials: {
@@ -29,6 +29,9 @@ const useStyles = makeStyles({
   },
   selectedTab: {
     borderBottom: '7px solid blue'
+  },
+  mobileDisplayMenu : {
+    margin: 'auto',
   }
 });
 
@@ -42,6 +45,16 @@ const NavBar = (props) => {
   const handleContactClose = () => {
     setopenContact(false);
   };
+
+  const menuText = () => {
+    if (selTab === 1) {
+      return 'Skills';
+    }
+    if (selTab === 2) {
+      return 'Resume';
+    }
+    return 'Projects'
+  }
 
   const handleChange = (event,value) => { 
     setSelTab(value);
@@ -104,6 +117,9 @@ const NavBar = (props) => {
           </Hidden>
 
           <Hidden smUp>    
+            <div className={classes.mobileDisplayMenu}>
+              <Typography variant="h6">{menuText()}</Typography>
+            </div>
             <IconButton className={classes.mobileMenuLoc} onClick={()=>settoggleMenu(!toggleMenu)} color="primary" >
               <MenuIcon  className={classes.mobileMenu}/>
             </IconButton> 
