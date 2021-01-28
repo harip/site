@@ -6,15 +6,18 @@ import Projects from './projects/Projects';
 import PythonDs from './pthonds/PythonDs';
 import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
+import FloatingActionButtonSize from './common/components/feedback/FloatingActionButtonSize'; 
 
 const App = () => {
   return (
     <HashRouter  >
       <NavBar />  
+      <FloatingActionButtonSize/> 
       <Route path="/" exact component={SkillCloud} />
-      <Route path="/resume" exact component={Resume} /> 
-      <Route path="/projects" exact component={Projects} />
-      <Route path="/pythonds" exact component={PythonDs} /> 
+          <Route path="/resume" exact component={Resume} /> 
+          <Route path="/projects" exact component={Projects} />
+          <Route path="/pythonds" exact component={PythonDs} />       
+ 
     </HashRouter>
   )
 };

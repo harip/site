@@ -93,7 +93,7 @@ const Contact = (props) =>{
         </ListItem>  
 
         <ListItem  > 
-            <Button
+          <Button
             variant="contained"
             color="primary"
             size="large" 
@@ -105,20 +105,20 @@ const Contact = (props) =>{
         </ListItem>        
 
         <ListItem  > 
-            <Button
+          <Button
             variant="contained"
             color="primary"
             size="large"
-            onClick={()=> window.open('https://github.com/harip/Resume/blob/master/format1/HARI_Resume.pdf') }
+            onClick={()=> window.open('https://github.com/harip/Resume/blob/master/format1/HARI_Resume.pdf?raw=true', '_blank') }
             className={classes.button}
             startIcon={<PictureAsPdfIcon />}
           >
             Resume
-          </Button>
+          </Button> 
         </ListItem>
 
         <ListItem  > 
-            <Button
+          <Button
             variant="contained"
             color="primary"
             size="large"
@@ -131,7 +131,7 @@ const Contact = (props) =>{
         </ListItem>     
 
         <ListItem  > 
-            <Button
+          <Button
             variant="contained"
             color="primary"
             size="large"
