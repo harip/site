@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'; 
 import List from '@material-ui/core/List'; 
@@ -20,11 +20,21 @@ const useStyles = makeStyles({
     borderBottom: 2,
     color: '#fff',
     backgroundColor: '#3f51b5'
+  },
+  selectedMenuItem: {
+    backgroundColor: 'antiquewhite'
   }
 });
 
 const  SwipeableTemporaryDrawer =(props)=> {
+  const [selMenu,setSelMenu]=useState(1);
   const classes = useStyles();
+
+  const handleMenuClick = (menuIndex) => {
+    setSelMenu(menuIndex);
+    props.onHandleChange(null,menuIndex);
+  }
+
   const list = () => (
     <div
       className={classes.list}
@@ -38,17 +48,17 @@ const  SwipeableTemporaryDrawer =(props)=> {
       </MuiDialogTitle>
 
       <List>
-        <ListItem button key={'Skill Cloud'} onClick={()=>props.onHandleChange(null,1)}>
+        <ListItem button key={'Skill Cloud'} onClick={()=>handleMenuClick(1)} className={`${ selMenu===1 ? classes.selectedMenuItem : ""}`}>
           <ListItemIcon><FindInPage /></ListItemIcon>
           <ListItemText primary="Skill Cloud" />
         </ListItem>
 
-        <ListItem button key={'Resume'} onClick={()=>props.onHandleChange(null,2)}>
+        <ListItem button key={'Resume'} onClick={()=>handleMenuClick(2)} className={`${ selMenu===2 ? classes.selectedMenuItem : ""}`}>
         <ListItemIcon><AssignmentInd /></ListItemIcon>
           <ListItemText primary="Resume" />
         </ListItem>
 
-        <ListItem button key={'Projects'} onClick={()=>props.onHandleChange(null,3)}>
+        <ListItem button key={'Projects'} onClick={()=>handleMenuClick(3)} className={`${ selMenu===3 ? classes.selectedMenuItem : ""}`}>
           <ListItemIcon> <DynamicFeedIcon /> </ListItemIcon>
           <ListItemText primary="Projects" />
         </ListItem>  
