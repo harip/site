@@ -27,19 +27,24 @@ const useStyles = makeStyles({
   mobileMenu: {
     fontSize: 45
   },
+  selectedTab: {
+    borderBottom: '7px solid blue'
+  }
 });
 
 const NavBar = (props) => {
   const [openContact, setopenContact] = useState(false);
   const history = useHistory();
   const classes = useStyles();  
-  const [toggleMenu, settoggleMenu] = useState(false)  
+  const [toggleMenu, settoggleMenu] = useState(false);
+  const [selTab, setSelTab] = useState(1);
   
   const handleContactClose = () => {
     setopenContact(false);
   };
 
   const handleChange = (event,value) => { 
+    setSelTab(value);
     if (value === 0) {
       setopenContact(true); 
       return;
@@ -70,14 +75,32 @@ const NavBar = (props) => {
       
         <Tabs 
           value={0}
+          inkbarstyle={{background: 'blue'}}
           indicatorColor="primary"  
         >
           <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" onClick={(e)=>handleChange(e,0)}/> 
 
           <Hidden xsDown> 
-            <Tab icon={<FindInPage />} onClick={(e)=>handleChange(e,1)} label="Skill Cloud"/>
-            <Tab icon={<AssignmentInd />} onClick={(e)=>handleChange(e,2)} label="Resume"/> 
-            <Tab icon={<DynamicFeedIcon />} onClick={(e)=>handleChange(e,3)} label="Projects"/>  
+            <Tab 
+              icon={<FindInPage />} 
+              onClick={(e)=>handleChange(e,1)} 
+              label="Skill Cloud"
+              className={`${ selTab===1 ? classes.selectedTab : ""}`}
+            />
+
+            <Tab 
+              icon={<AssignmentInd />} 
+              onClick={(e)=>handleChange(e,2)} 
+              label="Resume"
+              className={`${ selTab===2 ? classes.selectedTab : ""}`}
+            /> 
+
+            <Tab 
+              icon={<DynamicFeedIcon />} 
+              onClick={(e)=>handleChange(e,3)} 
+              label="Projects"
+              className={`${ selTab===3 ? classes.selectedTab : ""}`}
+            />  
           </Hidden>
 
           <Hidden smUp>    
