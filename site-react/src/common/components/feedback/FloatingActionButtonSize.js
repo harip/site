@@ -6,6 +6,7 @@ import NavigationIcon from '@material-ui/icons/Navigation';
 import Hidden from '@material-ui/core/Hidden'; 
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import getResume from '../../../apis/endpoints';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -34,6 +35,19 @@ const useStyles = makeStyles((theme) => ({
 export default function FloatingActionButtonSize() {
   const classes = useStyles();
 
+  const showResume = async () => {
+     await getResume();
+    
+    // if (window.navigator.msSaveOrOpenBlob) {
+    //   // IE11
+    //   window.navigator.msSaveOrOpenBlob(resume, `hari.pdf`);
+    // } else {
+    //   window.open(URL.createObjectURL(resume), '_blank');
+    // }
+
+    // debugger
+  }
+
   return (
     <React.Fragment>
 
@@ -45,6 +59,7 @@ export default function FloatingActionButtonSize() {
                   size="small"
                   color="primary"
                   aria-label="add" 
+                  onClick = { ()=> showResume() }
                 >
                   <CloudDownloadIcon className={classes.extendedIcon} />
                   Resume
@@ -74,6 +89,7 @@ export default function FloatingActionButtonSize() {
                   size="small"
                   color="primary"
                   aria-label="add"  
+                  onClick = { ()=> showResume() }
                 >
                   <PictureAsPdfIcon /> 
                 </Fab> 
