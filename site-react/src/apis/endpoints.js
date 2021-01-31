@@ -1,27 +1,13 @@
-const corsAnyWhere = 'https://cors-anywhere.herokuapp.com/';
-
+const corsAnyWhere = 'https://cors-anywhere.herokuapp.com/'; 
+ 
 const getResume = async () => {
-  const url = `${corsAnyWhere}https://github.com/harip/Resume/blob/master/format1/HARI_Resume.pdf?raw=true`;
+  const url = `${corsAnyWhere}https://github.com/harip/Resume/blob/master/format1/Hari_Resume_Base64.txt?raw=true`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error('error getting resume');
-  } 
-  
-  let resumeText =   await response.text();
-
-  debugger
-
-  let binaryString = btoa(encodeURIComponent(resumeText).replace(/%([0-9A-F]{2})/g,
-  function toSolidBytes(match, p1) {
-    // debugger
-    return String.fromCharCode('0x' + p1);
-  }));
-
-  // let binaryString = window.atob(resumeText);
-
-  // binaryString = decodeURIComponent(escape(window.atob( binaryString )));
-  
-  // const binaryString = window.atob(resumeText.replace(/[\n\r]/g, ''));
+  }  
+  let resumeText =   await response.text(); 
+  const binaryString = window.atob(resumeText);
 
   const isIEOrEdge = /msie\s|trident\/|edge\//i.test(window.navigator.userAgent);
   const b = new Uint8Array(binaryString.length);
@@ -41,9 +27,7 @@ const getResume = async () => {
     window.navigator.msSaveOrOpenBlob(file, `hari.pdf`);
   } else {
     window.open(URL.createObjectURL(file), '_blank');
-  }
-
-  // return file;
+  } 
 };
 
 export default getResume; 

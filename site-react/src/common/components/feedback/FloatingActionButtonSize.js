@@ -36,16 +36,7 @@ export default function FloatingActionButtonSize() {
   const classes = useStyles();
 
   const showResume = async () => {
-     await getResume();
-    
-    // if (window.navigator.msSaveOrOpenBlob) {
-    //   // IE11
-    //   window.navigator.msSaveOrOpenBlob(resume, `hari.pdf`);
-    // } else {
-    //   window.open(URL.createObjectURL(resume), '_blank');
-    // }
-
-    // debugger
+     await getResume(); 
   }
 
   return (
@@ -67,7 +58,7 @@ export default function FloatingActionButtonSize() {
               </div> 
             </div> 
 
-            <div className={classes.fabFeedback}> 
+            {/* <div className={classes.fabFeedback}> 
               <div className={classes.fabItem}>
                 <Fab
                   variant="extended"
@@ -78,7 +69,7 @@ export default function FloatingActionButtonSize() {
                   <FeedbackIcon /> 
                 </Fab> 
               </div> 
-            </div>            
+            </div>             */}
           </Hidden>
 
           <Hidden smUp> 
@@ -96,7 +87,7 @@ export default function FloatingActionButtonSize() {
               </div> 
             </div> 
 
-            <div className={classes.fabFeedback}> 
+            {/* <div className={classes.fabFeedback}> 
               <div className={classes.fabItem}>
                 <Fab
                   variant="extended"
@@ -107,7 +98,7 @@ export default function FloatingActionButtonSize() {
                   <FeedbackIcon /> 
                 </Fab> 
               </div> 
-            </div>            
+            </div>             */}
           </Hidden>
 
 
