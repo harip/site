@@ -6,13 +6,13 @@ import Projects from './projects/Projects';
 import PythonDs from './pthonds/PythonDs';
 import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
-import FloatingActionButtonSize from './common/components/feedback/FloatingActionButtonSize'; 
+import FloatingActions from './common/components/floatingactions/FloatingActions'; 
 
 const App = () => {
   return (
     <HashRouter  >
       <NavBar />  
-      <FloatingActionButtonSize/> 
+      <FloatingActions/> 
       <Route path="/" exact component={SkillCloud} />
           <Route path="/resume" exact component={Resume} /> 
           <Route path="/projects" exact component={Projects} />

@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function FloatingActionButtonSize() {
+const FloatingActions = () => {
   const classes = useStyles();
 
   const showResume = async () => {
@@ -117,3 +117,5 @@ export default function FloatingActionButtonSize() {
     </React.Fragment>
   );
 }
+
+export default FloatingActions;
