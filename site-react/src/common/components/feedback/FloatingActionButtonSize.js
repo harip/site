@@ -7,6 +7,7 @@ import Hidden from '@material-ui/core/Hidden';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import getResume from '../../../apis/endpoints';
+import onFeedbackSubmit from './feedback-service';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -39,9 +40,15 @@ export default function FloatingActionButtonSize() {
      await getResume(); 
   }
 
+  const feedback = async () => {
+    const response = await onFeedbackSubmit();
+    console.log(response);
+  }
+
   return (
     <React.Fragment>
 
+          {/* Not mobile  */}
           <Hidden xsDown> 
             <div className={classes.fabResume}> 
               <div className={classes.fabItem}>
@@ -58,20 +65,22 @@ export default function FloatingActionButtonSize() {
               </div> 
             </div> 
 
-            {/* <div className={classes.fabFeedback}> 
+            <div className={classes.fabFeedback}> 
               <div className={classes.fabItem}>
                 <Fab
                   variant="extended"
                   size="small"
                   color="primary"
                   aria-label="add" 
+                  onClick = { ()=> feedback() }
                 >
-                  <FeedbackIcon /> 
+                  <FeedbackIcon  /> 
                 </Fab> 
               </div> 
-            </div>             */}
+            </div>            
           </Hidden>
 
+          {/* Mobile */}
           <Hidden smUp> 
             <div className={classes.fabResume}> 
               <div className={classes.fabItem}>
@@ -87,18 +96,19 @@ export default function FloatingActionButtonSize() {
               </div> 
             </div> 
 
-            {/* <div className={classes.fabFeedback}> 
+            <div className={classes.fabFeedback}> 
               <div className={classes.fabItem}>
                 <Fab
                   variant="extended"
                   size="small"
                   color="primary"
                   aria-label="add" 
+                  onClick = { ()=> feedback() }
                 >
                   <FeedbackIcon /> 
                 </Fab> 
               </div> 
-            </div>             */}
+            </div>            
           </Hidden>
 
 
