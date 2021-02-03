@@ -13,6 +13,7 @@ const Feedback =  (props) => {
  
   const handleClose = (save) => {
     const data = { 
+      rating: '',
       comments: comment
     };
     close(save,data);

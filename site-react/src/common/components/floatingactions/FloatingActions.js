@@ -54,6 +54,9 @@ const FloatingActions = () => {
     // Save data  
     settoggleFeedbackForm(false);
 
+    if (!data || data.comments === ''){
+      return;
+    }
     await onFeedbackSubmit(data);
   }
 
