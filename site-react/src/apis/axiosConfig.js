@@ -2,5 +2,5 @@ import axios from 'axios';
 const corsAnyWhere = 'https://cors-anywhere.herokuapp.com/'; 
 
 export default axios.create({
-  baseURL: `http://localhost:55076`
+  baseURL: `${corsAnyWhere}https://harip-profile.netlify.app/.netlify/functions`
 });
