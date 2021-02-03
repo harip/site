@@ -9,14 +9,19 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 const Feedback =  (props) => {
   const { open, close} = props;
+  const [comment, setComment] = useState('');
  
   const handleClose = (save) => {
-    const data = {
-      rating: '4222',
-      comments: 'sdfsdfsdfsdfsd'
+    const data = { 
+      comments: comment
     };
     close(save,data);
+    setComment("");
   };
+
+  const handleChange = (e) => {
+    setComment(e.target.value);
+  }
 
   return (
     <div>
@@ -33,6 +38,8 @@ const Feedback =  (props) => {
             label="thoughts?"
             type="text"
             fullWidth
+            value={comment}
+            onChange={handleChange}
           />
         </DialogContent>
         <DialogActions>
