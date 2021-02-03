@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
-import NavigationIcon from '@material-ui/icons/Navigation';
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload'; 
 import Hidden from '@material-ui/core/Hidden'; 
 import FeedbackIcon from '@material-ui/icons/Feedback';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import getResume from '../../../apis/endpoints';
 import onFeedbackSubmit from './feedback-service';
+import Feedback from './Feedback';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -35,18 +35,31 @@ const useStyles = makeStyles((theme) => ({
 
 const FloatingActions = () => {
   const classes = useStyles();
+  const [toggleFeedbackForm, settoggleFeedbackForm] = useState(false)
 
   const showResume = async () => {
      await getResume(); 
   }
 
-  const feedback = async () => {
-    const response = await onFeedbackSubmit();
-    console.log(response);
+  const feedbackForm = async () => {
+    settoggleFeedbackForm(!toggleFeedbackForm);
+  }
+
+  const closeFeedbackForm = async (save,data) => {
+    if (!save){
+      settoggleFeedbackForm(false);
+      return;
+    }
+
+    // Save data  
+    settoggleFeedbackForm(false);
+
+    await onFeedbackSubmit(data);
   }
 
   return (
     <React.Fragment>
+          <Feedback open={toggleFeedbackForm} close = {closeFeedbackForm} />
 
           {/* Not mobile  */}
           <Hidden xsDown> 
@@ -72,7 +85,7 @@ const FloatingActions = () => {
                   size="small"
                   color="primary"
                   aria-label="add" 
-                  onClick = { ()=> feedback() }
+                  onClick = { ()=> feedbackForm() }
                 >
                   <FeedbackIcon  /> 
                 </Fab> 
@@ -103,7 +116,7 @@ const FloatingActions = () => {
                   size="small"
                   color="primary"
                   aria-label="add" 
-                  onClick = { ()=> feedback() }
+                  onClick = { ()=> feedbackForm() }
                 >
                   <FeedbackIcon /> 
                 </Fab> 
