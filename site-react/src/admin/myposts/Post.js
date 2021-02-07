@@ -7,6 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';  
 import Typography from '@material-ui/core/Typography'; 
+import PostEditor from './PostEditor';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -40,6 +41,18 @@ const Post = (props) => {
         );
     } 
 
+    const readOnly = () => {
+        return (
+            <div>I am ready only</div>
+        );
+    }
+
+    const editor = () => {
+        return (
+            <PostEditor/>
+        );
+    }
+
     const getSkillChip = (item) => {  
         return (  
             <div className={classes.card}>
@@ -50,7 +63,7 @@ const Post = (props) => {
                     /> 
                     <CardContent> 
                         <div id="container">
-                        {item.content}
+                            {editor()}
                         </div>
                     </CardContent>
                     <CardActions disableSpacing>
