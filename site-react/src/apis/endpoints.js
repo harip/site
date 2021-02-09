@@ -1,7 +1,7 @@
 const corsAnyWhere = 'https://cors-anywhere.herokuapp.com/'; 
  
 const getResume = async () => {
-  const url = `${corsAnyWhere}https://github.com/harip/Resume/blob/master/format1/Hari_Resume_Base64.txt?raw=true`;
+  const url = `https://github.com/harip/Resume/blob/master/format1/Hari_Resume_Base64.txt?raw=true`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error('error getting resume');
