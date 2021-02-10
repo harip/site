@@ -13,14 +13,15 @@ const useStyles= makeStyles( (theme)=> ({
       flexWrap: 'wrap',
       listStyle: 'none',
       padding: theme.spacing(0.5),
-      fontFamily: "monospace"  
+      fontFamily: "monospace",
+      background: '#fafafa'
     },
     paperStyle: {
         borderRadius: 0,
         marginRight: 10,
     },
     header : {
-      background: 'chartreuse',
+      background: '#ffa602',
       textAlign: 'left',
       padding: 6,
       fontSize: 16

@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
 
   fabResume: {
     marginTop: 10,
-    position: 'fixed',   
+    position: 'fixed',    
+    bottom: theme.spacing(8),
   },
 
   fabItem: {

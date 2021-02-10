@@ -17,9 +17,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles({
   initials: {
-    fontSize: 15,
-    background: 'black' ,
-    color: 'white'
+    fontSize: 15
   },
   mobileMenuLoc: {
     marginLeft: 'auto'
@@ -83,7 +81,7 @@ const NavBar = (props) => {
   };
  
   return ( 
-    <Paper square>
+    <div>
       <Contact open={openContact} close={handleContactClose}/> 
       
         <Tabs 
@@ -129,7 +127,7 @@ const NavBar = (props) => {
         </Tabs>   
         
 
-    </Paper>
+    </div>
   );
 }
 

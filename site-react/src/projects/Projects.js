@@ -21,7 +21,8 @@ const useStyles= makeStyles( (theme)=> ({
     alignContent: 'center',
     flexWrap: 'wrap',
     listStyle: 'none',
-    padding: theme.spacing(0.5)  
+    padding: theme.spacing(0.5),
+    background: '#fafafa'  
   },
   skillItem: {
     alignSelf: 'center'
@@ -52,7 +53,7 @@ const useStyles= makeStyles( (theme)=> ({
     contactHeader: {
     fontSize: 20,
     borderBottom: 2,
-    backgroundColor: 'antiquewhite'
+    backgroundColor: '#ffa602'
   },
     card: {
       marginRight: 5,
@@ -61,6 +62,9 @@ const useStyles= makeStyles( (theme)=> ({
   badge: {
     borderRadius: 5
   },
+  projectsPage: { 
+      background: '#fafafa'
+  }
 }));
 
 const StyledBadge = withStyles((theme) => ({
@@ -125,6 +129,7 @@ const Projects = (props) =>{
 
   return(  
     <Grid container direction="row"
+    className={classes.projectsPage}
     justify="center"
     alignItems="center"> 
       <Grid item xs={12} sm={8}>  

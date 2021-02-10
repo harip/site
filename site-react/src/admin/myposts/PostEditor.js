@@ -10,7 +10,6 @@ function PostEditor() {
 
   return <Editor editorState={editorState} onChange={setEditorState} />;
 }
-
-// ReactDOM.render(<PostEditor />, document.getElementById('container'));
+ 
 
 export default PostEditor;

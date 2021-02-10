@@ -14,7 +14,8 @@ const useStyles= makeStyles( (theme)=> ({
     alignContent: 'center',
     flexWrap: 'wrap',
     listStyle: 'none',
-    padding: theme.spacing(0.5)  
+    padding: theme.spacing(0.5),
+    background: '#ffa602'
   },
   skillItem: {
     alignSelf: 'center'
@@ -23,8 +24,7 @@ const useStyles= makeStyles( (theme)=> ({
     display: 'flex',
     margin: '0.8px', 
     paddingRight: 24, 
-    paddingLeft: 24,
-    backgroundColor: '#e0e0e0',
+    paddingLeft: 24, 
     overflow: 'hidden',
     whiteSpace: 'nowrap', 
     textOverflow: 'ellipsis',
@@ -40,6 +40,9 @@ const useStyles= makeStyles( (theme)=> ({
   },
   high : {
     fontSize: 45, 
+  },
+  skillPage: { 
+      background: '#fafafa'
   }
 }));
 
@@ -85,6 +88,7 @@ const SkillCloud = (props) =>{
 
   return(  
     <Grid container direction="row"
+    className= {classes.skillPage}
     justify="center"
     alignItems="center"> 
       <Grid item xs={12} sm={8}> 
