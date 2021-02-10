@@ -7,7 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';  
 import Typography from '@material-ui/core/Typography'; 
-import PostEditor from './PostEditor';
+import TextEditor from '../../common/components/editor/TextEditor';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -49,7 +49,7 @@ const Post = (props) => {
 
     const editor = () => {
         return (
-            <PostEditor/>
+            <TextEditor/>
         );
     }
 

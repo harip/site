@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "@tinymce/tinymce-react": "^3.10.1",
     "axios": "^0.21.1",
     "custom-elements": "file:../custom-elements/custom-elements-0.0.2.tgz",
     "draft-js": "^0.11.7",
