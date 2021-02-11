@@ -104,14 +104,17 @@ const Post = (props) => {
      * Invoke save method that will call the parent save
      * parent save will invoke the api
      */
-    const postSave = () => {
-      setTitleEdit(true);  
+    const postSave = () => { 
       // Get post data
       const postData = {
         title: postTitle,
         content: props.item.newContent
       }
-      savePost(props.item, postData);
+      savePost(props.item, postData, (status)=>{
+        if (status) {
+          setTitleEdit(true);  
+        }
+      });
     }
     
     /**

@@ -39,13 +39,17 @@ const Posts = () => {
    * Function that will be triggered when a post is changed
    * @param {*} item post that was changed
    */
-  const onSavePost = (currentPost, postData) => {
+  const onSavePost = (currentPost, postData, callback) => {
     console.log(currentPost);
     console.log(postData);
     // Save to database and if successful show that in frontend as well
     // If not show an error dialog to the user
-    currentPost.title = postData.title;
-    currentPost.content = postData.content;
+    const status = false;
+    callback(status);
+    if (status) {
+      currentPost.title = postData.title;
+      currentPost.content = postData.content;
+    } 
   }
 
   return(  

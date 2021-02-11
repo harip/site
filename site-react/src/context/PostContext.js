@@ -14,7 +14,7 @@ export const PostProvider = ({children}) => {
     }
     fetchData(); 
   }, [])
-
+  
   return (
     <PostContext.Provider value={postData}>
       {children}
