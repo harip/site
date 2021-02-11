@@ -8,7 +8,8 @@ import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
 import FloatingActions from './common/components/floatingactions/FloatingActions'; 
 
-const AddPostLazy = lazy(()=>import('./admin/myposts/MyPosts'));
+const LazyAdminPosts = lazy(()=>import('./admin/myposts/MyPosts'));
+const LazyPosts = lazy(()=>import('./myposts/ReadOnlyPosts'));
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
           <Route path="/resume" exact component={Resume} /> 
           <Route path="/projects" exact component={Projects} />
           <Route path="/pythonds" exact component={PythonDs} />     
-          <Route path="/myposts" exact component={AddPostLazy} />  
+          <Route path="/adminPosts" exact component={LazyAdminPosts} />  
+          <Route path="/posts" exact component={LazyPosts} />  
       </HashRouter> 
     </React.Fragment>
   )

@@ -23,18 +23,19 @@ const useStyles= makeStyles( (theme)=> ({
   }
 })); 
 
-const Posts = () => { 
-  const myPosts = useContext(PostContext);
-  const classes = useStyles();    
+const Posts = (props) => { 
+  const data = useContext(PostContext); 
+  const classes = useStyles();   
 
   useEffect(() => {
     document.title="Add Posts";
   }, []);  
-   
-  if (!myPosts){
+
+  if (!data){
     return <div>Loading...</div>
-  }
- 
+  }  
+
+  const { posts } = data; 
   /**
    * Function that will be triggered when a post is changed
    * @param {*} item post that was changed
@@ -56,7 +57,7 @@ const Posts = () => {
     <Grid container direction="row"
     justify="center"
     alignItems="center">       
-      {myPosts.map((item) => { 
+      {posts.map((item) => { 
         return(
           <Grid key={item._id} item xs={12} sm={9} className={classes.post}>   
             <Post item={item} savePost = {onSavePost}  key={item._id}/>

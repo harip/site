@@ -13,7 +13,7 @@ const ErrorDialog = (props) => {
     closeError();
   };
 
-  if (!errorDialogData || errorDialogData=={} || openError === false){
+  if (!errorDialogData || errorDialogData === {} || openError === false){
     return null;
   }
 

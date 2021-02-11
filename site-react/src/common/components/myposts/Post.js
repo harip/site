@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader'; 
@@ -10,6 +10,7 @@ import { ButtonGroup, IconButton } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';
+import PostContext from '../../../context/PostContext';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -36,13 +37,14 @@ const useStyles= makeStyles( (theme)=> ({
   }));
 
 const Post = (props) => {  
+    const contextValue = useContext(PostContext);   
     const classes = useStyles();
     const [postTitle, setPostTitle] = useState(props.item.title);
     const [titleEdit, setTitleEdit] = useState(true);
-
+ 
     // Parent events
     const {savePost} = props;
-
+ 
     /**
      * Function that renders the title markup edit mode or readonly mode
      * @param {*} item current item that is being edited
@@ -121,6 +123,12 @@ const Post = (props) => {
      * Get save and edit button markup for title
      */
     const titleCrudButtonMarkup = () => {
+      // Do we show edit functionality
+      const {view} = contextValue;
+      if (view !== 'admin') {
+        return null;
+      }
+
       return (
         <ButtonGroup 
           color="primary" 
