@@ -10,6 +10,7 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import FindInPage from '@material-ui/icons/FindInPage';
 import AssignmentInd from '@material-ui/icons/AssignmentInd';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
+import SubjectIcon from '@material-ui/icons/Subject';
 
 const useStyles = makeStyles({
   list: {
@@ -62,6 +63,11 @@ const  SwipeableTemporaryDrawer =(props)=> {
           <ListItemIcon> <DynamicFeedIcon /> </ListItemIcon>
           <ListItemText primary="Projects" />
         </ListItem>  
+
+        <ListItem button key={'Blog'} onClick={()=>handleMenuClick(4)} className={`${ selMenu===4 ? classes.selectedMenuItem : ""}`}>
+          <ListItemIcon> <SubjectIcon /> </ListItemIcon>
+          <ListItemText primary="Blog" />
+        </ListItem>          
       </List>
     </div>
   );

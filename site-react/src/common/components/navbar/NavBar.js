@@ -13,6 +13,7 @@ import Hidden from '@material-ui/core/Hidden';
 import SwipeableTemporaryDrawer from './SwipeableTemporaryDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';  
+import SubjectIcon from '@material-ui/icons/Subject';
 
 const useStyles = makeStyles({
   initials: {
@@ -50,7 +51,10 @@ const NavBar = (props) => {
     if (selTab === 2) {
       return 'Resume';
     }
-    return 'Projects'
+    if (selTab === 3) {
+      return 'Projects';
+    }
+    return 'Blog'
   }
 
   const handleChange = (event,value) => { 
@@ -71,6 +75,11 @@ const NavBar = (props) => {
 
     if (value === 3) {
       history.push('/projects');
+      return;
+    }
+
+    if (value === 4) {
+      history.push('/posts');
       return;
     }
 
@@ -111,6 +120,13 @@ const NavBar = (props) => {
               label="Projects"
               className={`${ selTab===3 ? classes.selectedTab : ""}`}
             />  
+
+            <Tab 
+              icon={<SubjectIcon />} 
+              onClick={(e)=>handleChange(e,4)} 
+              label="Blog"
+              className={`${ selTab===4 ? classes.selectedTab : ""}`}
+            />              
           </Hidden>
 
           <Hidden smUp>    
