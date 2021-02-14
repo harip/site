@@ -4,7 +4,8 @@ const defaultProviderValue = {
   user: 'Guest',
   token: '',
   modifyNameAndToken: ()=> {},
-  isLoggedIn: ()=> {}
+  isLoggedIn: ()=> {},
+  logout: ()=> {}
 };
 
 const UserContext = React.createContext(defaultProviderValue);
@@ -20,14 +21,23 @@ export const UserContextProvider = ({children}) => {
   };
 
   const isLoggedIn = () => {
-    return  name.token  && name.token !== "null"
+    const isAdminAndLoggedIn =  name.user.toUpperCase() === 'ADMIN' &&  name.token  && name.token !== "null"
+    return isAdminAndLoggedIn;
+  }
+
+  const logout = () => {
+    setName({ ...name, 
+      user: 'Guest',
+      token:  ''
+    }); 
   }
 
   return(
     <UserContext.Provider value={{
       ...name,
       modifyNameAndToken,
-      isLoggedIn
+      isLoggedIn,
+      logout
     }}>
       {children}
     </UserContext.Provider> 

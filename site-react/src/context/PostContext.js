@@ -3,16 +3,11 @@ import axiosCfg from '../apis/axiosConfig';
 
 const PostContext = React.createContext({
   // Default empty function
-  posts: null,
-  view: 'admin',
-  modifyView: () => {}
+  posts: null
 });
 
 export const PostProvider = ({children}) => {
   const [postData, setPostData] = useState(null);
-
-  const modifyView = (view,data) =>{ 
-  }
 
   useEffect(() => {
     // Make api call to get posts and set data
@@ -21,9 +16,7 @@ export const PostProvider = ({children}) => {
       
       // Payload
       const contextValue = {
-        posts: response.data,
-        view: children.props.view ? children.props.view : 'admin',
-        modifyView
+        posts: response.data
       }
 
       setPostData(contextValue);

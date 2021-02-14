@@ -9,8 +9,8 @@ import TextEditor from '../editor/TextEditor';
 import { ButtonGroup, IconButton } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
-import TextField from '@material-ui/core/TextField';
-import PostContext from '../../../context/PostContext';
+import TextField from '@material-ui/core/TextField'; 
+import UserContext from '../../../context/UserContext';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -36,8 +36,8 @@ const useStyles= makeStyles( (theme)=> ({
     }
   }));
 
-const Post = (props) => {  
-    const contextValue = useContext(PostContext);   
+const Post = (props) => {   
+    const userContextValue = useContext(UserContext);
     const classes = useStyles();
     const [postTitle, setPostTitle] = useState(props.item.title);
     const [titleEdit, setTitleEdit] = useState(true);
@@ -53,7 +53,7 @@ const Post = (props) => {
       return (
         <div>  
           {
-            !titleEdit 
+            !titleEdit
             ?  
               <TextField
                 autoFocus
@@ -112,23 +112,23 @@ const Post = (props) => {
         title: postTitle,
         content: props.item.newContent
       }
-      savePost(props.item, postData, (status)=>{
-        if (status) {
-          setTitleEdit(true);  
-        }
-      });
+      setTitleEdit(true);  
+      // savePost(props.item, postData, (status)=>{
+      //   if (status) {
+      //     setTitleEdit(true);  
+      //   }
+      // });
     }
     
     /**
      * Get save and edit button markup for title
      */
-    const titleCrudButtonMarkup = () => {
-      // Do we show edit functionality
-      const {view} = contextValue;
-      if (view !== 'admin') {
+    const titleCrudButtonMarkup = () => {  
+      if (!userContextValue.isLoggedIn()) {
         return null;
       }
 
+      // show edit functionality
       return (
         <ButtonGroup 
           color="primary" 

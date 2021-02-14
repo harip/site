@@ -105,9 +105,15 @@ const NavBar = (props) => {
       return;
     }
 
-    if (value === 999) {
+    if (value === 998) {
       // Login screen
       setShowSignIn(true);
+      return;
+    }
+
+    if (value === 999) {
+      // hide screen
+      userContextValue.logout();
       return;
     }
 
@@ -155,23 +161,15 @@ const NavBar = (props) => {
               onClick={(e)=>handleChange(e,4)} 
               label="Blog"
               className={`${ selTab===4 ? classes.selectedTab : ""}`}
-            />    
-
-            <Tab 
-              icon={<AccountCircleIcon />} 
-              onClick={(e)=>handleChange(e,5)}   
-              label="Edit Blog"
-              className={`${ selTab===5 ? classes.selectedTab : ""}`}
-            />   
-
+            />     
             {
               !userContextValue.isLoggedIn()
               ? 
                 <Tab 
                   icon={<AccountCircleIcon />} 
-                  onClick={(e)=>handleChange(e,999)}  
+                  onClick={(e)=>handleChange(e,998)}  
                   style={{marginLeft: 'auto'}}
-                  className={`${ selTab===999 ? classes.selectedTab : ""}`}
+                  className={`${ selTab===998 ? classes.selectedTab : ""}`}
                 />  
               :
                 <Tab 

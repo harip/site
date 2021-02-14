@@ -72,15 +72,10 @@ const  SwipeableTemporaryDrawer =(props)=> {
           <ListItemIcon> <SubjectIcon /> </ListItemIcon>
           <ListItemText primary="Blog" />
         </ListItem>     
-
-        <ListItem button key={'Edit Blog'} onClick={()=>handleMenuClick(5)} className={`${ selMenu===5 ? classes.selectedMenuItem : ""}`}>
-          <ListItemIcon> <SubjectIcon /> </ListItemIcon>
-          <ListItemText primary="Edit Blog" />
-        </ListItem>    
         {
           !userContextValue.isLoggedIn()
           ?
-            <ListItem button key={'Sign In'} onClick={()=>handleMenuClick(999)} className={`${ selMenu===999 ? classes.selectedMenuItem : ""}`}>
+            <ListItem button key={'Sign In'} onClick={()=>handleMenuClick(998)} className={`${ selMenu===998 ? classes.selectedMenuItem : ""}`}>
               <ListItemIcon> <AccountCircleIcon /> </ListItemIcon>
               <ListItemText primary="Sign In" />
             </ListItem>  

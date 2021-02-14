@@ -8,8 +8,7 @@ import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
 import FloatingActions from './common/components/floatingactions/FloatingActions'; 
 import { UserContextProvider } from './context/UserContext';
-
-const LazyAdminPosts = lazy(()=>import('./admin/myposts/MyPosts'));
+ 
 const LazyPosts = lazy(()=>import('./myposts/ReadOnlyPosts'));
 
 const App = () => {
@@ -22,8 +21,7 @@ const App = () => {
           <Route path="/resume" exact component={Resume} /> 
           <Route path="/projects" exact component={Projects} />
           <Route path="/pythonds" exact component={PythonDs} />   
-          <Route path="/posts" exact component={LazyPosts} />  
-          <Route path="/editposts" exact component={LazyAdminPosts} />  
+          <Route path="/posts" exact component={LazyPosts} />   
       </HashRouter> 
     </React.Fragment>
   )
