@@ -110,14 +110,20 @@ const Post = (props) => {
       // Get post data
       const postData = {
         title: postTitle,
-        content: props.item.newContent
-      }
+        content: props.item.newContent,
+        token: userContextValue.token
+      };
+
+      if (props.item["_id"]){
+        postData["_id"] = props.item["_id"];
+      } 
+      
       setTitleEdit(true);  
-      // savePost(props.item, postData, (status)=>{
-      //   if (status) {
-      //     setTitleEdit(true);  
-      //   }
-      // });
+      savePost(props.item, postData, (status)=>{
+        if (status) {
+          setTitleEdit(true);  
+        }
+      });
     }
     
     /**
