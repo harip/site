@@ -7,6 +7,7 @@ import PythonDs from './pthonds/PythonDs';
 import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
 import FloatingActions from './common/components/floatingactions/FloatingActions'; 
+import { UserContextProvider } from './context/UserContext';
 
 const LazyAdminPosts = lazy(()=>import('./admin/myposts/MyPosts'));
 const LazyPosts = lazy(()=>import('./myposts/ReadOnlyPosts'));
@@ -20,9 +21,9 @@ const App = () => {
           <Route path="/" exact component={SkillCloud} />
           <Route path="/resume" exact component={Resume} /> 
           <Route path="/projects" exact component={Projects} />
-          <Route path="/pythonds" exact component={PythonDs} />     
-          <Route path="/adminPosts" exact component={LazyAdminPosts} />  
+          <Route path="/pythonds" exact component={PythonDs} />   
           <Route path="/posts" exact component={LazyPosts} />  
+          <Route path="/editposts" exact component={LazyAdminPosts} />  
       </HashRouter> 
     </React.Fragment>
   )
@@ -30,11 +31,13 @@ const App = () => {
 
 export const profileApp = () => {
   return (
-    <ProfileProvider>
-      <Suspense fallback={<div>Loading...</div>}>
-      <App/>
-      </Suspense>
-    </ProfileProvider>
+    <UserContextProvider>
+      <ProfileProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <App/>
+        </Suspense>
+      </ProfileProvider>
+    </UserContextProvider>
   );
 };
 

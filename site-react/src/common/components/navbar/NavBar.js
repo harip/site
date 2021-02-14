@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom'; 
 import { Tab, Typography } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs'; 
@@ -14,6 +14,10 @@ import SwipeableTemporaryDrawer from './SwipeableTemporaryDrawer';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';  
 import SubjectIcon from '@material-ui/icons/Subject';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import SignIn from '../../../signin/SignIn';
+import UserContext from '../../../context/UserContext';
 
 const useStyles = makeStyles({
   initials: {
@@ -34,14 +38,20 @@ const useStyles = makeStyles({
 });
 
 const NavBar = (props) => {
+  const userContextValue = useContext(UserContext);
   const [openContact, setopenContact] = useState(false);
   const history = useHistory();
   const classes = useStyles();  
   const [toggleMenu, settoggleMenu] = useState(false);
   const [selTab, setSelTab] = useState(1);
+  const [showSignIn, setShowSignIn] = useState(false);
   
   const handleContactClose = () => {
     setopenContact(false);
+  };
+
+  const handleSignInClose = () => {
+    setShowSignIn(false);
   };
 
   const menuText = () => {
@@ -54,7 +64,13 @@ const NavBar = (props) => {
     if (selTab === 3) {
       return 'Projects';
     }
-    return 'Blog'
+    if (selTab === 4) {
+      return 'Blog';
+    }
+    if (selTab === 5) {
+      return 'Edit Blog';
+    } 
+    return ''
   }
 
   const handleChange = (event,value) => { 
@@ -83,6 +99,18 @@ const NavBar = (props) => {
       return;
     }
 
+    if (value === 5) {
+      // Login screen
+      history.push('/editposts');
+      return;
+    }
+
+    if (value === 999) {
+      // Login screen
+      setShowSignIn(true);
+      return;
+    }
+
     return (
       <div>Coming soon!</div>
     );
@@ -91,6 +119,7 @@ const NavBar = (props) => {
   return ( 
     <div>
       <Contact open={openContact} close={handleContactClose}/> 
+      <SignIn open={showSignIn} close={handleSignInClose}/>
       
         <Tabs 
           value={0}
@@ -99,7 +128,7 @@ const NavBar = (props) => {
         >
           <Tab icon={<ContactMailIcon style={{ fontSize: 40 }}/>} className={classes.initials} label="HARI" onClick={(e)=>handleChange(e,0)}/> 
 
-          <Hidden xsDown> 
+          <Hidden only={['xs','sm']}> 
             <Tab 
               icon={<FindInPage />} 
               onClick={(e)=>handleChange(e,1)} 
@@ -126,10 +155,35 @@ const NavBar = (props) => {
               onClick={(e)=>handleChange(e,4)} 
               label="Blog"
               className={`${ selTab===4 ? classes.selectedTab : ""}`}
-            />              
+            />    
+
+            <Tab 
+              icon={<AccountCircleIcon />} 
+              onClick={(e)=>handleChange(e,5)}   
+              label="Edit Blog"
+              className={`${ selTab===5 ? classes.selectedTab : ""}`}
+            />   
+
+            {
+              !userContextValue.isLoggedIn()
+              ? 
+                <Tab 
+                  icon={<AccountCircleIcon />} 
+                  onClick={(e)=>handleChange(e,999)}  
+                  style={{marginLeft: 'auto'}}
+                  className={`${ selTab===999 ? classes.selectedTab : ""}`}
+                />  
+              :
+                <Tab 
+                  icon={<ExitToAppIcon />} 
+                  onClick={(e)=>handleChange(e,999)}  
+                  style={{marginLeft: 'auto'}}
+                  className={`${ selTab===999 ? classes.selectedTab : ""}`}
+                />  
+            } 
           </Hidden>
 
-          <Hidden smUp>    
+          <Hidden only={['md','lg','xl']}>    
             <div className={classes.mobileDisplayMenu}>
               <Typography variant="h6">{menuText()}</Typography>
             </div>

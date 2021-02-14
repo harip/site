@@ -1,4 +1,4 @@
-import React, {useState} from 'react'; 
+import React, {useState,useContext} from 'react'; 
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'; 
 import List from '@material-ui/core/List'; 
@@ -10,7 +10,10 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import FindInPage from '@material-ui/icons/FindInPage';
 import AssignmentInd from '@material-ui/icons/AssignmentInd';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
-import SubjectIcon from '@material-ui/icons/Subject';
+import SubjectIcon from '@material-ui/icons/Subject'; 
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'; 
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import UserContext from '../../../context/UserContext';
 
 const useStyles = makeStyles({
   list: {
@@ -28,6 +31,7 @@ const useStyles = makeStyles({
 });
 
 const  SwipeableTemporaryDrawer =(props)=> {
+  const userContextValue = useContext(UserContext);
   const [selMenu,setSelMenu]=useState(1);
   const classes = useStyles();
 
@@ -67,7 +71,25 @@ const  SwipeableTemporaryDrawer =(props)=> {
         <ListItem button key={'Blog'} onClick={()=>handleMenuClick(4)} className={`${ selMenu===4 ? classes.selectedMenuItem : ""}`}>
           <ListItemIcon> <SubjectIcon /> </ListItemIcon>
           <ListItemText primary="Blog" />
-        </ListItem>          
+        </ListItem>     
+
+        <ListItem button key={'Edit Blog'} onClick={()=>handleMenuClick(5)} className={`${ selMenu===5 ? classes.selectedMenuItem : ""}`}>
+          <ListItemIcon> <SubjectIcon /> </ListItemIcon>
+          <ListItemText primary="Edit Blog" />
+        </ListItem>    
+        {
+          !userContextValue.isLoggedIn()
+          ?
+            <ListItem button key={'Sign In'} onClick={()=>handleMenuClick(999)} className={`${ selMenu===999 ? classes.selectedMenuItem : ""}`}>
+              <ListItemIcon> <AccountCircleIcon /> </ListItemIcon>
+              <ListItemText primary="Sign In" />
+            </ListItem>  
+          :
+          <ListItem button key={'Sign Out'} onClick={()=>handleMenuClick(999)} className={`${ selMenu===999 ? classes.selectedMenuItem : ""}`}>
+            <ListItemIcon> <ExitToAppIcon /> </ListItemIcon>
+            <ListItemText primary="Sign Out" />
+          </ListItem>  
+        } 
       </List>
     </div>
   );
