@@ -67,6 +67,9 @@ const SignIn =  (props) => {
     const {token}=authData;
     if (token && token !== "null" && token !== "" ) {
       userContextValue.modifyNameAndToken('admin',token);
+
+      // Set localstorage
+      localStorage.setItem('token',token);
     } else {
       userContextValue.modifyNameAndToken('guest',token);
     } 

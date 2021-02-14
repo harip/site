@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 
 const defaultProviderValue = {
   user: 'Guest',
@@ -12,6 +12,15 @@ const UserContext = React.createContext(defaultProviderValue);
 
 export const UserContextProvider = ({children}) => {
   const [name, setName] = useState(defaultProviderValue);
+
+  useEffect(() => {
+    let token = localStorage.getItem('token');
+    token = token ? token : "";
+    
+    if (token !== ""){
+      modifyNameAndToken('admin',token);
+    }
+  },[]); 
 
   const modifyNameAndToken = (user,token) => { 
     setName({ ...name, 
@@ -30,6 +39,7 @@ export const UserContextProvider = ({children}) => {
       user: 'Guest',
       token:  ''
     }); 
+    localStorage.setItem('token',"");
   }
 
   return(
