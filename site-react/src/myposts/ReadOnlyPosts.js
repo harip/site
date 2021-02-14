@@ -14,7 +14,7 @@ const ReadOnlyPosts = () => {
  
   return (
     <PostProvider>
-      <Posts view="readOnly"/> 
+      <Posts/> 
     </PostProvider>
   );
 }
