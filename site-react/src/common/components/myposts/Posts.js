@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Post from './Post';
 import PostContext from '../../../context/PostContext';
 import PostData from '../myposts/PostService';
+import SkeletonPost from '../skeletons/SkeletonPost';
 
 const useStyles= makeStyles( (theme)=> ({
   root: {
@@ -33,7 +34,10 @@ const Posts = (props) => {
   }, []);  
 
   if (!data){
-    return <div>Loading...</div>
+    // Return a ghost element
+    return (
+      <SkeletonPost/>
+    );
   }  
 
   const { posts } = data; 
