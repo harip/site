@@ -6,16 +6,7 @@ import PostContext from '../../../context/PostContext';
 import PostData from '../myposts/PostService';
 import SkeletonPost from '../skeletons/SkeletonPost';
 
-const useStyles= makeStyles( (theme)=> ({
-  root: {
-    margin: 10,
-    display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    flexWrap: 'wrap',
-    listStyle: 'none',
-    padding: theme.spacing(0.5)  
-  },  
+const useStyles= makeStyles( (theme)=> ({  
   card: {
     marginRight: 5,
     marginBottom: 5

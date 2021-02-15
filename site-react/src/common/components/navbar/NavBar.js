@@ -66,9 +66,6 @@ const NavBar = (props) => {
     }
     if (selTab === 4) {
       return 'Blog';
-    }
-    if (selTab === 5) {
-      return 'Edit Blog';
     } 
     return ''
   }
@@ -98,13 +95,7 @@ const NavBar = (props) => {
       history.push('/posts');
       return;
     }
-
-    if (value === 5) {
-      // Login screen
-      history.push('/editposts');
-      return;
-    }
-
+ 
     if (value === 998) {
       // Login screen
       setShowSignIn(true);
@@ -193,7 +184,7 @@ const NavBar = (props) => {
 
         </Tabs>   
         
-
+        <hr/>
     </div>
   );
 }
