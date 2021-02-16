@@ -1,0 +1,20 @@
+site-react
+  service workers, cache api to get all bundles
+  refactor multi context classes
+    refactor code
+    refactor context classes
+    check bundle size 
+  tailwindcss or 
+  spinner for post edit
+  "add new post" button
+    add error handling
+  edit post 
+    add error handling
+  add reaction button for posts
+  error message for signin failure
+  server side rendering
+  move to redux    
+
+site-functions
+  fix cors issue - when errors are occuring
+  move function to AWS free account
