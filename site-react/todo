@@ -1,5 +1,7 @@
 site-react
   service workers, cache api to get all bundles
+    long term cache
+    unique file names
   refactor multi context classes
     refactor code
     refactor context classes
