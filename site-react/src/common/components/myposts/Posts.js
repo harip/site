@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';    
 import Post from './Post';
 import PostContext from '../../../context/PostContext';
-import PostData from '../myposts/PostService';
+import PostData, {PatchComment} from '../myposts/PostService';
 import SkeletonPost from '../skeletons/SkeletonPost';
 
 const useStyles= makeStyles( (theme)=> ({  
@@ -49,7 +49,7 @@ const Posts = (props) => {
   }
 
   const onSaveComment = async (commentData,callback) => {
-    const commentSaveResponse = await PatchComment(postData); 
+    const commentSaveResponse = await PatchComment(commentData); 
     const status = commentSaveResponse['success']; 
     callback();
   }
