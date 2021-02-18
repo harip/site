@@ -24,3 +24,14 @@ site-react
 site-functions
   fix cors issue - when errors are occuring
   move function to AWS free account
+
+
+site architecture
+  what was the goal
+    create a skill cloud
+    resume page
+    tech blog
+    ability to edit and post blogs
+    
+
+folder structure

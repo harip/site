@@ -48,6 +48,12 @@ const Posts = (props) => {
     } 
   }
 
+  const onSaveComment = async (commentData,callback) => {
+    const commentSaveResponse = await PatchComment(postData); 
+    const status = commentSaveResponse['success']; 
+    callback();
+  }
+
   return(  
     <Grid container direction="row"
     justify="center"
@@ -55,7 +61,12 @@ const Posts = (props) => {
       {posts.map((item) => { 
         return(
           <Grid key={item._id} item xs={12} sm={9} className={classes.post}>   
-            <Post item={item} savePost = {onSavePost}  key={item._id}/>
+            <Post 
+              item={item} 
+              savePost={onSavePost} 
+              saveComment={onSaveComment}  
+              key={item._id}
+            />
           </Grid> 
         );
       })}       

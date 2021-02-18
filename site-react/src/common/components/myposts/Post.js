@@ -9,9 +9,10 @@ import TextEditor from '../editor/TextEditor';
 import { ButtonGroup, IconButton } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
-import TextField from '@material-ui/core/TextField'; 
-import CircularProgress from '@material-ui/core/CircularProgress';
+import TextField from '@material-ui/core/TextField';  
 import UserContext from '../../../context/UserContext';
+import InsertCommentIcon from '@material-ui/icons/InsertComment';
+import SpinnerButton from '../controls/SpinnerButton';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -32,12 +33,18 @@ const useStyles= makeStyles( (theme)=> ({
         marginRight: 5,
         marginBottom: 5
     },
+    cardActions: {
+      borderTop: 'solid 1px #f9f5ee'
+    },
     crudButtons : {
       marginLeft: 'auto'
     },
     wrapper: {
       margin: theme.spacing(1),
       position: 'relative',
+    },
+    commentBox: {
+      width: '100%'
     },
   }));
 
@@ -47,9 +54,13 @@ const Post = (props) => {
     const [postTitle, setPostTitle] = useState(props.item.title);
     const [titleEdit, setTitleEdit] = useState(true);
     const [loading, setLoading] = React.useState(true);
- 
+    const [showCommentBox, setShowCommentBox] = React.useState(false);
+
+    const [postComment, setPostComment] = useState('');
+    const [postCommentLoading, setPostCommentLoading] = useState(false);
+  
     // Parent events
-    const {savePost} = props;
+    const {savePost,saveComment} = props;
  
     /**
      * Function that renders the title markup edit mode or readonly mode
@@ -131,6 +142,30 @@ const Post = (props) => {
         }
       });
     }
+
+    const postSaveComment = () => {
+      setPostCommentLoading(true);
+      // Get post data
+      const commentData = { 
+        text: postComment
+      };
+
+      if (props.item["_id"]){
+        commentData["_id"] = props.item["_id"];
+      } 
+
+      saveComment(commentData, ()=> {
+        setPostCommentLoading(false);
+      })
+    }
+
+    /**
+     * Function to change post comment (controlled)
+     * @param {*} e comment event
+     */
+    const handleCommentChange = (e) => {
+      setPostComment(e.target.value);
+    } 
     
     /**
      * Get save and edit button markup for title
@@ -172,18 +207,29 @@ const Post = (props) => {
                             {renderContent()}
                         </div>
                     </CardContent>
-                    <CardActions disableSpacing>
-                        {/* <IconButton aria-label="add to favorites">
-                        <FavoriteIcon />
-                        </IconButton>   */}
+                    <CardActions disableSpacing className={classes.cardActions}>
+                        <IconButton aria-label="add comment" onClick={()=> setShowCommentBox(!showCommentBox)} >
+                          <InsertCommentIcon />
+                        </IconButton>  
+                        <TextField
+                          id="standard-multiline-flexible"
+                          label="add comment"
+                          className={classes.commentBox}
+                          multiline
+                          rowsMax={4} 
+                          value={postComment}
+                          onChange={handleCommentChange}
+                        />
+                        <SpinnerButton buttonProps = {{
+                          'text': 'Save',
+                          'onClick':  postSaveComment,
+                          'loading' : postCommentLoading
+                          }}
+                        />
                     </CardActions> 
                 </Card> 
-            </div>  
-            {
-              loading && 
-              <CircularProgress size={24} className={classes.buttonProgress} />
-            }
-            </div> 
+            </div>   
+          </div> 
         );
     }  
 
