@@ -22,12 +22,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 10,
     position: 'fixed',  
     bottom: theme.spacing(2),
+    zIndex: 999
   },
 
   fabResume: {
     marginTop: 10,
     position: 'fixed',    
     bottom: theme.spacing(8),
+    zIndex: 999
   },
 
   fabItem: {
@@ -112,7 +114,7 @@ const FloatingActions = () => {
             close = {closeFeedbackForm} />
 
           {/* Not mobile  */}
-          <Hidden xsDown> 
+          <Hidden xsDown > 
             <div className={classes.fabResume}> 
               <div className={classes.fabItem}>
                 <Fab

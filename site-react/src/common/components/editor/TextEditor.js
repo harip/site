@@ -22,7 +22,7 @@ const TextEditor = (props) => {
           'searchreplace visualblocks code fullscreen',
           'insertdatetime media table paste code codesample image'
         ],
-        toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify |  bullist numlist outdent indent | removeformat | codesample | image'
+        toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify |  bullist numlist outdent indent | removeformat | codesample | image | code'
       }}
       onEditorChange={handleEditorChange}
     />
