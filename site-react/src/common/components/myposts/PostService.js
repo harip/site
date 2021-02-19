@@ -6,7 +6,7 @@ const PostData = async (data) => {
 };
 
 export const PatchComment = async (data) => {
-  const response = await axiosConfig.patch('/postComment',data);
+  const response = await axiosConfig.patch('/post',data);
   return response.data;
 }
 
