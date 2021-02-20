@@ -10,15 +10,27 @@ export const PostProvider = ({children}) => {
   const [postData, setPostData] = useState(null);
 
   useEffect(() => {
+    let contextValue = {
+      posts: null,
+      error: false
+    };
+
     // Make api call to get posts and set data
     async function fetchData() { 
-      let response = await axiosCfg.get('/post'); 
-      
-      // Payload
-      const contextValue = {
-        posts: response.data
-      }
-
+      try {
+        let response = await axiosCfg.get('/post1'); 
+              
+        // Payload
+        contextValue = {
+          posts: response.data,
+          error: false
+        };
+      } catch(err) {
+        contextValue = {
+          posts: null,
+          error: true
+        };
+      } 
       setPostData(contextValue);
     }
     fetchData(); 

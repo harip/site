@@ -1,5 +1,5 @@
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'; 
 import { Tab, Typography } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs'; 
@@ -43,7 +43,7 @@ const NavBar = (props) => {
   const history = useHistory();
   const classes = useStyles();  
   const [toggleMenu, settoggleMenu] = useState(false);
-  const [selTab, setSelTab] = useState(1);
+  const [selTab, setSelTab] = useState(0);
   const [showSignIn, setShowSignIn] = useState(false);
   
   const handleContactClose = () => {
@@ -53,8 +53,8 @@ const NavBar = (props) => {
   const handleSignInClose = () => {
     setShowSignIn(false);
   };
-
-  const menuText = () => {
+ 
+  const menuText = () => { 
     if (selTab === 1) {
       return 'Skills';
     }

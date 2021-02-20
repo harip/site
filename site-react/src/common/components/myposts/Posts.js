@@ -21,13 +21,13 @@ const Posts = (props) => {
   const classes = useStyles();   
 
   useEffect(() => {
-    document.title="Add Posts";
+    document.title="Blog";
   }, []);  
 
-  if (!data){
+  if ( !data ||  (data && data.error)){
     // Return a ghost element
     return (
-      <SkeletonPost/>
+      <SkeletonPost responseData={data}/>
     );
   }  
 
