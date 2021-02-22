@@ -24,10 +24,12 @@ const Posts = (props) => {
     document.title="Blog";
   }, []);  
 
-  if ( !data ||  (data && data.error)){
+  const retryFetchPosts = () => data.retry();
+
+  if ( !data || (data && data.error) || (data && !data.posts)){
     // Return a ghost element
     return (
-      <SkeletonPost responseData={data}/>
+      <SkeletonPost responseData={data} retry={retryFetchPosts}/>
     );
   }  
 
@@ -49,8 +51,7 @@ const Posts = (props) => {
   }
 
   const onSaveComment = async (commentData,callback) => {
-    const commentSaveResponse = await PatchComment(commentData); 
-    const status = commentSaveResponse['success']; 
+    const commentSaveResponse = await PatchComment(commentData);  
     callback();
   }
 

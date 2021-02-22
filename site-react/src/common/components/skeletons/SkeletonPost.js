@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';    
 import { Button, Typography } from '@material-ui/core';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
-import RefreshIcon from '@material-ui/icons/Refresh';
+import RefreshIcon from '@material-ui/icons/Refresh'; 
 
 const useStyles= makeStyles( (theme)=> ({
     post: {
@@ -32,18 +32,16 @@ const useStyles= makeStyles( (theme)=> ({
   })); 
 
 const SkeletonPost = (props) =>{
-    const { responseData } = props; 
+    const { responseData, retry } = props; 
     const posts = [1,2,3];
-    const classes = useStyles();   
+    const classes = useStyles();    
 
-    const retryBlog = () => {
-
-    };
+    const retryBlog = () => retry();
 
     const retryElement = (item) => {
         if (item ===1 && responseData && responseData.error) {
             return(
-                <div className={classes.retry} onClick={()=>retryBlog}>
+                <div className={classes.retry} onClick={retryBlog}>
                     <Typography variant="label">Something went wrong </Typography>
                     <br/>
                     <SentimentVeryDissatisfiedIcon className={classes.sadIcon}/>

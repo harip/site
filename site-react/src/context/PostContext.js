@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from 'react'; 
 import axiosCfg from '../apis/axiosConfig';
 
-const PostContext = React.createContext({
+const defaultValue = {
   // Default empty function
-  posts: null
-});
+  posts: null,
+  error: false,
+  retry: ()=>{}
+};
+
+const PostContext = React.createContext(defaultValue);
 
 export const PostProvider = ({children}) => {
-  const [postData, setPostData] = useState(null);
+  const [postData, setPostData] = useState(defaultValue);
 
-  useEffect(() => {
-    let contextValue = {
-      posts: null,
-      error: false
-    };
-
-    // Make api call to get posts and set data
-    async function fetchData() { 
-      try {
-        let response = await axiosCfg.get('/post1'); 
-              
-        // Payload
-        contextValue = {
-          posts: response.data,
-          error: false
-        };
-      } catch(err) {
-        contextValue = {
-          posts: null,
-          error: true
-        };
-      } 
-      setPostData(contextValue);
-    }
+  useEffect(() => { 
     fetchData(); 
   }, [])
+
+  async function fetchData() { 
+    let posts = null;
+    let error = false; 
+    try {
+      let response = await axiosCfg.get('/post'); 
+      posts=response.data; 
+    } catch(err) {
+      error = true;
+    } 
+    setPostData({
+      ...postData,
+      posts,
+      error,
+      retry
+    });
+  }
+
+  const retry = () =>  fetchData(); 
 
   return (
     <PostContext.Provider value={postData} >

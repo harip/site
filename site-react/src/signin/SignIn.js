@@ -1,5 +1,4 @@
-import React, { useState,useContext } from 'react';
-import Button from '@material-ui/core/Button';
+import React, { useState,useContext } from 'react'; 
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -10,9 +9,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input'; 
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import { makeStyles,Typography } from '@material-ui/core'; 
-
-import clsx from 'clsx';
+import { makeStyles,Typography } from '@material-ui/core';   
 import CloseIcon from '@material-ui/icons/Close';
 import ValidateCredentials from './SignInService';
 import UserContext from '../context/UserContext';
@@ -42,12 +39,8 @@ const SignIn =  (props) => {
   }); 
   const userContextValue = useContext(UserContext);
 
-  const [loading, setLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
-  const classes = useStyles(); 
-  const buttonClassname = clsx({
-    [classes.buttonSuccess]: success,
-  });
+  const [loading, setLoading] = React.useState(false); 
+  const classes = useStyles();  
 
   const handleClose = () => {
       close();
