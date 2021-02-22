@@ -1,6 +1,5 @@
 /**
- * Display admin view of posts
- * Use a posts context
+ * Blog articles page
  */ 
 import {useContext} from 'react';
 import Posts from '../common/components/myposts/Posts';

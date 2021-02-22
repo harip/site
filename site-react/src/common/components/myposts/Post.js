@@ -127,7 +127,7 @@ const Post = (props) => {
       // Get post data
       const postData = {
         title: postTitle,
-        content: props.item.newContent,
+        content: props.item.newContent ? props.item.newContent: props.item.content,
         token: userContextValue.token
       };
 
