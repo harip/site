@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'; 
-import 'custom-elements';
+// import 'custom-elements';
 
 const PythonDs = () =>{ 
   useEffect(() => {
@@ -8,7 +8,7 @@ const PythonDs = () =>{
  
   return(   
     <div>
-      <custom-pythonds></custom-pythonds> 
+      {/* <custom-pythonds></custom-pythonds>  */}
     </div>
   );
 };
