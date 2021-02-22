@@ -1,43 +1,109 @@
-import React, { useEffect, useState } from 'react'; 
-import axiosCfg from '../apis/axiosConfig';
+import React, { useEffect, useState, useContext } from 'react'; 
+import axiosConfig from '../apis/axiosConfig';
+import UserContext from './UserContext';
 
-const defaultValue = {
+const initialState = {
   // Default empty function
   posts: null,
   error: false,
-  retry: ()=>{}
+
+  retry: ()=>{},
+  save: ()=>{},
+  saveComment: ()=>{} 
 };
 
-const PostContext = React.createContext(defaultValue);
+const PostContext = React.createContext(initialState);
 
 export const PostProvider = ({children}) => {
-  const [postData, setPostData] = useState(defaultValue);
+  const userContextValue = useContext(UserContext);
+  const [blogs, setBlogs] = useState(null);
 
   useEffect(() => { 
-    fetchData(); 
+    fetchBlogData(); 
   }, [])
 
-  async function fetchData() { 
+  async function fetchBlogData() { 
     let posts = null;
     let error = false; 
     try {
-      let response = await axiosCfg.get('/post'); 
+      let response = await axiosConfig.get('/post'); 
       posts=response.data; 
     } catch(err) {
       error = true;
     } 
-    setPostData({
-      ...postData,
+
+    setBlogs({
       posts,
-      error,
-      retry
+      error
     });
+  }  
+
+  const save = async (id,blogData) => {
+    console.log(id);
+    console.log(blogData); 
+
+    if (id){
+      blogData["_id"] = id;
+    } 
+
+    try {
+      await axiosConfig.put('/post',{
+        ...blogData,
+        token: userContextValue.token
+      });
+      
+      // Reset state
+      let { posts } = { ...blogs };  
+      let currentPostIndex = posts.findIndex(f=>f._id === `${id}`);
+      if (currentPostIndex>=0) {   
+        // Set content and titles
+        posts.splice(currentPostIndex,1,blogData);
+        setBlogs({
+          posts,
+          error: false
+        });
+      } 
+
+      // Reset value 
+      return true;
+    } catch (err) {
+      // Don't do anything
+      console.error(err);
+      return false;
+    }
   }
 
-  const retry = () =>  fetchData(); 
+  const  addNewBlog = async (id,comment) => { 
+    try {
+      const response = await axiosConfig.patch('/post',comment);
+      return true;
+    } catch (err) {
+      // Don't do anything
+      console.error(err);
+      return false;
+    } 
+  }
+
+  const saveComment = async (id,comment) => {
+    try {
+      const response = await axiosConfig.patch('/post',  comment );
+      return true;
+    } catch (err) {
+      // Don't do anything
+      console.error(err);
+      return false;
+    } 
+  }
+
+  const retryFetchBlog = () =>  fetchBlogData(); 
 
   return (
-    <PostContext.Provider value={postData} >
+    <PostContext.Provider value={{
+      ...blogs,
+      retry: retryFetchBlog,
+      save,
+      saveComment      
+    }} >
       {children}
     </PostContext.Provider>
   )

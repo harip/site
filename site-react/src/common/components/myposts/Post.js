@@ -12,7 +12,9 @@ import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';  
 import UserContext from '../../../context/UserContext';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
-import SpinnerButton from '../controls/SpinnerButton';
+import SpinnerButton from '../controls/SpinnerButton'; 
+import { useFormik } from 'formik';
+import PostContext from '../../../context/PostContext';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -47,126 +49,91 @@ const useStyles= makeStyles( (theme)=> ({
       width: '100%'
     },
   }));
-
+ 
 const Post = (props) => {   
     const userContextValue = useContext(UserContext);
-    const classes = useStyles();
-    const [postTitle, setPostTitle] = useState(props.item.title);
-    const [titleEdit, setTitleEdit] = useState(true);
-    const [loading, setLoading] = React.useState(true);
-    const [showCommentBox, setShowCommentBox] = React.useState(false);
-
+    const postContext = useContext(PostContext); 
+    const classes = useStyles();  
+    const [editClicked, setEditClicked] = useState(false);    
+ 
     const [postComment, setPostComment] = useState('');
     const [postCommentLoading, setPostCommentLoading] = useState(false);
   
     // Parent events
-    const {savePost,saveComment} = props;
- 
-    /**
-     * Function that renders the title markup edit mode or readonly mode
-     * @param {*} item current item that is being edited
-     */
-    const cardTitle = (item) => { 
+    const {item } = props; 
+
+    const formik = useFormik({
+      initialValues: {
+        title: item.title,
+        subTitle: item.subTitle,
+        content: item.content
+      },
+      onSubmit: (values) => {
+        console.log(values);
+      }
+    });
+
+    const getForm = () => {
       return (
-        <div>  
-          {
-            !titleEdit
-            ?  
-              <TextField
-                autoFocus
-                margin="dense"
-                id="postTitle"
-                label="title"
-                type="text"
-                fullWidth
-                value={postTitle}
-                onChange={handleChange}
-              />                 
-            :  <Typography>{item.title}</Typography>     
-          }  
-        </div>
-      );
-    } 
-
-    /**
-     * Function to change title (controlled)
-     * @param {*} e title event
-     */
-    const handleChange = (e) => {
-      setPostTitle(e.target.value);
+        <form onSubmit={formik.handleSubmit}>
+          <Card  > 
+            <CardHeader
+                className={classes.contactHeader}
+                title={
+                  <React.Fragment>
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      id="postTitle"
+                      label="title"
+                      name = "title"
+                      type="text"
+                      fullWidth
+                      value={formik.values.title}
+                      onChange={formik.handleChange}
+                    />   
+                    <TextField 
+                      margin="dense"
+                      name= "subTitle"
+                      id="postSubTitle"
+                      label="subTitle"
+                      type="text"
+                      fullWidth
+                      value={formik.values.subTitle}
+                      onChange={formik.handleChange}
+                    />                      
+                  </React.Fragment>    
+                }  
+                action={titleCrudButtonMarkup()}
+            /> 
+            <CardContent>  
+              <div id="container">
+                <TextEditor post={item} /> 
+              </div> 
+            </CardContent>
+            <CardActions className={classes.cardActions}>
+                <InsertCommentIcon />
+                <TextField
+                  id="standard-multiline-flexible"
+                  label="add comment"
+                  className={classes.commentBox}
+                  multiline
+                  rowsMax={4} 
+                  value={postComment}
+                  onChange={handleCommentChange}
+                />
+                <SpinnerButton buttonProps = {{
+                  'text': 'Save',
+                  'onClick':  postSaveComment,
+                  'loading' : postCommentLoading
+                  }}
+                />
+            </CardActions> 
+          </Card>  
+        </form>
+      );  
     }
 
-    /**
-     * Function that will enable editing content
-     */
-    const renderContent = () => {
-      return (
-        <React.Fragment>
-          {
-            !titleEdit 
-            ?  <TextEditor post={props.item} /> 
-            :  
-              <div
-              dangerouslySetInnerHTML={{
-                __html: props.item.content
-              }}></div>
-          }
-        </React.Fragment>
-      );
-    } 
-
-    const onTitleEdit = () => {
-      setTitleEdit(false)
-    }
-
-    /**
-     * Invoke save method that will call the parent save
-     * parent save will invoke the api
-     */
-    const postSave = () => { 
-      // Get post data
-      const postData = {
-        title: postTitle,
-        content: props.item.newContent ? props.item.newContent: props.item.content,
-        token: userContextValue.token
-      };
-
-      if (props.item["_id"]){
-        postData["_id"] = props.item["_id"];
-      } 
-      
-      setTitleEdit(true);  
-      savePost(props.item, postData, (status)=>{
-        if (status) {
-          setTitleEdit(true);  
-        }
-      });
-    }
-
-    const postSaveComment = () => {
-      setPostCommentLoading(true);
-      // Get post data
-      const commentData = { 
-        text: postComment
-      };
-
-      if (props.item["_id"]){
-        commentData["_id"] = props.item["_id"];
-      } 
-
-      saveComment(commentData, ()=> {
-        setPostCommentLoading(false);
-      })
-    }
-
-    /**
-     * Function to change post comment (controlled)
-     * @param {*} e comment event
-     */
-    const handleCommentChange = (e) => {
-      setPostComment(e.target.value);
-    } 
-    
     /**
      * Get save and edit button markup for title
      */
@@ -178,66 +145,117 @@ const Post = (props) => {
       // show edit functionality
       return (
         <ButtonGroup 
+          type="submit"
           color="primary" 
           aria-label="outlined primary button group" 
           className={classes.crudButtons}>
             {
-              titleEdit 
-              ?  <IconButton aria-label="edit" onClick={onTitleEdit}><EditIcon /></IconButton>       
-              :  <IconButton aria-label="save" onClick={ ()=> postSave()} color="primary"><SaveIcon /></IconButton>      
+              !editClicked 
+              ?  <IconButton aria-label="edit" onClick={()=>setEditClicked(!editClicked)}><EditIcon /></IconButton>       
+              :  <IconButton aria-label="save" onClick={()=> postSave()} color="primary"><SaveIcon /></IconButton>      
             } 
         </ButtonGroup>
       );
     };
 
-    const getPostCard = (item) => {  
-        return (  
-          <div className={classes.wrapper} disabled={loading}>
-            <div className={classes.card}>
-                <Card  > 
-                    <CardHeader
-                        className={classes.contactHeader}
-                        title={
-                          cardTitle(item)
-                        }  
-                        action={titleCrudButtonMarkup()}
-                    /> 
-                    <CardContent> 
-                        <div id="container">
-                            {renderContent()}
-                        </div>
-                    </CardContent>
-                    <CardActions disableSpacing className={classes.cardActions}>
-                        <IconButton aria-label="add comment" onClick={()=> setShowCommentBox(!showCommentBox)} >
-                          <InsertCommentIcon />
-                        </IconButton>  
-                        <TextField
-                          id="standard-multiline-flexible"
-                          label="add comment"
-                          className={classes.commentBox}
-                          multiline
-                          rowsMax={4} 
-                          value={postComment}
-                          onChange={handleCommentChange}
-                        />
-                        <SpinnerButton buttonProps = {{
-                          'text': 'Save',
-                          'onClick':  postSaveComment,
-                          'loading' : postCommentLoading
-                          }}
-                        />
-                    </CardActions> 
-                </Card> 
-            </div>   
-          </div> 
-        );
+    const getReadOnlyForm = () => {
+      return (
+        <Card  > 
+          <CardHeader
+              className={classes.contactHeader}
+              title={
+                <React.Fragment>
+                  <Typography variant="h3">{item.title}</Typography>     
+                  <Typography variant="h6">{item.subTitle}</Typography>    
+                </React.Fragment> 
+              }  
+              action={titleCrudButtonMarkup()}
+          /> 
+          <CardContent>  
+            <div id="container"
+              dangerouslySetInnerHTML={{
+                __html: props.item.content
+              }}>
+            </div> 
+          </CardContent>
+          <CardActions className={classes.cardActions}>
+              <InsertCommentIcon />
+              <TextField
+                id="standard-multiline-flexible"
+                label="add comment"
+                className={classes.commentBox}
+                multiline
+                rowsMax={4} 
+                value={postComment}
+                onChange={handleCommentChange}
+              />
+              <SpinnerButton buttonProps = {{
+                'text': 'Save',
+                'onClick':  postSaveComment,
+                'loading' : postCommentLoading
+                }}
+              />
+          </CardActions> 
+        </Card>  
+      );     
+    } 
+
+    /**
+     * Invoke save method that will call the parent save
+     * parent save will invoke the api
+     */
+    const postSave = () => {    
+      // Get post data 
+      let postData = { 
+        ...props.item, 
+        title:formik.values.title,
+        subTitle: formik.values.subTitle,
+        content: props.item.newContent ? props.item.newContent: props.item.content 
+      }; 
+      const isSuccess = postContext.save(props.item["_id"],postData);
+      if (isSuccess) {
+        setEditClicked(!editClicked);
+      } 
+    }
+
+    const postSaveComment = () => {
+      setPostCommentLoading(true);
+      // Get post data
+      const commentData = { 
+        _id: props.item["_id"],
+        text: postComment
+      };
+      const isSuccess = postContext.saveComment(props.item["_id"],commentData);
+      setPostCommentLoading(false);
+    }
+
+    /**
+     * Function to change post comment (controlled)
+     * @param {*} e comment event
+     */
+    const handleCommentChange = (e) => {
+      setPostComment(e.target.value);
+    }  
+ 
+    const getPostCard = () => {  
+      return (  
+        <div className={classes.wrapper}>
+          <div className={classes.card}> 
+            {
+              editClicked
+              ? getForm()
+              : getReadOnlyForm()
+            }            
+          </div>   
+        </div> 
+      );
     }  
 
     return(  
-        <React.Fragment key={props.item.timeStamp}>
-            {getPostCard(props.item)} 
-            </React.Fragment>
-      );   
+      <React.Fragment key={props.item.timeStamp}>
+        {getPostCard(props.item)} 
+      </React.Fragment>
+    );   
 }
 
 export default Post;
