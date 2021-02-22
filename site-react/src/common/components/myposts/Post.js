@@ -220,12 +220,10 @@ const Post = (props) => {
 
     const postSaveComment = () => {
       setPostCommentLoading(true);
-      // Get post data
-      const commentData = { 
+      const isSuccess = postContext.saveComment(props.item["_id"],{ 
         _id: props.item["_id"],
         text: postComment
-      };
-      const isSuccess = postContext.saveComment(props.item["_id"],commentData);
+      });
       setPostCommentLoading(false);
     }
 
