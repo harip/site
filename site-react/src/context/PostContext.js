@@ -5,10 +5,10 @@ import UserContext from './UserContext';
 const initialState = {
   // Default empty function
   posts: null,
-  error: false,
-
+  error: false, 
   retry: ()=>{},
   save: ()=>{},
+  addNewBlog: ()=>{},
   saveComment: ()=>{} 
 };
 
