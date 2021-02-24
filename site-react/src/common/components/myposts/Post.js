@@ -13,7 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import UserContext from '../../../context/UserContext';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import SpinnerButton from '../controls/SpinnerButton'; 
-import { useFormik } from 'formik';
+import { useFormik } from 'formik'; 
 import PostContext from '../../../context/PostContext';
 
 const useStyles= makeStyles( (theme)=> ({
@@ -55,7 +55,6 @@ const Post = (props) => {
     const postContext = useContext(PostContext); 
     const classes = useStyles();  
     const [editClicked, setEditClicked] = useState(false);    
- 
     const [postComment, setPostComment] = useState('');
     const [postCommentLoading, setPostCommentLoading] = useState(false);
   
@@ -250,7 +249,7 @@ const Post = (props) => {
     }  
 
     return(  
-      <React.Fragment key={props.item.timeStamp}>
+      <React.Fragment key={props.item.timeStamp}> 
         {getPostCard(props.item)} 
       </React.Fragment>
     );   

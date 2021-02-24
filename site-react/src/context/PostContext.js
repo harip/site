@@ -38,10 +38,7 @@ export const PostProvider = ({children}) => {
     });
   }  
 
-  const save = async (id,blogData) => {
-    console.log(id);
-    console.log(blogData); 
-
+  const save = async (id,blogData) => { 
     if (id){
       blogData["_id"] = id;
     } 
@@ -73,9 +70,20 @@ export const PostProvider = ({children}) => {
     }
   }
 
-  const  addNewBlog = async (id,comment) => { 
+  const addNewBlog = async (id,comment) => { 
     try {
-      const response = await axiosConfig.patch('/post',comment);
+      // Create a empty item
+      const newItem = {  
+        title:'',
+        subTitle: '',
+        content: 'Enter text' 
+      }; 
+      let { posts } = { ...blogs };   
+      posts.unshift(newItem);
+      setBlogs({
+        posts,
+        error: false
+      });
       return true;
     } catch (err) {
       // Don't do anything
@@ -101,6 +109,7 @@ export const PostProvider = ({children}) => {
     <PostContext.Provider value={{
       ...blogs,
       retry: retryFetchBlog,
+      addNewBlog,
       save,
       saveComment      
     }} >
