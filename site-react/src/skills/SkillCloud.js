@@ -91,16 +91,13 @@ const SkillCloud = (props) =>{
     className= {classes.skillPage}
     justify="center"
     alignItems="center"> 
-      <Grid item xs={12} sm={8}> 
-
-        {/* <PythonDs></PythonDs> */}
-
+      <Grid item xs={12} sm={8}>  
         <SkillSearch open={open} onClose={handleClose} searchTerm={selectedSkill}/> 
 
         <Paper component="ul" className={classes.root} elevation={0}>
-            {data.skills.map((data) => { 
+            {data.skills.map((data,index) => {  
               return (
-                <React.Fragment key={data.id}>
+                <React.Fragment key={index}>
                 {getSkillChip(data)}
                 </React.Fragment>
               );

@@ -193,8 +193,9 @@
     { "id": 0, "skill": "Angular", "experience": "high" },  
     { "id": 1, "skill": "Angular Material", "experience": "high" },
     { "id": 2, "skill": "React", "experience": "med" }, 
-    { "id": 3, "skill": "React Material", "experience": "med" }, 
+    { "id": 3, "skill": "React Material UI", "experience": "med" }, 
     { "id": 4, "skill": "React Native", "experience": "low" },
+    { "id": 4, "skill": "Redux", "experience": "low" },
     { "id": 5, "skill": "Data Science", "experience": "low" } ,
     { "id": 6, "skill": "Python", "experience": "high" },
     { "id": 7, "skill": "pandas", "experience": "high" } ,
@@ -211,6 +212,7 @@
     { "id": 18, "skill": "JavaScript", "experience": "high" },
     { "id": 19, "skill": "CSS", "experience": "med" },
     { "id": 20, "skill": "mongoDB", "experience": "high" },
+    { "id": 20, "skill": "mongoose", "experience": "high" },
     { "id": 21, "skill": "SQL Server", "experience": "med" },
     { "id": 22, "skill": "Stored Procedures", "experience": "med" },
     { "id": 23, "skill": "Salesforce", "experience": "med" },
@@ -228,7 +230,9 @@
     { "id": 36, "skill": "Karma", "experience": "med" },
     { "id": 37, "skill": "Knockout", "experience": "high" },
     { "id": 38, "skill": ".NETCore", "experience": "low" },
-    { "id": 39, "skill": "Go", "experience": "low" }
+    { "id": 39, "skill": "Go", "experience": "low" },    
+    { "id": 38, "skill": "Microservices", "experience": "high" },
+    { "id": 39, "skill": "Services", "experience": "high" }
   ],
   "projects": [
     { "id":0, 
