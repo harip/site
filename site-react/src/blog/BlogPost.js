@@ -1,5 +1,4 @@
 import React, { useState,useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader'; 
 import CardContent from '@material-ui/core/CardContent';
@@ -15,49 +14,16 @@ import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import SpinnerButton from '../common/components/controls/SpinnerButton'; 
 import { useFormik } from 'formik';  
 import BlogContext from '../context/BlogContext';
-
-const useStyles= makeStyles( (theme)=> ({
-    root: {
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      flexWrap: 'wrap',
-      listStyle: 'none',
-      padding: theme.spacing(0.5)  
-    },
-    contactHeader: {
-      fontSize: 20,
-      borderBottom: 2,
-      background: '#ffa602'
-    },
-    card: {
-        marginRight: 5,
-        marginBottom: 5
-    },
-    cardActions: {
-      borderTop: 'solid 1px #f9f5ee'
-    },
-    crudButtons : {
-      marginLeft: 'auto'
-    },
-    wrapper: {
-      margin: theme.spacing(1),
-      position: 'relative',
-    },
-    commentBox: {
-      width: '100%'
-    },
-  }));
+import blogStyles from './useBlogStyles';  
  
 const BlogPost = (props) => {   
     const userContextValue = useContext(UserContext);
     const blogContext = useContext(BlogContext); 
-    const classes = useStyles();  
     const [editClicked, setEditClicked] = useState(false);    
     const [postComment, setPostComment] = useState('');
     const [postCommentLoading, setPostCommentLoading] = useState(false);
-  
+    const classes = blogStyles();
+
     // Parent events
     const {item } = props; 
 
@@ -71,7 +37,7 @@ const BlogPost = (props) => {
         console.log(values);
       }
     });
-
+ 
     const getForm = () => {
       return (
         <form onSubmit={formik.handleSubmit}>

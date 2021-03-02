@@ -1,16 +1,11 @@
-import { makeStyles } from '@material-ui/core';
+/**
+ * Renders an individual project 
+ */ 
 import React from 'react';
-
-const useStyles = makeStyles({ 
-  header: {
-    textDecoration: "underline",
-    fontWeight: "bold",
-    fontSize: "large"
-  }
-});
-
+import useExperienceStyles from './useExperienceStyles';
+ 
 const Project = ({project}) => {
-    const classes= useStyles();
+    const classes= useExperienceStyles();
 
     const getResponsibilities = () =>{
         const data= project.responsibilities.map ( (item,index)=> {
@@ -21,7 +16,7 @@ const Project = ({project}) => {
 
     return (
         <div>
-            <span className={classes.header}>{project.title}</span> - {project.description}
+            <span className={classes.prjHeader}>{project.title}</span> - {project.description}
             <ul>
                 {getResponsibilities()}
             </ul>

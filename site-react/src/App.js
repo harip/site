@@ -34,9 +34,9 @@ export const profileApp = () => {
     <UserContextProvider>
       <ProfileProvider>
         <Suspense fallback={<div>Loading...</div>}>
-          <ThemeProvider theme={dark}>
+          {/* <ThemeProvider theme={dark}> */}
             <App/>
-          </ThemeProvider>
+          {/* </ThemeProvider> */}
         </Suspense>
       </ProfileProvider>
     </UserContextProvider>

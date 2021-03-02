@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles'; 
 import Grid from '@material-ui/core/Grid';    
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';   
@@ -7,16 +6,14 @@ import BlogPost from './BlogPost';
 import SkeletonBlogPost from './skeletons/SkeletonBlogPost'; 
 import UserContext from '../context/UserContext';
 import BlogContext from '../context/BlogContext';
-import blogStyles from './blog_styles'; 
+import useBlogStyles from './useBlogStyles'; 
  
 const BlogPosts = (props) => { 
   const blogContext = useContext(BlogContext); 
   const userContextValue = useContext(UserContext);
-  const classes = blogStyles;   
+  const classes = useBlogStyles();   
 
-  useEffect(() => {
-    document.title="Blog";
-  }, []);  
+  useEffect(() => document.title="Blog",[]);  
 
   const retryFetchPosts = () => blogContext.retry();
 
@@ -26,7 +23,7 @@ const BlogPosts = (props) => {
       <SkeletonBlogPost responseData={blogContext} retry={retryFetchPosts}/>
     );
   }  
-
+ 
   const { posts } = blogContext;  
 
   return(  

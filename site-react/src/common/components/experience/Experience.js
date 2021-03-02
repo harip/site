@@ -1,40 +1,17 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+/**
+ * Component that renders a work experience at a company
+ * Child Component: Project that renders individual projects worked at the company
+ */
+import React from 'react'; 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Project from './Project'; 
-
-const useStyles= makeStyles( (theme)=> ({
-    root: {
-      margin: 10,
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      flexWrap: 'wrap',
-      listStyle: 'none',
-      padding: theme.spacing(0.5),
-      fontFamily: "monospace",
-      background: '#fafafa'
-    },
-    paperStyle: {
-        borderRadius: 0,
-        marginRight: 10,
-    },
-    header : {
-      background: '#ffa602',
-      textAlign: 'left',
-      padding: 6,
-      fontSize: 16
-    },
-    contentSpacing: {
-      padding: 10
-    }
-  }));
-
+import useExperienceStyles from './useExperienceStyles';
+ 
 const Experience = (props) => {
     const { experienceItem } = props;
 
-    const classes=useStyles();
+    const classes=useExperienceStyles();
 
     const getProjects = () =>{
       const projects = experienceItem.projects.map(p=>{

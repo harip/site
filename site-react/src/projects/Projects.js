@@ -1,6 +1,5 @@
 
 import React, { useContext, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';  
 import Grid from '@material-ui/core/Grid';  
 import Card from '@material-ui/core/Card';
@@ -11,61 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography'; 
 import LaunchIcon from '@material-ui/icons/Launch';
 import ProfileContext from '../context/ProfileContext';
-import { Badge, withStyles } from '@material-ui/core';
-
-const useStyles= makeStyles( (theme)=> ({
-  root: {
-    margin: 10,
-    display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    flexWrap: 'wrap',
-    listStyle: 'none',
-    padding: theme.spacing(0.5),
-    background: '#fafafa'  
-  },
-  skillItem: {
-    alignSelf: 'center'
-  },
-  skillContainer: {
-    display: 'flex',
-    margin: '0.8px', 
-    paddingRight: 24, 
-    paddingLeft: 24,
-    backgroundColor: '#e0e0e0',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap', 
-    textOverflow: 'ellipsis',
-    cursor: 'pointer',
-    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-    height: 64, 
-    maxWidth:345
-  },
-  low : {
-    fontSize: 15, 
-  },
-  med : {
-    fontSize: 25, 
-  },
-  high : {
-    fontSize: 45, 
-  },
-    contactHeader: {
-    fontSize: 20,
-    borderBottom: 2,
-    backgroundColor: '#ffa602'
-  },
-    card: {
-      marginRight: 5,
-      marginBottom: 5
-  },
-  badge: {
-    borderRadius: 5
-  },
-  projectsPage: { 
-      background: '#fafafa'
-  }
-}));
+import { Badge, withStyles } from '@material-ui/core'; 
+import useProjectStyles from './useProjectStyles';
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -77,7 +23,7 @@ const StyledBadge = withStyles((theme) => ({
 
 const Projects = (props) =>{
   const data = useContext(ProfileContext);
-  const classes = useStyles();   
+  const classes = useProjectStyles();   
 
   useEffect(() => {
     document.title="Personal Projects";
