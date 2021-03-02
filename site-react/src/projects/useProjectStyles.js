@@ -10,7 +10,7 @@ const useProjectStyles= makeStyles( (theme)=> ({
     flexWrap: 'wrap',
     listStyle: 'none',
     padding: theme.spacing(0.5),
-    background: '#fafafa'  
+    background:  theme.palette.customBackground ? theme.palette.customBackground : theme.background
   },
   skillItem: {
     alignSelf: 'center'

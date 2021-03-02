@@ -1,15 +1,11 @@
-import React, { lazy, Suspense } from 'react';
-import { HashRouter, Route  } from 'react-router-dom';  
-import NavBar from './common/components/navbar/NavBar';
-import { ProfileProvider } from './context/ProfileContext'; 
+import React, { lazy } from 'react';
+import { HashRouter, Route  } from 'react-router-dom';    
+import NavBar from './common/components/navbar/NavBar'; 
 import Projects from './projects/Projects';
 import PythonDs from './pthonds/PythonDs';
 import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
-import FloatingActions from './common/components/floatingactions/FloatingActions'; 
-import { UserContextProvider } from './context/UserContext';
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import dark from './common/styling/themes/dark';
+import FloatingActions from './common/components/floatingactions/FloatingActions';  
  
 const LazyPosts = lazy(()=>import('./blog/Blog'));
 
@@ -29,18 +25,4 @@ const App = () => {
   )
 };
 
-export const profileApp = () => {
-  return (
-    <UserContextProvider>
-      <ProfileProvider>
-        <Suspense fallback={<div>Loading...</div>}>
-          {/* <ThemeProvider theme={dark}> */}
-            <App/>
-          {/* </ThemeProvider> */}
-        </Suspense>
-      </ProfileProvider>
-    </UserContextProvider>
-  );
-};
-
-export default profileApp;
+export default App;

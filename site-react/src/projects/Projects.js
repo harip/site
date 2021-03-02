@@ -38,7 +38,7 @@ const Projects = (props) =>{
       </div>
     );
   }
-
+ 
   const getSkillChip = (item) => {  
     return ( 
       <li>  
@@ -74,12 +74,10 @@ const Projects = (props) =>{
   }
 
   return(  
-    <Grid container direction="row"
-    className={classes.projectsPage}
+    <Grid container direction="row" 
     justify="center"
     alignItems="center"> 
-      <Grid item xs={12} sm={8}>  
-
+      <Grid item xs={12} sm={8}>   
         <Paper component="ul" className={classes.root} elevation={0}>
             {data.projects.map((data) => { 
               return (
