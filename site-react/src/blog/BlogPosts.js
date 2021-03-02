@@ -7,27 +7,12 @@ import BlogPost from './BlogPost';
 import SkeletonBlogPost from './skeletons/SkeletonBlogPost'; 
 import UserContext from '../context/UserContext';
 import BlogContext from '../context/BlogContext';
-
-const useStyles= makeStyles( (theme)=> ({  
-  card: {
-    marginRight: 5,
-    marginBottom: 5
-  },
-  post: {
-    marginTop: 30
-  },
-  fabAddBlog: {
-    marginTop: 10,
-    position: 'fixed', 
-    marginLeft: 'auto',  
-    zIndex: 999
-  },
-})); 
-
+import blogStyles from './blog_styles'; 
+ 
 const BlogPosts = (props) => { 
   const blogContext = useContext(BlogContext); 
   const userContextValue = useContext(UserContext);
-  const classes = useStyles();   
+  const classes = blogStyles;   
 
   useEffect(() => {
     document.title="Blog";

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'; 
 
-const useStyles= makeStyles( (theme)=> ({  
+const blogStyles= makeStyles( (theme)=> ({  
   card: {
     marginRight: 5,
     marginBottom: 5
@@ -16,4 +16,4 @@ const useStyles= makeStyles( (theme)=> ({
   },
 })); 
 
-export default useStyles;
+export default blogStyles;
