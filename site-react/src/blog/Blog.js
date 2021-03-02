@@ -1,20 +1,20 @@
 /**
  * Blog articles page
  */ 
-import {useContext} from 'react'; 
-import PostContext, { PostProvider } from '../context/PostContext';
+import {useContext} from 'react';  
+import BlogContext, { BlogProvider } from '../context/BlogContext';
 import BlogPosts from './BlogPosts';
 
 const Blog = () => {   
-  const data = useContext(PostContext); 
+  const data = useContext(BlogContext); 
   if (!data){
     return <div>Loading...</div>
   }  
  
   return (
-    <PostProvider>
+    <BlogProvider>
       <BlogPosts/> 
-    </PostProvider>
+    </BlogProvider>
   );
 }
 

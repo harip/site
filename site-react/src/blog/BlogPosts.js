@@ -4,9 +4,9 @@ import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';   
 import BlogPost from './BlogPost';
-import SkeletonBlogPost from './skeletons/SkeletonBlogPost';
-import PostContext from '../context/PostContext';
+import SkeletonBlogPost from './skeletons/SkeletonBlogPost'; 
 import UserContext from '../context/UserContext';
+import BlogContext from '../context/BlogContext';
 
 const useStyles= makeStyles( (theme)=> ({  
   card: {
@@ -25,7 +25,7 @@ const useStyles= makeStyles( (theme)=> ({
 })); 
 
 const BlogPosts = (props) => { 
-  const postContext = useContext(PostContext); 
+  const blogContext = useContext(BlogContext); 
   const userContextValue = useContext(UserContext);
   const classes = useStyles();   
 
@@ -33,16 +33,16 @@ const BlogPosts = (props) => {
     document.title="Blog";
   }, []);  
 
-  const retryFetchPosts = () => postContext.retry();
+  const retryFetchPosts = () => blogContext.retry();
 
-  if ( !postContext || (postContext && postContext.error) || (postContext && !postContext.posts)){
+  if ( !blogContext || (blogContext && blogContext.error) || (blogContext && !blogContext.posts)){
     // Return a ghost element
     return (
-      <SkeletonBlogPost responseData={postContext} retry={retryFetchPosts}/>
+      <SkeletonBlogPost responseData={blogContext} retry={retryFetchPosts}/>
     );
   }  
 
-  const { posts } = postContext;  
+  const { posts } = blogContext;  
 
   return(  
     <React.Fragment> 
@@ -50,7 +50,7 @@ const BlogPosts = (props) => {
         userContextValue.isLoggedIn() 
         ? 
           <div className={classes.fabAddBlog}> 
-            <Fab className="test" aria-label="add" onClick={postContext.addNewBlog} >
+            <Fab className="test" aria-label="add" onClick={blogContext.addNewBlog} >
               <AddIcon />
             </Fab>    
           </div>        

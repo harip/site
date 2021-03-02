@@ -12,9 +12,9 @@ const initialState = {
   saveComment: ()=>{} 
 };
 
-const PostContext = React.createContext(initialState);
+const BlogContext = React.createContext(initialState);
 
-export const PostProvider = ({children}) => {
+export const BlogProvider = ({children}) => {
   const userContextValue = useContext(UserContext);
   const [blogs, setBlogs] = useState(null);
 
@@ -106,7 +106,7 @@ export const PostProvider = ({children}) => {
   const retryFetchBlog = () =>  fetchBlogData(); 
 
   return (
-    <PostContext.Provider value={{
+    <BlogContext.Provider value={{
       ...blogs,
       retry: retryFetchBlog,
       addNewBlog,
@@ -114,8 +114,8 @@ export const PostProvider = ({children}) => {
       saveComment      
     }} >
       {children}
-    </PostContext.Provider>
+    </BlogContext.Provider>
   )
 };
  
-export default PostContext;
+export default BlogContext;

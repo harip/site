@@ -13,8 +13,8 @@ import TextField from '@material-ui/core/TextField';
 import UserContext from '../context/UserContext';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import SpinnerButton from '../common/components/controls/SpinnerButton'; 
-import { useFormik } from 'formik'; 
-import PostContext from '../context/PostContext';
+import { useFormik } from 'formik';  
+import BlogContext from '../context/BlogContext';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -52,7 +52,7 @@ const useStyles= makeStyles( (theme)=> ({
  
 const BlogPost = (props) => {   
     const userContextValue = useContext(UserContext);
-    const postContext = useContext(PostContext); 
+    const blogContext = useContext(BlogContext); 
     const classes = useStyles();  
     const [editClicked, setEditClicked] = useState(false);    
     const [postComment, setPostComment] = useState('');
@@ -211,7 +211,7 @@ const BlogPost = (props) => {
         subTitle: formik.values.subTitle,
         content: props.item.newContent ? props.item.newContent: props.item.content 
       }; 
-      const isSuccess = postContext.save(props.item["_id"],postData);
+      const isSuccess = blogContext.save(props.item["_id"],postData);
       if (isSuccess) {
         setEditClicked(!editClicked);
       } 
@@ -219,7 +219,7 @@ const BlogPost = (props) => {
 
     const postSaveComment = () => {
       setPostCommentLoading(true);
-      const isSuccess = postContext.saveComment(props.item["_id"],{ 
+      const isSuccess = blogContext.saveComment(props.item["_id"],{ 
         _id: props.item["_id"],
         text: postComment
       });
