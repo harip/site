@@ -1,11 +1,11 @@
 /**
  * Blog articles page
  */ 
-import {useContext} from 'react';
-import Posts from '../common/components/myposts/Posts';
+import {useContext} from 'react'; 
 import PostContext, { PostProvider } from '../context/PostContext';
+import BlogPosts from './BlogPosts';
 
-const ReadOnlyPosts = () => {   
+const Blog = () => {   
   const data = useContext(PostContext); 
   if (!data){
     return <div>Loading...</div>
@@ -13,9 +13,9 @@ const ReadOnlyPosts = () => {
  
   return (
     <PostProvider>
-      <Posts/> 
+      <BlogPosts/> 
     </PostProvider>
   );
 }
 
-export default ReadOnlyPosts;
+export default Blog;

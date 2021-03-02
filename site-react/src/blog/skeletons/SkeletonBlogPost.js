@@ -31,7 +31,7 @@ const useStyles= makeStyles( (theme)=> ({
     },
   })); 
 
-const SkeletonPost = (props) =>{
+const SkeletonBlogPost = (props) =>{
     const { responseData, retry } = props; 
     const posts = [1,2,3];
     const classes = useStyles();    
@@ -83,4 +83,4 @@ const SkeletonPost = (props) =>{
     );
 };
 
-export default SkeletonPost;
+export default SkeletonBlogPost;

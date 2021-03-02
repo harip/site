@@ -8,8 +8,10 @@ import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
 import FloatingActions from './common/components/floatingactions/FloatingActions'; 
 import { UserContextProvider } from './context/UserContext';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import dark from './common/styling/themes/dark';
  
-const LazyPosts = lazy(()=>import('./myposts/ReadOnlyPosts'));
+const LazyPosts = lazy(()=>import('./blog/Blog'));
 
 const App = () => {
   return (
@@ -32,7 +34,9 @@ export const profileApp = () => {
     <UserContextProvider>
       <ProfileProvider>
         <Suspense fallback={<div>Loading...</div>}>
-          <App/>
+          <ThemeProvider theme={dark}>
+            <App/>
+          </ThemeProvider>
         </Suspense>
       </ProfileProvider>
     </UserContextProvider>

@@ -5,16 +5,16 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';  
 import Typography from '@material-ui/core/Typography'; 
-import TextEditor from '../editor/TextEditor';
+import TextEditor from '../common/components/editor/TextEditor';
 import { ButtonGroup, IconButton } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';  
-import UserContext from '../../../context/UserContext';
+import UserContext from '../context/UserContext';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
-import SpinnerButton from '../controls/SpinnerButton'; 
+import SpinnerButton from '../common/components/controls/SpinnerButton'; 
 import { useFormik } from 'formik'; 
-import PostContext from '../../../context/PostContext';
+import PostContext from '../context/PostContext';
 
 const useStyles= makeStyles( (theme)=> ({
     root: {
@@ -50,7 +50,7 @@ const useStyles= makeStyles( (theme)=> ({
     },
   }));
  
-const Post = (props) => {   
+const BlogPost = (props) => {   
     const userContextValue = useContext(UserContext);
     const postContext = useContext(PostContext); 
     const classes = useStyles();  
@@ -255,4 +255,4 @@ const Post = (props) => {
     );   
 }
 
-export default Post;
+export default BlogPost;
