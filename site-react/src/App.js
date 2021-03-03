@@ -6,7 +6,8 @@ import PythonDs from './pthonds/PythonDs';
 import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
 import FloatingActions from './common/components/floatingactions/FloatingActions';  
- 
+
+
 const LazyPosts = lazy(()=>import('./blog/Blog'));
 
 const App = () => {
