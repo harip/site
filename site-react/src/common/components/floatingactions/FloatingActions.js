@@ -9,6 +9,7 @@ import getResume from './resume-service';
 import onFeedbackSubmit from './feedback-service';
 import Feedback from './Feedback';
 import ErrorDialog from '../errordialog/ErrorDialog';
+import Switch from '@material-ui/core/Switch';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -34,7 +35,14 @@ const useStyles = makeStyles((theme) => ({
 
   fabItem: {
     marginBottom: 10
-  }
+  },
+
+  fabTheme: { 
+    position: 'fixed',    
+    right: theme.spacing(2),
+    bottom: theme.spacing(2),
+    marginLeft: 'auto' 
+  },
 }));
 
 const FloatingActions = () => {
@@ -175,6 +183,13 @@ const FloatingActions = () => {
               </div> 
             </div>            
           </Hidden>  
+
+          <div className={classes.fabTheme}>          
+            <Switch color="primary" />
+            Dark
+          </div>
+
+
     </React.Fragment>
   );
 }
