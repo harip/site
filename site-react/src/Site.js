@@ -1,22 +1,14 @@
-import React, { lazy, Suspense, useContext } from 'react'; 
-import { createMuiTheme, CssBaseline, MuiThemeProvider } from '@material-ui/core';  
-import { ProfileProvider } from './context/ProfileContext';  
-import UserContext, { UserContextProvider } from './context/UserContext'; 
-import dark from './common/styling/themes/dark';
+import React, { lazy, Suspense, useContext } from 'react';  
 import App from './App';
+import { ProfileProvider } from './context/ProfileContext';  
+import UserContext, { UserContextProvider } from './context/UserContext';   
 
-const theme = createMuiTheme({ 
-});
-
-export const Site = () => { 
+export const Site = () => {  
   return (
     <UserContextProvider>
       <ProfileProvider>
-        <Suspense fallback={<div>Loading...</div>}> 
-          <MuiThemeProvider theme={theme}>
-            <CssBaseline/>
-            <App/>
-          </MuiThemeProvider>
+        <Suspense fallback={<div>Loading...</div>}>  
+            <App/> 
         </Suspense>
       </ProfileProvider>
     </UserContextProvider>

@@ -9,8 +9,7 @@ const useExperienceStyles= makeStyles( (theme)=> ({
     flexWrap: 'wrap',
     listStyle: 'none',
     padding: theme.spacing(0.5),
-    fontFamily: "monospace",
-    background: '#fafafa'
+    fontFamily: "monospace" 
   },
   paperStyle: {
       borderRadius: 0,

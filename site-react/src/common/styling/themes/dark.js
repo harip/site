@@ -3,6 +3,8 @@ import { green, purple,red } from '@material-ui/core/colors';
 
 const darkTheme = {
   backgroundColor: "#424242",
+
+  // background: '#fafafa'
 } 
 
 const dark = createMuiTheme({  
@@ -14,6 +16,12 @@ const dark = createMuiTheme({
         },
       },
     }, 
+    MuiGridList : {
+      backgroundColor: red[500]
+    },
+    MuiGridList : {
+      backgroundColor: red[500]
+    }
   }, 
 
   palette: { 

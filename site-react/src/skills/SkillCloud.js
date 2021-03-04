@@ -40,9 +40,6 @@ const useStyles= makeStyles( (theme)=> ({
   },
   high : {
     fontSize: 45, 
-  },
-  skillPage: { 
-      background: '#fafafa'
   }
 }));
 
@@ -87,8 +84,7 @@ const SkillCloud = (props) =>{
   }
 
   return(  
-    <Grid container direction="row"
-    className= {classes.skillPage}
+    <Grid container direction="row" 
     justify="center"
     alignItems="center"> 
       <Grid item xs={12} sm={8}>  

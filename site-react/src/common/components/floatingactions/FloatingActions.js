@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload'; 
@@ -10,6 +10,7 @@ import onFeedbackSubmit from './feedback-service';
 import Feedback from './Feedback';
 import ErrorDialog from '../errordialog/ErrorDialog';
 import Switch from '@material-ui/core/Switch';
+import UserContext from '../../../context/UserContext';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FloatingActions = () => {
   const classes = useStyles();
-
+  const userContext = useContext(UserContext);
   const [errorDialog, setErrorDialog] = useState({}); 
   const [toggleFeedbackForm, settoggleFeedbackForm] = useState(false); 
 
@@ -111,6 +112,10 @@ const FloatingActions = () => {
   const closeErrorDialogWindow = () =>{ 
     setErrorDialog({});
   }  
+
+  const setTheme = (e) => { 
+    userContext.changeTheme(e.target.checked ? 'dark': 'light');
+  } 
 
   return (
     <React.Fragment>
@@ -185,8 +190,11 @@ const FloatingActions = () => {
           </Hidden>  
 
           <div className={classes.fabTheme}>          
-            <Switch color="primary" />
-            Dark
+            <Switch 
+              color="primary" 
+              checked = {userContext.theme === 'dark'} 
+              onChange= {setTheme}  />
+            Dark(beta)
           </div>
 
 
