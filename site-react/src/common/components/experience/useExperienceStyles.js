@@ -1,19 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useExperienceStyles= makeStyles( (theme)=> ({
-  root: {
-    margin: 10,
+  root: { 
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
     flexWrap: 'wrap',
     listStyle: 'none',
-    padding: theme.spacing(0.5),
+    padding: theme.spacing(2),
     fontFamily: "monospace" 
   },
   paperStyle: {
-      borderRadius: 0,
-      marginRight: 10,
+      borderRadius: 0, 
   },
   header : {
     background: '#ffa602',

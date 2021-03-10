@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Project from './Project'; 
 import useExperienceStyles from './useExperienceStyles';
+import { Button } from '@material-ui/core';
  
 const Experience = (props) => {
     const { experienceItem } = props;
@@ -28,7 +29,7 @@ const Experience = (props) => {
             className={classes.root}
             justify="center"
             alignItems="center"
-        > 
+        >  
             <Grid item xs={12}  sm={7} > 
                 <Paper className={expHeaderClass} elevation={10}>
                     <div className={classes.header}>{experienceItem.companyHeader}</div>  

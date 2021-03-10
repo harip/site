@@ -1,33 +1,33 @@
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { green, purple,red } from '@material-ui/core/colors';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles'; 
 
 const darkTheme = {
-  backgroundColor: "#424242",
-
-  // background: '#fafafa'
+  backgroundColor: "#424242", 
+  boxShadowColor: "#151414"
 } 
 
 const dark = createMuiTheme({  
-  overrides: {
+  overrides: {  
     MuiCssBaseline: {
       "@global": {
         body: {
-          backgroundColor: darkTheme.backgroundColor,
-        },
-      },
-    }, 
-    MuiGridList : {
-      backgroundColor: red[500]
+          backgroundColor: darkTheme.backgroundColor
+        }, 
+        pre: { 
+          backgroundColor: "#101213 !important", 
+        }
+      }
     },
-    MuiGridList : {
-      backgroundColor: red[500]
+    MuiGrid: {
+      item: {
+        // Some CSS 
+        boxShadow: '0px 6px 6px -3px #272424, 0px 10px 14px 1px #272424'
+      },
     }
   }, 
-
   palette: { 
     type: 'dark', 
-    customBackground: darkTheme.backgroundColor
-  },
+    customBackground: darkTheme.backgroundColor 
+  }
 });
 
 export default dark;
