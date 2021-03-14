@@ -1,7 +1,7 @@
-import React, { lazy, Suspense, useContext } from 'react';  
+import React, { Suspense } from 'react';  
 import App from './App';
 import { ProfileProvider } from './context/ProfileContext';  
-import UserContext, { UserContextProvider } from './context/UserContext';   
+import { UserContextProvider } from './context/UserContext';   
 
 export const Site = () => {  
   return (

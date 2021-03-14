@@ -1,6 +1,6 @@
 import React, { lazy, useContext } from 'react';
 import { HashRouter, Route  } from 'react-router-dom';   
-import { createMuiTheme, CssBaseline, MuiThemeProvider } from '@material-ui/core';  
+import { CssBaseline, MuiThemeProvider } from '@material-ui/core';  
 import NavBar from './common/components/navbar/NavBar'; 
 import Projects from './projects/Projects';
 import PythonDs from './pthonds/PythonDs';
@@ -27,11 +27,7 @@ const BasicApp = () => {
       </HashRouter> 
     </React.Fragment>
   )
-}; 
-
-const theme = createMuiTheme({ 
-});
-
+};  
 
 const App = () => {
   const userContext = useContext(UserContext);  

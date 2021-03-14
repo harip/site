@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 const  SwipeableTemporaryDrawer =(props)=> {
   const userContextValue = useContext(UserContext);
   const [selMenu,setSelMenu]=useState(1);
-  const classes = useStyles();
+  const classes = useStyles();  
 
   const handleMenuClick = (menuIndex) => {
     setSelMenu(menuIndex);
@@ -100,8 +100,8 @@ const  SwipeableTemporaryDrawer =(props)=> {
       onClose={()=>props.setToggle(false) }
       onOpen={()=>props.setToggle(true) }
     >
-    {list()}
-  </SwipeableDrawer>     
+      {list()}
+    </SwipeableDrawer>     
   );
 }
 

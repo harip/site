@@ -185,7 +185,7 @@ const BlogPost = (props) => {
 
     const postSaveComment = () => {
       setPostCommentLoading(true);
-      const isSuccess = blogContext.saveComment(props.item["_id"],{ 
+      blogContext.saveComment(props.item["_id"],{ 
         _id: props.item["_id"],
         text: postComment
       });

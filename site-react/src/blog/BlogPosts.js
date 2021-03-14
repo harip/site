@@ -8,12 +8,14 @@ import UserContext from '../context/UserContext';
 import BlogContext from '../context/BlogContext';
 import useBlogStyles from './useBlogStyles'; 
  
-const BlogPosts = (props) => { 
+const BlogPosts = () => { 
   const blogContext = useContext(BlogContext); 
   const userContextValue = useContext(UserContext);
   const classes = useBlogStyles();   
 
-  useEffect(() => document.title="Blog",[]);  
+  useEffect(() => {
+    document.title="Blog";
+  },[]);  
 
   const retryFetchPosts = () => blogContext.retry();
 
@@ -32,7 +34,7 @@ const BlogPosts = (props) => {
         userContextValue.isLoggedIn() 
         ? 
           <div className={classes.fabAddBlog}> 
-            <Fab className="test" aria-label="add" onClick={blogContext.addNewBlog} >
+            <Fab color="primary" aria-label="add" onClick={blogContext.addNewBlog} >
               <AddIcon />
             </Fab>    
           </div>        

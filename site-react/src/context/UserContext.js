@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const defaultProviderValue = {
   user: 'Guest',
-  token: '',
+  token: localStorage.getItem('token'),
   theme: 'light',
   modifyNameAndToken: ()=> {},
   isLoggedIn: ()=> {},
@@ -15,7 +15,7 @@ const UserContext = React.createContext(defaultProviderValue);
 export const UserContextProvider = ({children}) => {
   const [name, setName] = useState(defaultProviderValue);
 
-  useEffect(() => {
+  useEffect(() => { 
     let token = localStorage.getItem('token');
     token = token ? token : "";
     
@@ -30,14 +30,17 @@ export const UserContextProvider = ({children}) => {
   },[]); 
 
   const modifyNameAndToken = (user,token) => { 
-    setName({ ...name, 
+    let newState = { ...name, 
       user: user,
       token:  token
-    }); 
+    };
+    setName(newState); 
   };
 
   const isLoggedIn = () => {
-    const isAdminAndLoggedIn =  name.user.toUpperCase() === 'ADMIN' &&  name.token  && name.token !== "null"
+    const isAdminAndLoggedIn =  
+      name.token  && 
+      name.token !== "null"
     return isAdminAndLoggedIn;
   }
 
