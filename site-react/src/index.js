@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import Site from './Site';
 
 ReactDOM.render(
-  <App/>,
+  <Site/>,
   document.querySelector("#root")
 );

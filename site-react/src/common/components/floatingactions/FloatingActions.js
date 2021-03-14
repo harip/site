@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload'; 
@@ -8,7 +8,8 @@ import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import getResume from './resume-service';
 import onFeedbackSubmit from './feedback-service';
 import Feedback from './Feedback';
-import ErrorDialog from '../errordialog/ErrorDialog';
+import ErrorDialog from '../errordialog/ErrorDialog';  
+import ThemeSwitcher from '../controls/ThemeSwitcher';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -34,12 +35,18 @@ const useStyles = makeStyles((theme) => ({
 
   fabItem: {
     marginBottom: 10
-  }
+  },
+
+  fabTheme: { 
+    position: 'fixed',    
+    right: theme.spacing(2),
+    bottom: theme.spacing(2),
+    marginLeft: 'auto' 
+  },
 }));
 
 const FloatingActions = () => {
-  const classes = useStyles();
-
+  const classes = useStyles(); 
   const [errorDialog, setErrorDialog] = useState({}); 
   const [toggleFeedbackForm, settoggleFeedbackForm] = useState(false); 
 
@@ -103,7 +110,7 @@ const FloatingActions = () => {
   const closeErrorDialogWindow = () =>{ 
     setErrorDialog({});
   }  
-
+ 
   return (
     <React.Fragment>
           <ErrorDialog 
@@ -142,7 +149,9 @@ const FloatingActions = () => {
                   <FeedbackIcon  /> 
                 </Fab> 
               </div> 
-            </div>            
+            </div>    
+
+            <ThemeSwitcher/>                  
           </Hidden>
 
           {/* Mobile */}
@@ -174,7 +183,8 @@ const FloatingActions = () => {
                 </Fab> 
               </div> 
             </div>            
-          </Hidden>  
+          </Hidden>   
+
     </React.Fragment>
   );
 }

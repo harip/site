@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 const defaultProviderValue = {
   user: 'Guest',
   token: '',
+  theme: 'light',
   modifyNameAndToken: ()=> {},
   isLoggedIn: ()=> {},
-  logout: ()=> {}
+  logout: ()=> {},
+  changeTheme: ()=>{}
 };
 
 const UserContext = React.createContext(defaultProviderValue);
@@ -20,6 +22,11 @@ export const UserContextProvider = ({children}) => {
     if (token !== ""){
       modifyNameAndToken('admin',token);
     }
+
+    // Check theme  
+    let theme = localStorage.getItem('theme');
+    theme = theme && theme !== ''? theme : 'light';
+    changeTheme(theme);
   },[]); 
 
   const modifyNameAndToken = (user,token) => { 
@@ -42,12 +49,20 @@ export const UserContextProvider = ({children}) => {
     localStorage.setItem('token',"");
   }
 
+  const changeTheme = (themeName) => {  
+    setName({ ...name, 
+      theme: `${themeName}`
+    }); 
+    localStorage.setItem('theme',themeName);
+  } 
+
   return(
     <UserContext.Provider value={{
       ...name,
       modifyNameAndToken,
       isLoggedIn,
-      logout
+      logout,
+      changeTheme
     }}>
       {children}
     </UserContext.Provider> 

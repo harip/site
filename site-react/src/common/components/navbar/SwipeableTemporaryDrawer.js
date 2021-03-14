@@ -13,7 +13,8 @@ import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 import SubjectIcon from '@material-ui/icons/Subject'; 
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'; 
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import UserContext from '../../../context/UserContext';
+import UserContext from '../../../context/UserContext'; 
+import ThemeSwitcher from '../controls/ThemeSwitcher';
 
 const useStyles = makeStyles({
   list: {
@@ -84,7 +85,10 @@ const  SwipeableTemporaryDrawer =(props)=> {
             <ListItemIcon> <ExitToAppIcon /> </ListItemIcon>
             <ListItemText primary="Sign Out" />
           </ListItem>  
-        } 
+        }  
+        <ListItem>
+          <ThemeSwitcher/>
+        </ListItem> 
       </List>
     </div>
   );

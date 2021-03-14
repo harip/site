@@ -1,17 +1,19 @@
-import React, { lazy, Suspense } from 'react';
-import { HashRouter, Route  } from 'react-router-dom';  
-import NavBar from './common/components/navbar/NavBar';
-import { ProfileProvider } from './context/ProfileContext'; 
+import React, { lazy, useContext } from 'react';
+import { HashRouter, Route  } from 'react-router-dom';   
+import { createMuiTheme, CssBaseline, MuiThemeProvider } from '@material-ui/core';  
+import NavBar from './common/components/navbar/NavBar'; 
 import Projects from './projects/Projects';
 import PythonDs from './pthonds/PythonDs';
 import Resume from './resume/Resume';
 import SkillCloud from './skills/SkillCloud';
-import FloatingActions from './common/components/floatingactions/FloatingActions'; 
-import { UserContextProvider } from './context/UserContext';
- 
-const LazyPosts = lazy(()=>import('./myposts/ReadOnlyPosts'));
+import FloatingActions from './common/components/floatingactions/FloatingActions';   
+import dark from './common/styling/themes/dark';
+import light from './common/styling/themes/light';
+import UserContext from './context/UserContext';
 
-const App = () => {
+const LazyPosts = lazy(()=>import('./blog/Blog'));
+
+const BasicApp = () => {
   return (
     <React.Fragment>
       <HashRouter  > 
@@ -25,18 +27,22 @@ const App = () => {
       </HashRouter> 
     </React.Fragment>
   )
-};
+}; 
 
-export const profileApp = () => {
+const theme = createMuiTheme({ 
+});
+
+
+const App = () => {
+  const userContext = useContext(UserContext);  
+  // Select theme, refactor if more than 2 themes
+  const customTheme = userContext.theme === 'dark' ? dark : light;  
   return (
-    <UserContextProvider>
-      <ProfileProvider>
-        <Suspense fallback={<div>Loading...</div>}>
-          <App/>
-        </Suspense>
-      </ProfileProvider>
-    </UserContextProvider>
+    <MuiThemeProvider theme={customTheme}>
+      <CssBaseline/>
+      <BasicApp/>
+    </MuiThemeProvider>
   );
-};
+}
 
-export default profileApp;
+export default App;
