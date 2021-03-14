@@ -1,7 +1,7 @@
 
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom'; 
-import { Tab, Typography } from '@material-ui/core';
+import { Tab, ThemeProvider, Typography } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs'; 
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import FindInPage from '@material-ui/icons/FindInPage';
@@ -19,12 +19,13 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import SignIn from '../../../signin/SignIn';
 import UserContext from '../../../context/UserContext';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>  ({
   initials: {
     fontSize: 15
   },
   mobileMenuLoc: {
-    marginLeft: 'auto'
+    marginLeft: 'auto',
+    color: theme.palette.hamburgerColor
   },
   mobileMenu: {
     fontSize: 45
@@ -33,9 +34,9 @@ const useStyles = makeStyles({
     borderBottom: '7px solid blue'
   },
   mobileDisplayMenu : {
-    margin: 'auto',
+    margin: 'auto'
   }
-});
+}));
 
 const NavBar = (props) => {
   const userContextValue = useContext(UserContext);
@@ -176,7 +177,7 @@ const NavBar = (props) => {
             <div className={classes.mobileDisplayMenu}>
               <Typography variant="h6">{menuText()}</Typography>
             </div>
-            <IconButton className={classes.mobileMenuLoc} onClick={()=>settoggleMenu(!toggleMenu)} color="primary" >
+            <IconButton className={classes.mobileMenuLoc} onClick={()=>settoggleMenu(!toggleMenu)}   >
               <MenuIcon  className={classes.mobileMenu}/>
             </IconButton> 
             <SwipeableTemporaryDrawer toggle={toggleMenu} setToggle={settoggleMenu} onHandleChange={handleChange}/>

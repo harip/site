@@ -17,7 +17,8 @@ const light = createMuiTheme({
 
   palette: { 
     type: 'light',  
-    selectedMenuItem: 'red'
+    selectedMenuItem: 'red',
+    hamburgerColor: '#3f51b5'
   },
 });
 

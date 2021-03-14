@@ -32,7 +32,8 @@ const dark = createMuiTheme({
   palette: { 
     type: 'dark', 
     customBackground: darkTheme.backgroundColor,
-    selectedMenuItem: 'red'
+    selectedMenuItem: 'red', 
+    hamburgerColor: 'red'
   }
 });
 
