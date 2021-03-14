@@ -33,7 +33,8 @@ const dark = createMuiTheme({
     type: 'dark', 
     customBackground: darkTheme.backgroundColor,
     selectedMenuItem: 'red', 
-    hamburgerColor: 'red'
+    hamburgerColor: 'red',
+    contactHeaderColor: 'black'
   }
 });
 

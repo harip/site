@@ -18,7 +18,8 @@ const light = createMuiTheme({
   palette: { 
     type: 'light',  
     selectedMenuItem: 'red',
-    hamburgerColor: '#3f51b5'
+    hamburgerColor: '#3f51b5',
+    contactHeaderColor: 'antiquewhite'
   },
 });
 

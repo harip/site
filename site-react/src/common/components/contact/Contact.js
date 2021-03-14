@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   contactHeader: {
     fontSize: 20,
     borderBottom: 2,
-    backgroundColor: 'antiquewhite'
+    backgroundColor: theme.palette.contactHeaderColor
   },
   actionsRoot: {
     // backgroundColor: 'aqua'
