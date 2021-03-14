@@ -22,11 +22,17 @@ const dark = createMuiTheme({
         // Some CSS 
         boxShadow: '0px 6px 6px -3px #272424, 0px 10px 14px 1px #272424'
       },
+    },
+    MuiListItem : {
+      selected : {
+        color: 'red'
+      }
     }
   }, 
   palette: { 
     type: 'dark', 
-    customBackground: darkTheme.backgroundColor 
+    customBackground: darkTheme.backgroundColor,
+    selectedMenuItem: 'red'
   }
 });
 

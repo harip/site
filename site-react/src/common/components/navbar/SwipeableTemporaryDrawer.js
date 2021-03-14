@@ -16,7 +16,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import UserContext from '../../../context/UserContext'; 
 import ThemeSwitcher from '../controls/ThemeSwitcher';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) => ({
   list: {
     width: 250,
   },
@@ -27,9 +27,9 @@ const useStyles = makeStyles({
     backgroundColor: '#3f51b5'
   },
   selectedMenuItem: {
-    backgroundColor: 'antiquewhite'
+    backgroundColor: theme.palette.selectedMenuItem
   }
-});
+}));
 
 const  SwipeableTemporaryDrawer =(props)=> {
   const userContextValue = useContext(UserContext);
