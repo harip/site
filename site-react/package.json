@@ -4,19 +4,18 @@
   "private": true,
   "dependencies": {
     "@emotion/css": "^11.1.3",
-    "@material-ui/core": "^4.11.2",
+    "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.57",
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
-    "@tinymce/tinymce-react": "^3.10.1",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@tinymce/tinymce-react": "^3.12.6",
     "axios": "^0.21.1",
-    "custom-elements": "file:../custom-elements/custom-elements-0.0.2.tgz",
-    "formik": "^2.2.6",
+    "formik": "^2.2.9",
     "fuse.js": "^6.4.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "source-map-explorer": "^2.5.2",
@@ -51,7 +50,7 @@
   },
   "devDependencies": {
     "@babel/helper-define-map": "^7.14.5",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.2.3"
   },
   "homepage": "https://harip.github.io/site"
 }
