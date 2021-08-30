@@ -3,7 +3,26 @@
     "experience": [
       {
         "id":0,
-        "companyHeader":"SWISS RE / June 2018-Present / Senior Full Stack Developer",
+        "companyHeader":"TCS - Silicon Valley Bank (SVB) / June 2021 - Present / Consultant",
+        "jobDescription":"Creating connected services based on event driven architecture and microservices architecture. The tech stack is based on NodeJS, Strongloop, TypeScript, KafkaJs and Oracle.",
+        "projects":[
+          {
+            "id":0,
+            "title":"Client Onboarding",
+            "description":"Fullstack developer, working with Integrations, API and UI team on creating a portal for onboarding client/businesses to SVB.",
+            "responsibilities": [
+              "Create microservices based on event driven architecture on NodeJS stack using strongloop framework and kafka queues using kafkaJs.",
+              "API management using APIGEE, create inbound and outbound proxies using custom Javascript policies.",
+              "Create reusable npm packages and integrate with microservices.",
+              "Create test suites for React front end application and microservices.",
+              "Work with Devops to create jenkins pipelines to deploy the services to openShift."
+            ]
+          }          
+        ]
+      },
+      {
+        "id":0,
+        "companyHeader":"SWISS RE / June 2018 - Present / Senior Full Stack Developer",
         "jobDescription":"Working as a senior full stack developer in creating B2B2C platforms with focus on Life insurance and Medicare supplement products.",
         "projects":[
           {
@@ -231,8 +250,11 @@
     { "id": 37, "skill": "Knockout", "experience": "high" },
     { "id": 38, "skill": ".NETCore", "experience": "low" },
     { "id": 39, "skill": "Go", "experience": "low" },    
-    { "id": 38, "skill": "Microservices", "experience": "high" },
-    { "id": 39, "skill": "Services", "experience": "high" }
+    { "id": 40, "skill": "Microservices", "experience": "high" },
+    { "id": 41, "skill": "Services", "experience": "high" },
+    { "id": 42, "skill": "Loopback", "experience": "high" },
+    { "id": 43, "skill": "APIGEE", "experience": "med" },
+    { "id": 44, "skill": "KafkaJs", "experience": "high" }
   ],
   "projects": [
     { "id":0, 

@@ -23,7 +23,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:wp": "./node_modules/.bin/webpack-dev-server",
     "build": "react-scripts build",
+    "webpack": "./node_modules/.bin/webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -49,8 +51,19 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
     "@babel/helper-define-map": "^7.14.5",
-    "gh-pages": "^3.2.3"
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@webpack-cli/serve": "^1.5.2",
+    "babel-loader": "^8.2.2",
+    "gh-pages": "^3.2.3",
+    "html-webpack-plugin": "^5.3.2",
+    "regenerator-runtime": "^0.13.9",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^4.0.0"
   },
   "homepage": "https://harip.github.io/site"
 }
