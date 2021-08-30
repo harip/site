@@ -3,6 +3,29 @@
     "experience": [
       {
         "id":0,
+        "companyHeader":"TCS - Silicon Valley Bank / June 2021-Present / Consultant",
+        "jobDescription":"Creating connected services based on event driven architecture and microservices architecture. The tech stack is based on NodeJS, LoopBack, TypeScript, and Oracle.",
+        "projects":[
+          {
+            "id":0,
+            "title":"Client Onboarding",
+            "description":"Create a sys",
+            "responsibilities": [
+              "Worked with Software Architect and Senior Developers to design and identify tech stack for the platform.",
+              "Lead a team of UI developers in creating the web interface using Angular.",
+              "Worked closely with UX designer, backend developers, decision management and modeling analysts and business analysts to create page flow diagrams, technical and API documentation and give high level estimates.",
+              "Created Angular Custom Library for reusable components.",
+              "Experience using Angular features including Http Interceptors, Lazy Loading Feature Modules, Custom Validators, RxJS and NgRx library for state management.",
+              "Integrated with Google Analytics and Azure Application Insights for page tracking and performance.",
+              "Created unit test suite using Jest and integrated with Azure build pipelines for executing and generating test results and code coverage reports and ensured the team maintained an approved code coverage.",
+              "Created several in-house apps, proof-of-concept apps using Python,React, Redux, Angular, Python, C#, and ",
+              "Lead the daily stand up calls regularly." 
+            ]
+          }          
+        ]
+      },
+      {
+        "id":0,
         "companyHeader":"SWISS RE / June 2018-Present / Senior Full Stack Developer",
         "jobDescription":"Working as a senior full stack developer in creating B2B2C platforms with focus on Life insurance and Medicare supplement products.",
         "projects":[
