@@ -22,8 +22,6 @@ const BasicApp = () => {
           <Route path="/" exact component={SkillCloud} />
           <Route path="/resume" exact component={Resume} /> 
           <Route path="/projects" exact component={Projects} />
-          <Route path="/pythonds" exact component={PythonDs} />   
-          <Route path="/posts" exact component={LazyPosts} />   
       </HashRouter> 
     </React.Fragment>
   )

@@ -146,31 +146,7 @@ const NavBar = (props) => {
               onClick={(e)=>handleChange(e,3)} 
               label="Projects"
               className={`${ selTab===3 ? classes.selectedTab : ""}`}
-            />  
-
-            <Tab 
-              icon={<SubjectIcon />} 
-              onClick={(e)=>handleChange(e,4)} 
-              label="Blog"
-              className={`${ selTab===4 ? classes.selectedTab : ""}`}
-            />     
-            {
-              !userContextValue.isLoggedIn()
-              ? 
-                <Tab 
-                  icon={<AccountCircleIcon />} 
-                  onClick={(e)=>handleChange(e,998)}  
-                  style={{marginLeft: 'auto'}}
-                  className={`${ selTab===998 ? classes.selectedTab : ""}`}
-                />  
-              :
-                <Tab 
-                  icon={<ExitToAppIcon />} 
-                  onClick={(e)=>handleChange(e,999)}  
-                  style={{marginLeft: 'auto'}}
-                  className={`${ selTab===999 ? classes.selectedTab : ""}`}
-                />  
-            } 
+            />   
           </Hidden>
 
           <Hidden only={['md','lg','xl']}>    

@@ -259,31 +259,17 @@
   "projects": [
     { "id":0, 
       "title": "gMath", 
-      "description": "tiny math app created for my kid using React and Redux", 
+      "description": "math app using React and Redux", 
       "url":"https://g-math.netlify.app", 
       "github":"",
       "language": "React,Redux"
      },
-    { "id":1, 
-      "title": "Python Coding Conventions", 
-      "description": "Visual Studio Code extension for implementing python conventions", 
-      "url":"https://marketplace.visualstudio.com/items?itemName=igress.python-coding-conventions", 
-      "github":"" ,
-      "language":"TypeScript"
-    },
-    { "id":2, 
-      "title": "Print Class Instance", 
-      "description": "Reflection methods created for extracting C# class properties created using C#", 
-      "url":"https://www.nuget.org/packages/PrintClassInstance", 
+     { "id":1, 
+      "title": "Dice Probability", 
+      "description": "math app using React and Redux", 
+      "url":"https://g-math.netlify.app", 
       "github":"",
-      "language": ".NETCore, C#"
-    },
-    { "id":3, 
-      "title": "Custom Data Structure", 
-      "description": "Custom tree data structure created in python and is used to represent a HTML DOM structure", 
-      "url":"https://github.com/harip/python-html-ml", 
-      "github":"",
-      "language":"Python"
-    }
+      "language": "React,Redux"
+     }
   ]
 }
