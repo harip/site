@@ -267,7 +267,7 @@
      { "id":1, 
       "title": "Basic Probability", 
       "description": "Basic probability created using React. State is maintained using Component state and Redux", 
-      "url":"https://react-probability.netlify.app/dice", 
+      "url":"https://react-probability.netlify.app", 
       "github":"",
       "language": "React,Redux"
      }
