@@ -265,8 +265,8 @@
       "language": "React,Redux"
      },
      { "id":1, 
-      "title": "Basic Probability", 
-      "description": "Basic probability created using React. State is maintained using Component state and Redux", 
+      "title": "Math with React", 
+      "description": "probability, conic sections, and calculus using React and Redux",
       "url":"https://react-probability.netlify.app", 
       "github":"",
       "language": "React,Redux"
