@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';  
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
 import ProfileContext from '../context/ProfileContext';
 import Fuse from 'fuse.js';
 import Experience from '../common/components/experience/Experience';

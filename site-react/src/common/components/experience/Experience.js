@@ -3,11 +3,11 @@
  * Child Component: Project that renders individual projects worked at the company
  */
 import React from 'react'; 
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import Project from './Project'; 
 import useExperienceStyles from './useExperienceStyles';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
  
 const Experience = (props) => {
     const { experienceItem } = props;
@@ -27,7 +27,7 @@ const Experience = (props) => {
             direction="row" 
             wrap="nowrap"
             className={classes.root}
-            justify="center"
+            justifyContent="center"
             alignItems="center"
         >  
             <Grid item xs={12}  sm={7} > 

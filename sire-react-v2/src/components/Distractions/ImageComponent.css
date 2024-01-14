@@ -1,0 +1,11 @@
+.ImageComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .ImageComponent img {
+    max-width: 90%;
+    max-height: 90%;
+  }

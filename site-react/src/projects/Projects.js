@@ -1,16 +1,17 @@
 
 import React, { useContext, useEffect } from 'react';
-import Paper from '@material-ui/core/Paper';  
-import Grid from '@material-ui/core/Grid';  
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader'; 
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions'; 
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography'; 
-import LaunchIcon from '@material-ui/icons/Launch';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import LaunchIcon from '@mui/icons-material/Launch';
 import ProfileContext from '../context/ProfileContext';
-import { Badge, withStyles } from '@material-ui/core'; 
+import { Badge } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
 import useProjectStyles from './useProjectStyles';
 
 const StyledBadge = withStyles((theme) => ({
@@ -40,7 +41,7 @@ const Projects = (props) =>{
   }
  
   const getSkillChip = (item) => {  
-    return ( 
+    return (
       <li>  
         <div onClick={()=>window.open(item.url)} className={classes.card}>
           <Card  > 
@@ -48,7 +49,7 @@ const Projects = (props) =>{
               className={classes.contactHeader}
               title={cardTitle(item)} 
               action={
-                <IconButton aria-label="launch-app">
+                <IconButton aria-label="launch-app" size="large">
                   <LaunchIcon />
                 </IconButton>
               }
@@ -65,7 +66,7 @@ const Projects = (props) =>{
           </CardActions> 
           </Card>
         </div> 
-      </li> 
+      </li>
     );
   } 
   
@@ -73,9 +74,9 @@ const Projects = (props) =>{
     return <div>Loading...</div>
   }
 
-  return(  
+  return (
     <Grid container direction="row" 
-    justify="center"
+    justifyContent="center"
     alignItems="center"> 
       <Grid item xs={12} sm={8}>   
         <Paper component="ul" className={classes.root} elevation={0}>
@@ -89,8 +90,8 @@ const Projects = (props) =>{
         </Paper> 
 
       </Grid> 
-    </Grid> 
-  )
+    </Grid>
+  );
 };
 
 export default Projects;

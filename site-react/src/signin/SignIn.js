@@ -1,16 +1,17 @@
-import React, { useState,useContext } from 'react'; 
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent'; 
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input'; 
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import { makeStyles,Typography } from '@material-ui/core';   
-import CloseIcon from '@material-ui/icons/Close';
+import React, { useState,useContext } from 'react';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import MuiDialogTitle from '@mui/material/DialogTitle';
+import { Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import CloseIcon from '@mui/icons-material/Close';
 import ValidateCredentials from './SignInService';
 import UserContext from '../context/UserContext';
 
@@ -91,7 +92,11 @@ const SignIn =  (props) => {
 
         <MuiDialogTitle disableTypography className={classes.contactHeader} >
         <Typography variant="h6">Enable Admin Mode</Typography>
-            <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose} >
+            <IconButton
+              aria-label="close"
+              className={classes.closeButton}
+              onClick={handleClose}
+              size="large">
             <CloseIcon />
             </IconButton>
         </MuiDialogTitle>
@@ -117,10 +122,10 @@ const SignIn =  (props) => {
                 endAdornment={
                 <InputAdornment position="end">
                     <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                    >
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      size="large">
                     {passwordData.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                 </InputAdornment>

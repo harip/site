@@ -1,21 +1,21 @@
 
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom'; 
-import { Tab, ThemeProvider, Typography } from '@material-ui/core';
-import Tabs from '@material-ui/core/Tabs'; 
-import ContactMailIcon from '@material-ui/icons/ContactMail';
-import FindInPage from '@material-ui/icons/FindInPage';
-import AssignmentInd from '@material-ui/icons/AssignmentInd';
-import DynamicFeedIcon from '@material-ui/icons/DynamicFeed'; 
-import { makeStyles } from '@material-ui/core/styles';  
+import { Tab, ThemeProvider, StyledEngineProvider, Typography } from '@mui/material';
+import Tabs from '@mui/material/Tabs'; 
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import FindInPage from '@mui/icons-material/FindInPage';
+import AssignmentInd from '@mui/icons-material/AssignmentInd';
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed'; 
+import makeStyles from '@mui/styles/makeStyles';  
 import Contact from '../contact/Contact';
-import Hidden from '@material-ui/core/Hidden'; 
+import Hidden from '@mui/material/Hidden'; 
 import SwipeableTemporaryDrawer from './SwipeableTemporaryDrawer';
-import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';  
-import SubjectIcon from '@material-ui/icons/Subject';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';  
+import SubjectIcon from '@mui/icons-material/Subject';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SignIn from '../../../signin/SignIn';
 import UserContext from '../../../context/UserContext';
 
@@ -114,7 +114,7 @@ const NavBar = (props) => {
     );
   };
  
-  return ( 
+  return (
     <div>
       <Contact open={openContact} close={handleContactClose}/> 
       <SignIn open={showSignIn} close={handleSignInClose}/>
@@ -153,7 +153,10 @@ const NavBar = (props) => {
             <div className={classes.mobileDisplayMenu}>
               <Typography variant="h6">{menuText()}</Typography>
             </div>
-            <IconButton className={classes.mobileMenuLoc} onClick={()=>settoggleMenu(!toggleMenu)}   >
+            <IconButton
+              className={classes.mobileMenuLoc}
+              onClick={()=>settoggleMenu(!toggleMenu)}
+              size="large">
               <MenuIcon  className={classes.mobileMenu}/>
             </IconButton> 
             <SwipeableTemporaryDrawer toggle={toggleMenu} setToggle={settoggleMenu} onHandleChange={handleChange}/>

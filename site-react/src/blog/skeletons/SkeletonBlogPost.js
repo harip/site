@@ -1,9 +1,9 @@
-import Skeleton from '@material-ui/lab/Skeleton';
-import { makeStyles } from '@material-ui/core/styles'; 
-import Grid from '@material-ui/core/Grid';    
-import { Button, Typography } from '@material-ui/core';
-import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
-import RefreshIcon from '@material-ui/icons/Refresh'; 
+import Skeleton from '@mui/material/Skeleton';
+import makeStyles from '@mui/styles/makeStyles'; 
+import Grid from '@mui/material/Grid';    
+import { Button, Typography } from '@mui/material';
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+import RefreshIcon from '@mui/icons-material/Refresh'; 
 
 const useStyles= makeStyles( (theme)=> ({
     post: {
@@ -58,14 +58,12 @@ const SkeletonBlogPost = (props) =>{
             );
         }
 
-        return ( 
-            <Skeleton variant="rect" className={classes.postBody}/> 
-        );
+        return <Skeleton variant="rectangular" className={classes.postBody}/>;
     }
 
-    return(
+    return (
         <Grid container direction="row"
-            justify="center"
+            justifyContent="center"
             alignItems="center">       
             {posts.map((item) => { 
                 return(

@@ -1,0 +1,8 @@
+.Distractions {
+    padding: 20px;
+  }
+  
+  .Distractions img {
+    width: 100%;
+    cursor: pointer;
+  }

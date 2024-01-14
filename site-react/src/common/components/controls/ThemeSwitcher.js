@@ -1,5 +1,5 @@
-import { makeStyles } from '@material-ui/core';
-import Switch from '@material-ui/core/Switch'; 
+import makeStyles from '@mui/styles/makeStyles';
+import Switch from '@mui/material/Switch'; 
 import { useContext } from 'react';
 import UserContext from '../../../context/UserContext';
 

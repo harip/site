@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
-const light = createMuiTheme({  
+const light = createTheme(adaptV4Theme({  
   overrides: {
     MuiCssBaseline: {
       "@global": {
@@ -21,6 +21,6 @@ const light = createMuiTheme({
     hamburgerColor: '#3f51b5',
     contactHeaderColor: 'antiquewhite'
   },
-});
+}));
 
 export default light;

@@ -1,11 +1,13 @@
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles'; 
+import { createTheme, ThemeProvider, StyledEngineProvider, adaptV4Theme } from '@mui/material/styles';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 const darkTheme = {
   backgroundColor: "#424242", 
   boxShadowColor: "#151414"
-} 
+}
 
-const dark = createMuiTheme({  
+const dark = createTheme(adaptV4Theme({  
   overrides: {  
     MuiCssBaseline: {
       "@global": {
@@ -36,6 +38,6 @@ const dark = createMuiTheme({
     hamburgerColor: 'red',
     contactHeaderColor: 'black'
   }
-});
+}));
 
 export default dark;

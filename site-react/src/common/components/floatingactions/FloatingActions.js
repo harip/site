@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
-import CloudDownloadIcon from '@material-ui/icons/CloudDownload'; 
-import Hidden from '@material-ui/core/Hidden'; 
-import FeedbackIcon from '@material-ui/icons/Feedback';
-import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import makeStyles from '@mui/styles/makeStyles';
+import Fab from '@mui/material/Fab';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload'; 
+import Hidden from '@mui/material/Hidden'; 
+import FeedbackIcon from '@mui/icons-material/Feedback';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import getResume from './resume-service';
 import onFeedbackSubmit from './feedback-service';
 import Feedback from './Feedback';
@@ -121,7 +121,7 @@ const FloatingActions = () => {
             close = {closeFeedbackForm} />
 
           {/* Not mobile  */}
-          <Hidden xsDown > 
+          <Hidden smDown > 
             <div className={classes.fabResume}> 
               <div className={classes.fabItem}>
                 <Fab
