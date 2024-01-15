@@ -1,18 +1,19 @@
-import React from 'react';   
-import { Button, Dialog, makeStyles, Typography } from '@material-ui/core';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem'; 
-import MailOutlineIcon from '@material-ui/icons/MailOutline'; 
-import Card from '@material-ui/core/Card'; 
-import CardContent from '@material-ui/core/CardContent'; 
-import IconButton from '@material-ui/core/IconButton'; 
-import { red } from '@material-ui/core/colors'; 
-import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
-import GitHubIcon from '@material-ui/icons/GitHub'; 
-import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
-import CloseIcon from '@material-ui/icons/Close';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import React from 'react';
+import { Button, Dialog, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import IconButton from '@mui/material/IconButton';
+import { red } from '@mui/material/colors';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import CloseIcon from '@mui/icons-material/Close';
+import MuiDialogTitle from '@mui/material/DialogTitle';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,11 +68,15 @@ const Contact = (props) =>{
   }
  
 
-  return( 
+  return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}> 
       <MuiDialogTitle disableTypography className={classes.contactHeader} >
       <Typography variant="h6">HARI PULUGURTA</Typography>
-        <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose} >
+        <IconButton
+          aria-label="close"
+          className={classes.closeButton}
+          onClick={handleClose}
+          size="large">
           <CloseIcon />
         </IconButton>
       </MuiDialogTitle>
@@ -148,7 +153,7 @@ const Contact = (props) =>{
     </Card>
 
     </Dialog>
-  )
+  );
 };
 
 export default Contact;

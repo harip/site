@@ -1,16 +1,16 @@
 import React, { useState,useContext } from 'react';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader'; 
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';  
-import Typography from '@material-ui/core/Typography'; 
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader'; 
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';  
+import Typography from '@mui/material/Typography'; 
 import TextEditor from '../common/components/editor/TextEditor';
-import { ButtonGroup, IconButton } from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
-import SaveIcon from '@material-ui/icons/Save';
-import TextField from '@material-ui/core/TextField';  
+import { ButtonGroup, IconButton } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import SaveIcon from '@mui/icons-material/Save';
+import TextField from '@mui/material/TextField';  
 import UserContext from '../context/UserContext';
-import InsertCommentIcon from '@material-ui/icons/InsertComment';
+import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import SpinnerButton from '../common/components/controls/SpinnerButton'; 
 import { useFormik } from 'formik';  
 import BlogContext from '../context/BlogContext';
@@ -83,7 +83,7 @@ const BlogPost = (props) => {
                   label="add comment"
                   className={classes.commentBox}
                   multiline
-                  rowsMax={4} 
+                  maxRows={4} 
                   value={postComment}
                   onChange={handleCommentChange}
                 />
@@ -116,8 +116,8 @@ const BlogPost = (props) => {
           className={classes.crudButtons}>
             {
               !editClicked 
-              ?  <IconButton aria-label="edit" onClick={()=>setEditClicked(!editClicked)}><EditIcon /></IconButton>       
-              :  <IconButton aria-label="save" onClick={()=> postSave()} color="primary"><SaveIcon /></IconButton>      
+              ?  <IconButton aria-label="edit" onClick={()=>setEditClicked(!editClicked)} size="large"><EditIcon /></IconButton>       
+              :  <IconButton aria-label="save" onClick={()=> postSave()} color="primary" size="large"><SaveIcon /></IconButton>      
             } 
         </ButtonGroup>
       );
@@ -150,7 +150,7 @@ const BlogPost = (props) => {
                 label="add comment"
                 className={classes.commentBox}
                 multiline
-                rowsMax={4} 
+                maxRows={4} 
                 value={postComment}
                 onChange={handleCommentChange}
               />
@@ -161,7 +161,7 @@ const BlogPost = (props) => {
                 }}
               />
           </CardActions> 
-        </Card>  
+        </Card>
       );     
     } 
 

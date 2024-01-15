@@ -1,6 +1,6 @@
 import React, { lazy, useContext } from 'react';
 import { HashRouter, Route  } from 'react-router-dom';   
-import { CssBaseline, MuiThemeProvider } from '@material-ui/core';  
+import { CssBaseline, ThemeProvider, StyledEngineProvider } from '@mui/material';  
 import NavBar from './common/components/navbar/NavBar'; 
 import Projects from './projects/Projects';
 import PythonDs from './pthonds/PythonDs';
@@ -32,10 +32,12 @@ const App = () => {
   // Select theme, refactor if more than 2 themes
   const customTheme = userContext.theme === 'dark' ? dark : light;  
   return (
-    <MuiThemeProvider theme={customTheme}>
-      <CssBaseline/>
-      <BasicApp/>
-    </MuiThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={customTheme}>
+        <CssBaseline/>
+        <BasicApp/>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

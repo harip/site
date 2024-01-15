@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
-import Grid from '@material-ui/core/Grid';    
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';   
+import Grid from '@mui/material/Grid';    
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';   
 import BlogPost from './BlogPost';
 import SkeletonBlogPost from './skeletons/SkeletonBlogPost'; 
 import UserContext from '../context/UserContext';
@@ -28,7 +28,7 @@ const BlogPosts = () => {
  
   const { posts } = blogContext;  
 
-  return(  
+  return (
     <React.Fragment> 
       {
         userContextValue.isLoggedIn() 
@@ -42,7 +42,7 @@ const BlogPosts = () => {
       } 
 
       <Grid container direction="row"
-      justify="center"
+      justifyContent="center"
       alignItems="center">   
         {posts.map((item) => { 
           return(

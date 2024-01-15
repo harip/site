@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';  
-import Grid from '@material-ui/core/Grid'; 
+import makeStyles from '@mui/styles/makeStyles';
+import Paper from '@mui/material/Paper';  
+import Grid from '@mui/material/Grid'; 
 import ProfileContext from '../context/ProfileContext';
 import SkillSearch from './SkillSearch';
 // import PythonDs from '../pthonds/PythonDs';
@@ -83,9 +83,9 @@ const SkillCloud = (props) =>{
     return <div>Loading...</div>
   }
 
-  return(  
+  return (
     <Grid container direction="row" 
-    justify="center"
+    justifyContent="center"
     alignItems="center"> 
       <Grid item xs={12} sm={8}>  
         <SkillSearch open={open} onClose={handleClose} searchTerm={selectedSkill}/> 
@@ -100,8 +100,8 @@ const SkillCloud = (props) =>{
             })}
         </Paper> 
       </Grid> 
-    </Grid> 
-  )
+    </Grid>
+  );
 };
 
 export default SkillCloud;
