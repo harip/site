@@ -25,7 +25,7 @@ const defaultTheme = createTheme();
 export default function Pricing() {
 
   // Create state varaible to store which link is active
-  const [activeLink, setActiveLink] = React.useState('Experience');
+  const [activeLink, setActiveLink] = React.useState('Home');
 
   // Create a function to return appropriate component based on activeLink
   const renderActiveLink = () => {
