@@ -29,27 +29,22 @@ const Distractions: React.FC = () => {
   const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13, Image14, Image15, Image16, Image17, Image18, Image19, Image20];
   const [selectedImage, setSelectedImage] = useState("");
 
-  const handleClose = () => {
-    setSelectedImage("");
-  };
-
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
   };
 
+  const onImageClose = () => {
+    setSelectedImage("");
+  }
+
   return (
     <div className="Distractions">
       {selectedImage ? (
-        <Dialog open onClose={handleClose}>
-          <IconButton edge="end" color="inherit" onClick={handleClose} aria-label="close">
-            <CloseIcon />
-          </IconButton>
-          <ImageComponent image={selectedImage} />
-        </Dialog>
+        <ImageComponent image={selectedImage} onClose={onImageClose} />
       ) : (
         <Grid container spacing={2}>
           {images.map((image, index) => (
-            <Grid item xs={3} key={index}>
+            <Grid item xs={4} key={index}>
               <img
                 src={image}
                 alt=""
