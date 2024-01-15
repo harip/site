@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/site/static/css/main.672c9124.css",
-    "main.js": "/site/static/js/main.92056121.js",
+    "main.css": "/site/static/css/main.63fe0c71.css",
+    "main.js": "/site/static/js/main.2bda4bc6.js",
     "static/js/787.d92a41a5.chunk.js": "/site/static/js/787.d92a41a5.chunk.js",
     "static/media/CamScanner 12-04-2023 22.30_11.jpg": "/site/static/media/CamScanner 12-04-2023 22.30_11.8d3c2e60d906e39fa384.jpg",
     "static/media/CamScanner 12-04-2023 22.30_2.jpg": "/site/static/media/CamScanner 12-04-2023 22.30_2.ba47eaa45795149390a9.jpg",
@@ -24,12 +24,12 @@
     "static/media/CamScanner 12-04-2023 22.30_20.jpg": "/site/static/media/CamScanner 12-04-2023 22.30_20.c3d6fb361c7d5f92fff3.jpg",
     "static/media/CamScanner 12-04-2023 22.30_1.jpg": "/site/static/media/CamScanner 12-04-2023 22.30_1.70e2c06188cd4c69bc39.jpg",
     "index.html": "/site/index.html",
-    "main.672c9124.css.map": "/site/static/css/main.672c9124.css.map",
-    "main.92056121.js.map": "/site/static/js/main.92056121.js.map",
+    "main.63fe0c71.css.map": "/site/static/css/main.63fe0c71.css.map",
+    "main.2bda4bc6.js.map": "/site/static/js/main.2bda4bc6.js.map",
     "787.d92a41a5.chunk.js.map": "/site/static/js/787.d92a41a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.672c9124.css",
-    "static/js/main.92056121.js"
+    "static/css/main.63fe0c71.css",
+    "static/js/main.2bda4bc6.js"
   ]
 }
