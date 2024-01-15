@@ -16,7 +16,8 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import Distractions from './components/Distractions/Distractions';
-import Experience from './components/Experience/Experience';
+import Experience from './components/Experience/Experience'; 
+import Home from './components/Home/Home';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -32,40 +33,11 @@ export default function Pricing() {
       return <Experience />;
     } else if (activeLink === 'Distractions') {
       return <Distractions />;
+    } else if (activeLink === 'Home') {
+      return <Home />;
     } else {
       return <div>Invalid Link</div>;
     }
-  };
-
-  const renderContact = () => {
-    // If active link is experience, render contact, else render nothing
-    if (activeLink !== 'Experience') {
-      return null;
-    }
-      
-    return (
-      <Box
-        sx={{ 
-          height: '100vh',
-          padding: '20px',
-          textAlign: 'left',
-        }}
-      >
-        <Typography variant="h6" style={{ fontFamily: 'Indie Flower, cursive'  }}>
-          Email: charanp@gmail.com
-        </Typography>
-        <Typography variant="h6" style={{ fontFamily: 'Indie Flower, cursive' }}>
-          Code: 
-          <Link 
-            href="https://github.com/harip?tab=repositories" 
-            target="_blank" 
-            rel="noopener"
-          >
-            https://github.com/harip?tab=repositories
-          </Link>
-        </Typography>
-      </Box>
-    )
   };
 
   return (
@@ -84,6 +56,24 @@ export default function Pricing() {
             Hari
           </Typography>
           <nav>
+          <Link
+              variant="button"
+              color="text.primary"
+              href="#"
+              sx={{ 
+                my: 1, 
+                mx: 1.5,
+                color: activeLink === 'Home' ? 'primary.main' : 'text.primary',
+                textDecoration: activeLink === 'Home' ? 'underline' : 'underline',
+                backgroundColor: activeLink === 'Home' ? 'rgba(0, 0, 0, 0.04)' : 'transparent',
+                padding: activeLink === 'Home' ? '0.5rem' : '0',
+                borderRadius: activeLink === 'Home' ? '4px' : '0',
+              }}
+              onClick={ ()=> setActiveLink('Home') }
+            >
+              Home
+            </Link>
+
             <Link
               variant="button"
               color="text.primary"
@@ -122,9 +112,6 @@ export default function Pricing() {
         </Toolbar>
       </AppBar>
 
-
-      {renderContact()} 
-
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
         <Typography
           component="h1"
@@ -137,7 +124,6 @@ export default function Pricing() {
         </Typography>
       </Container>
 
- 
     </ThemeProvider>
   );
 }

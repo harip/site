@@ -9,7 +9,7 @@ const Experience: React.FC = () => {
         padding: '20px',
         textAlign: 'left',
       }}
-    > 
+    >      
     </Box>
   );
 };
