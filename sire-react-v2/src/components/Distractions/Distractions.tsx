@@ -48,17 +48,18 @@ const Distractions: React.FC = () => {
   }
 
   return (
-    <div className="Distractions">
+    <div className="image-container">
       {selectedImage ? (
         <ImageComponent image={selectedImage} onClose={onImageClose} />
       ) : (
         <Grid container spacing={2}>
           {images.map((image, index) => (
-            <Grid item xs={4} key={index}>
+            <Grid item xs={5} key={index}>
               <img
                 src={image}
                 alt=""
                 loading="lazy"
+                className="responsive-image"
                 onClick={() => handleImageClick(image)}
               />
             </Grid>
