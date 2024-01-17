@@ -27,10 +27,12 @@ import Image21 from './images/CamScanner 12-04-2023 22.30_21.jpeg';
 import Image22 from './images/CamScanner 12-04-2023 22.30_22.jpeg';
 import Image23 from './images/CamScanner 12-04-2023 22.30_23.jpeg';
 import Image24 from './images/CamScanner 12-04-2023 22.30_24.jpeg';
+import Image25 from './images/CamScanner 12-04-2023 22.30_25.jpeg';
 
 const Distractions: React.FC = () => {
 
   const images = [
+    Image25,
     Image24, Image23, Image22,  Image21,
     Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13, Image14, Image15, Image16, Image17, Image18, Image19, Image20
     
@@ -56,6 +58,7 @@ const Distractions: React.FC = () => {
               <img
                 src={image}
                 alt=""
+                loading="lazy"
                 onClick={() => handleImageClick(image)}
               />
             </Grid>
