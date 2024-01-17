@@ -54,7 +54,7 @@ const Distractions: React.FC = () => {
       ) : (
         <Grid container spacing={2}>
           {images.map((image, index) => (
-            <Grid item xs={5} key={index}>
+            <Grid item xs={6} key={index}>
               <img
                 src={image}
                 alt=""
