@@ -96,9 +96,9 @@ const App: React.FC = () => {
                 padding: activeLink === 'Experience' ? '0.5rem' : '0',
                 borderRadius: activeLink === 'Experience' ? '4px' : '0',
               }}
-              onClick={ ()=> setSelectedLink('Experience') }
+              onClick={ ()=> {} }
             >
-              Work
+              
             </Link>
             <Link
               variant="button"
@@ -115,7 +115,7 @@ const App: React.FC = () => {
               }}
               onClick={ ()=> setSelectedLink('Distractions') }
             >
-              Distractions
+              Work
             </Link>
           </nav>
         </Toolbar>
