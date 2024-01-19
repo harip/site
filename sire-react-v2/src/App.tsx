@@ -22,10 +22,22 @@ import Home from './components/Home/Home';
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Pricing() {
+const App: React.FC = () => {
 
   // Create state varaible to store which link is active
   const [activeLink, setActiveLink] = React.useState('Home');
+
+  React.useEffect(() => {
+    const activeLink = sessionStorage.getItem('activeLink');
+    if (activeLink) {
+      setActiveLink(activeLink);
+    }
+  }, []);
+
+  const setSelectedLink = (link: string) => {
+    setActiveLink(link);
+    sessionStorage.setItem('activeLink', link);
+  }
 
   // Create a function to return appropriate component based on activeLink
   const renderActiveLink = () => {
@@ -52,9 +64,6 @@ export default function Pricing() {
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Hari
-          </Typography>
           <nav>
           <Link
               variant="button"
@@ -69,7 +78,7 @@ export default function Pricing() {
                 padding: activeLink === 'Home' ? '0.5rem' : '0',
                 borderRadius: activeLink === 'Home' ? '4px' : '0',
               }}
-              onClick={ ()=> setActiveLink('Home') }
+              onClick={ ()=> setSelectedLink('Home') }
             >
               Home
             </Link>
@@ -87,7 +96,7 @@ export default function Pricing() {
                 padding: activeLink === 'Experience' ? '0.5rem' : '0',
                 borderRadius: activeLink === 'Experience' ? '4px' : '0',
               }}
-              onClick={ ()=> setActiveLink('Experience') }
+              onClick={ ()=> setSelectedLink('Experience') }
             >
               Work
             </Link>
@@ -104,7 +113,7 @@ export default function Pricing() {
                 padding: activeLink === 'Distractions' ? '0.5rem' : '0',
                 borderRadius: activeLink === 'Distractions' ? '4px' : '0',
               }}
-              onClick={ ()=> setActiveLink('Distractions') }
+              onClick={ ()=> setSelectedLink('Distractions') }
             >
               Distractions
             </Link>
@@ -127,3 +136,5 @@ export default function Pricing() {
     </ThemeProvider>
   );
 }
+
+export default App;
